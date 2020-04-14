@@ -102,3 +102,20 @@ dist
 
 # TernJS port file
 .tern-port
+
+*.suo
+*.user
+.vs/
+[Bb]in/
+[Oo]bj/
+_UpgradeReport_Files/
+[Pp]ackages/
+
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+.idea
+
+bin/
+obj/
