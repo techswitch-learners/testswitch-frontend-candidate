@@ -1,0 +1,33 @@
+{
+  "name": "testswitch-frontend-candidate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techswitch-learners/testswitch-frontend-candidate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techswitch-learners/testswitch-frontend-candidate/issues"
+  },
+  "homepage": "https://github.com/techswitch-learners/testswitch-frontend-candidate#readme",
+  "dependencies": {
+    "next": "^9.3.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.11.1",
+    "@types/react": "^16.9.34",
+    "typescript": "^3.8.3"
+  }
+}
