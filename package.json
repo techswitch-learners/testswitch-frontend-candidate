@@ -21,7 +21,10 @@
   },
   "homepage": "https://github.com/techswitch-learners/testswitch-frontend-candidate#readme",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
     "next": "^9.3.4",
+    "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
