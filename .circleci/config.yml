@@ -2,15 +2,6 @@
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  lint:
-    executor:
-      name: node/default
-    steps:
-      - checkout
-      - node/with-cache:
-      - steps:
-        - run: npm install eslint
-        - run: npm run lint
   build-and-test:
     executor:
       name: node/default
@@ -23,5 +14,4 @@ jobs:
 workflows:
   build-and-test:
     jobs:
-      - lint
       - build-and-test
