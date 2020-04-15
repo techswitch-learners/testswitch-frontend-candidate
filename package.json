@@ -20,6 +20,9 @@
     "url": "https://github.com/techswitch-learners/testswitch-frontend-candidate/issues"
   },
   "homepage": "https://github.com/techswitch-learners/testswitch-frontend-candidate#readme",
+  "jest": {
+    "preset": "ts-jest"
+  },
   "dependencies": {
     "next": "^9.3.4",
     "react": "^16.13.1",
