@@ -21,7 +21,15 @@
   },
   "homepage": "https://github.com/techswitch-learners/testswitch-frontend-candidate#readme",
   "jest": {
-    "preset": "ts-jest"
+    "preset": "ts-jest",
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "setupFilesAfterEnv": ["<rootDir>/_test_/setupTests.ts"],
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "babel-jest"
+    }
   },
   "dependencies": {
     "next": "^9.3.4",
