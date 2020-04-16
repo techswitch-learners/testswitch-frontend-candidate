@@ -12,7 +12,6 @@ function TextEditorContainer() {
     }
 
     function handleShowValue() {
-
         // @ts-ignore
         alert(`You have submitted this code: ${valueGetter.current()}`);
     }
@@ -20,7 +19,7 @@ function TextEditorContainer() {
     return (
         <div>
             <button onClick={handleShowValue} disabled={!isEditorReady}>
-               Submit Code 
+                Submit Code
             </button>
 
             <Editor
