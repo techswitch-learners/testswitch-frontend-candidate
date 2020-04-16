@@ -1,4 +1,4 @@
-﻿﻿$font-size: 60px;
+﻿@import "constants";
 .welcome {
-  font-size: $font-size;
+  @include LargeHeaderYellow();
 }

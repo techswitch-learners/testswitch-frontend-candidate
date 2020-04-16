@@ -1,15 +1,13 @@
-﻿﻿﻿@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-//Site Colours
+﻿//Site Colours
 $softwireBlack: rgb(24, 24, 24);
 $softwireYellow: rgb(255, 193, 0);
 $softwireWhite: rgb(255, 255, 255);
 
 //Fonts
-$softwireFont: 'Open Sans', sans-serif;
+
 
 @mixin LargeHeaderYellow() {
-  font-family: Open Sans;
+  font-family: Arial, serif;
   color: $softwireYellow;
   font-size: 46px;
 }
