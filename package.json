@@ -23,6 +23,11 @@
   "homepage": "https://github.com/techswitch-learners/testswitch-frontend-candidate#readme",
   "jest": {
     "preset": "ts-jest",
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.jest.json"
+      }
+    },
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -42,12 +47,12 @@
     }
   },
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
     "next": "^9.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/react": "^10.0.2",
     "@types/jest": "^25.2.1",
