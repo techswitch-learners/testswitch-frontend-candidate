@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "test": "jest"
-    "start": "next start -p $PORT",
+    "test": "jest",
+    "start": "next start -p $PORT"
   },
   "repository": {
     "type": "git",
