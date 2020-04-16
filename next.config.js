@@ -1,5 +1,11 @@
 ﻿const withSass = require('@zeit/next-sass');
-const withWebfonts = require('webfont-loader');
 module.exports = withSass({
     cssModules: true
 });
+
+WebFontConfig = {
+    google: {
+        families: ['Open Sans']
+    },
+    timeout: 2000 
+};
