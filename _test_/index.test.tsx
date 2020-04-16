@@ -7,3 +7,4 @@ test('Check that the home page renders',()=>{
     const tag=home.getByTestId('page-render-test');
     expect(tag).toBeInTheDocument();
 });
+ 
