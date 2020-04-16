@@ -1,4 +1,10 @@
 ﻿@import "constants";
+* {
+  @include Background();
+}
 .welcome {
   @include LargeHeaderYellow();
+}
+.page {
+  
 }
