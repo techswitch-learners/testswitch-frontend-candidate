@@ -8,7 +8,7 @@
     "build": "next build",
     "test": "jest",
     "start": "next start -p $PORT",
-    "lint:fix": "eslint './src/**/*.{ts,tsx}'"
+    "lint": "eslint ./**/*.{ts,tsx}"
   },
   "repository": {
     "type": "git",
