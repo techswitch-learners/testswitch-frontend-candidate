@@ -1,4 +1,5 @@
-﻿//Site Colours
+﻿
+//Site Colours
 $softwireBlack: rgb(24, 24, 24);
 $softwireYellow: rgb(255, 193, 0);
 $softwireWhite: rgb(255, 255, 255);
@@ -7,7 +8,7 @@ $softwireWhite: rgb(255, 255, 255);
 
 
 @mixin LargeHeaderYellow() {
-  font-family: Arial, serif;
+  font-family: Open Sans, sans-serif;
   color: $softwireYellow;
   font-size: 46px;
 }
