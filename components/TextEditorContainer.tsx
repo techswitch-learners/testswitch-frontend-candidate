@@ -1,18 +1,20 @@
-﻿import React, {useRef, useState} from "react";
+﻿import React, {MutableRefObject, useRef, useState} from "react";
 import Editor from '@monaco-editor/react';
+
+type StringFunction = (
+    () => string
+);
 
 function TextEditorContainer() {
     const [isEditorReady, setIsEditorReady] = useState(false);
-    const valueGetter = useRef();
+    const valueGetter: MutableRefObject<any> = useRef();
 
-    // @ts-ignore
-    function handleEditorDidMount(_valueGetter) {
+    function handleEditorDidMount(_valueGetter: StringFunction) {
         setIsEditorReady(true);
         valueGetter.current = _valueGetter;
     }
 
     function handleShowValue() {
-        // @ts-ignore
         alert(`You have submitted this code: ${valueGetter.current()}`);
     }
 
