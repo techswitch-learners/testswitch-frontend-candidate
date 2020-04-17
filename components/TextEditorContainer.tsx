@@ -1,9 +1,7 @@
 ﻿import React, {MutableRefObject, useRef, useState} from "react";
 import Editor from "@monaco-editor/react";
 
-type EditorContentGetter = (
-    () => string
-);
+type EditorContentGetter = () => string;
 
 function TextEditorContainer() {
     const [isEditorReady, setIsEditorReady] = useState(false);
