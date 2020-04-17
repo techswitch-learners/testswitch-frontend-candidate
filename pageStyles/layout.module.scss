@@ -1,0 +1,12 @@
+@import "constants";
+
+.layout {
+  @include Background();
+}
+
+.logoHeader {
+  max-width: 20px;
+}
+.content {
+  
+}

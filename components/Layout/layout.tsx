@@ -1,15 +1,14 @@
 import React from "react";
 import LogoHeader from "./logoHeader";
-import 'layout';
+import scss from '../../pageStyles/layout.module.scss';
+import { NextComponentType } from 'next/types';
 
 // @ts-ignore
-const Layout = props => (
-    <section className="layout">
+const Layout: NextComponentType.getInitialProps = props => (
+    <div className={scss.layout}>
         <LogoHeader/>
-        <div className="content">
             {props.children}
-        </div>
-    </section>
+    </div>
 );
 
 export default Layout;

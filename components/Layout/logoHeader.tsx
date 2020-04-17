@@ -1,7 +1,8 @@
 import React from "react";
+import scss from '../../pageStyles/layout.module.scss';
 
 const LogoHeader = () => (
-    <img className="logoHeader" alt="TechSwitch" src="../Images/Color%20logo%20-%20no%20background.png">
+    <img className={scss.logoHeader} alt="TechSwitch" src="https://www.techswitch.co.uk/images/logo.svg">
     </img>
 );
 
