@@ -1,21 +1,21 @@
 ﻿import React, {MutableRefObject, useRef, useState} from "react";
-import Editor from '@monaco-editor/react';
+import Editor from "@monaco-editor/react";
 
-type StringFunction = (
+type EditorContentGetter = (
     () => string
 );
 
 function TextEditorContainer() {
     const [isEditorReady, setIsEditorReady] = useState(false);
-    const valueGetter: MutableRefObject<any> = useRef();
+    const getContentOfEditorIfMounted: MutableRefObject<any> = useRef();
 
-    function handleEditorDidMount(_valueGetter: StringFunction) {
+    function handleIsEditorMounted(_getContentOfEditorIfMounted: EditorContentGetter) {
         setIsEditorReady(true);
-        valueGetter.current = _valueGetter;
+        getContentOfEditorIfMounted.current = _getContentOfEditorIfMounted;
     }
 
     function handleShowValue() {
-        alert(`You have submitted this code: ${valueGetter.current()}`);
+        alert(`You have submitted this code: ${getContentOfEditorIfMounted.current()}`);
     }
 
     return (
@@ -28,7 +28,7 @@ function TextEditorContainer() {
                 height="90vh"
                 language="javascript"
                 value={"// write your test code here"}
-                editorDidMount={handleEditorDidMount}
+                editorDidMount={handleIsEditorMounted}
             /></div>
     )
 }
