@@ -9,15 +9,18 @@
   padding: 5px;
   
 }
-section, div, h1, .content {
+
+section, div, h1, a, .content {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
   height: auto;
 }
-.content, h1 {
+.content, h1, a {
   justify-content: center;
   align-items: center;
   padding: 5px;
+  font-family: Open Sans, sans-serif;
+  text-decoration: none;
 }

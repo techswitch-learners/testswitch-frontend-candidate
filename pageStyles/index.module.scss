@@ -13,3 +13,7 @@ body {
 .welcome {
   @include LargeHeaderYellow();
 }
+
+.buttonYellow {
+  @include Buttons($softwireYellow, $softwireBlack);
+}
