@@ -10,7 +10,7 @@
   
 }
 
-section, div, h1, a, .content {
+section, div, h1, .content {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -24,3 +24,8 @@ section, div, h1, a, .content {
   font-family: Open Sans, sans-serif;
   text-decoration: none;
 }
+
+a#buttonYellow.buttonYellow {
+  @include Buttons($softwireYellow, $softwireBlack)
+}
+

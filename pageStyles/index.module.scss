@@ -14,6 +14,7 @@ body {
   @include LargeHeaderYellow();
 }
 
-.buttonYellow {
+a {
   @include Buttons($softwireYellow, $softwireBlack);
 }
+

@@ -16,25 +16,30 @@ $softwireWhite: rgb(255, 255, 255);
 }
 
 //Fonts
+$softwireFont: Open Sans, sans-serif;
+$desktopHeaderFontSize: 30px;
+$buttonFontSize: 9px;
 @mixin LargeHeaderYellow() {
-  font-family: Open Sans, sans-serif;
+  font-family: $softwireFont;
   color: $softwireYellow;
-  font-size: 30px;
+  font-size: $desktopHeaderFontSize;
   justify-content: center;
 }
 
 //Buttons
-@mixin Buttons($color, $fontColor) {
-  .button {
+@mixin Buttons($color, $fontColor)  {
+  font-family: $softwireFont;
+  width: 45px;
+  height: 15px;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
   border-width: 3px;
   border-color: $softwireYellow;
   border-style: solid;
   background-color: $color;
   color: $fontColor;
-  margin: 8px;
-  padding: 8px 16px;
-  font-size: 16px;
+  font-size: $buttonFontSize;
   }
-}
