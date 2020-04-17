@@ -48,7 +48,6 @@
   },
   "dependencies": {
     "@monaco-editor/react": "^3.3.0",
-    "@zeit/next-sass": "^1.0.1",
     "next": "^9.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
