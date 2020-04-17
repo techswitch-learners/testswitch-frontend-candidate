@@ -5,15 +5,15 @@ type EditorContentGetter = () => string;
 
 function TextEditorContainer() {
     const [isEditorReady, setIsEditorReady] = useState(false);
-    const getEditorContent: MutableRefObject<any> = useRef(null);
-
-    function handleIsEditorMounted(_editorContents: EditorContentGetter) {
+    const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
+    
+    function handleIsEditorMounted(_getEditorContents: EditorContentGetter) {
         setIsEditorReady(true);
-        getEditorContent.current = _editorContents;
+        getEditorContentIfMountedRef.current = _getEditorContents;
     }
 
     function handleShowValue() {
-        alert(`You have submitted this code: ${getEditorContent.current()}`);
+        alert(`You have submitted this code: ${getEditorContentIfMountedRef.current()}`);
     }
 
     return (
