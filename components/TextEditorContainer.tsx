@@ -7,9 +7,9 @@ function TextEditorContainer() {
     const [isEditorReady, setIsEditorReady] = useState(false);
     const getEditorContent: MutableRefObject<any> = useRef(null);
 
-    function handleIsEditorMounted(_getContentOfEditorIfMounted: EditorContentGetter) {
+    function handleIsEditorMounted(_editorContents: EditorContentGetter) {
         setIsEditorReady(true);
-        getEditorContent.current = _getContentOfEditorIfMounted;
+        getEditorContent.current = _editorContents;
     }
 
     function handleShowValue() {
