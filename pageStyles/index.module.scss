@@ -1,10 +1,15 @@
 ﻿@import "constants";
-* {
+
+html,
+body {
   @include Background();
+  height: 100%;
+  
 }
+
 .welcome {
   @include LargeHeaderYellow();
 }
 .page {
-  
+  @include Background();
 }
