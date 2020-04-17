@@ -7,15 +7,15 @@ type EditorContentGetter = (
 
 function TextEditorContainer() {
     const [isEditorReady, setIsEditorReady] = useState(false);
-    const getContentOfEditorIfMounted: MutableRefObject<any> = useRef(null);
+    const getEditorContent: MutableRefObject<any> = useRef(null);
 
     function handleIsEditorMounted(_getContentOfEditorIfMounted: EditorContentGetter) {
         setIsEditorReady(true);
-        getContentOfEditorIfMounted.current = _getContentOfEditorIfMounted;
+        getEditorContent.current = _getContentOfEditorIfMounted;
     }
 
     function handleShowValue() {
-        alert(`You have submitted this code: ${getContentOfEditorIfMounted.current()}`);
+        alert(`You have submitted this code: ${getEditorContent.current()}`);
     }
 
     return (
