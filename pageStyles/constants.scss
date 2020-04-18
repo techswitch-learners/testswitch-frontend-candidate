@@ -4,6 +4,16 @@ $softwireBlack: rgb(24, 24, 24);
 $softwireYellow: rgb(255, 193, 0);
 $softwireWhite: rgb(255, 255, 255);
 
+//Fonts
+$softwireFont: Open Sans, sans-serif;
+$desktopHeaderFontSize: 30px;
+$buttonFontSize: 9px;
+@mixin LargeHeaderYellow() {
+  color: $softwireYellow;
+  font-size: $desktopHeaderFontSize;
+  justify-content: center;
+}
+
 //Background
 @mixin Background {
   background-color: $softwireBlack;
@@ -12,25 +22,14 @@ $softwireWhite: rgb(255, 255, 255);
   padding: 0;
   margin: 0;
   border-style: none;
-  
-}
-
-//Fonts
-$softwireFont: Open Sans, sans-serif;
-$desktopHeaderFontSize: 30px;
-$buttonFontSize: 9px;
-@mixin LargeHeaderYellow() {
   font-family: $softwireFont;
-  color: $softwireYellow;
-  font-size: $desktopHeaderFontSize;
-  justify-content: center;
+
 }
 
 //Buttons
 @mixin Buttons($color, $fontColor)  {
-  font-family: $softwireFont;
   width: 45px;
-  height: 15px;
+  height: 10px;
   text-decoration: none;
   display: flex;
   flex-direction: column;

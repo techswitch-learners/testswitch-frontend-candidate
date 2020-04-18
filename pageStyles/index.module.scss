@@ -3,11 +3,9 @@
 html,
 body {
   @include Background();
-  height: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  
 }
 
 .welcome {

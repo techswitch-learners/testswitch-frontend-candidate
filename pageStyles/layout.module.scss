@@ -16,6 +16,7 @@ section, div, h1, .content {
   flex-wrap: wrap;
   width: 100%;
   height: auto;
+  align-content: center;
 }
 .content, h1, a {
   justify-content: center;
