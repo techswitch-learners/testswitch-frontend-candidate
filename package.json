@@ -52,7 +52,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "specificity": "^0.4.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "@monaco-editor/react": "^3.3.0"
   },
   "devDependencies": {
     "webfont-loader": "^1.1.0",
