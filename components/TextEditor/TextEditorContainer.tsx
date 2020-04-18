@@ -3,7 +3,16 @@ import Editor from "@monaco-editor/react";
 
 type EditorContentGetter = () => string;
 
-function TextEditorContainer() {
+interface TextEditorContainerProps {
+    containerClassName : string,
+    theme? : "light" | "dark",
+    height: string,
+    width: string,
+    language: string,
+    defaultText?: string,
+}
+
+function TextEditorContainer(props:TextEditorContainerProps) {
     const [isEditorReady, setIsEditorReady] = useState(false);
     const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
     
@@ -17,15 +26,17 @@ function TextEditorContainer() {
     }
 
     return (
-        <div>
+        <div className={props.containerClassName}>
             <button onClick={handleShowValue} disabled={!isEditorReady}>
                 Submit Code
             </button>
 
             <Editor
-                height="90vh"
-                language="javascript"
-                value={"// write your test code here"}
+                theme={props.theme}
+                height={props.height}
+                width={props.width}
+                language={props.language}
+                value={props.defaultText}
                 editorDidMount={handleIsEditorMounted}
             /></div>
     )
