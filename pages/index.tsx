@@ -9,7 +9,7 @@ const Home: NextPage = () => {
         <section className={scss.content}>
             <h1 className={scss.welcome} data-testid='page-render-test'>Welcome to the Test Zone</h1>
             <div className={scss.content}>
-            <Link href="/test">
+            <Link href="/testpage">
                 <a className="buttonYellow" id="buttonYellow">Start Test</a>
             </Link>
             </div>
