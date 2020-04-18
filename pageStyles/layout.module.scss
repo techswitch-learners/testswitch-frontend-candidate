@@ -5,23 +5,23 @@
 }
 
 .logoHeader {
-  max-width: 50px;
+  max-width: 60px;
   padding: 5px;
-  
+  margin: 2px;
+  align-self: flex-start;
 }
 
 section, div, h1, .content {
+  width: 100%;
+  align-items: center;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 100%;
-  height: auto;
-  align-content: center;
 }
 .content, h1, a {
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 1px;
   font-family: Open Sans, sans-serif;
   text-decoration: none;
 }
@@ -29,4 +29,9 @@ section, div, h1, .content {
 a#buttonYellow.buttonYellow {
   @include Buttons($softwireYellow, $softwireBlack)
 }
+
+.content {
+  justify-content: stretch;
+}
+
 

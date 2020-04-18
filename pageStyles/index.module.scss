@@ -16,3 +16,10 @@ a {
   @include Buttons($softwireYellow, $softwireBlack);
 }
 
+.instructionsHeader {
+  @include MediumWhiteHeader();
+}
+.instructions {
+  @include Instructions();
+}
+
