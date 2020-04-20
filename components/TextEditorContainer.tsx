@@ -6,7 +6,6 @@ type EditorContentGetter = () => string;
 function TextEditorContainer() {
     const [isEditorReady, setIsEditorReady] = useState(false);
     const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
-
     function handleIsEditorMounted(_getEditorContents: EditorContentGetter) {
         setIsEditorReady(true);
         getEditorContentIfMountedRef.current = _getEditorContents;
