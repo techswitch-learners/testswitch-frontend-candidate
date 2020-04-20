@@ -5,13 +5,13 @@ import {editor} from "monaco-editor";
 type EditorContentGetter = () => string;
 
 interface TextEditorContainerProps {
-    containerClassName: string,
-    theme?: "light" | "dark",
-    height: string,
-    width: string,
-    language: string,
-    defaultText?: string,
-    options?: editor.IEditorOptions
+    containerClassName: string;
+    theme?: "light" | "dark";
+    height: string;
+    width: string;
+    language: string;
+    defaultText?: string;
+    options?: editor.IEditorOptions;
 }
 
 function TextEditorContainer(props: TextEditorContainerProps) {
