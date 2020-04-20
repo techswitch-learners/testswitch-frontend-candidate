@@ -18,15 +18,16 @@ a {
   background-color: $softwireYellow;
   color: $softwireBlack;
   font-size: $buttonFontSize;
+  justify-content: center;
+  padding: 3px;
+  font-family: Open Sans, sans-serif;
 }
-section, div, h1, .content {
+section, .content {
   width: 100%;
   align-items: center;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-}
-.content, h1, a {
   justify-content: center;
   padding: 3px;
   font-family: Open Sans, sans-serif;
