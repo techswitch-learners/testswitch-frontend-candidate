@@ -1,5 +1,6 @@
 ﻿import React, {MutableRefObject, useRef, useState} from "react";
 import Editor from "@monaco-editor/react";
+import {editor} from "monaco-editor";
 
 type EditorContentGetter = () => string;
 
@@ -10,6 +11,7 @@ interface TextEditorContainerProps {
     width: string,
     language: string,
     defaultText?: string,
+    options?: editor.IEditorOptions
 }
 
 function TextEditorContainer(props:TextEditorContainerProps) {
@@ -38,6 +40,7 @@ function TextEditorContainer(props:TextEditorContainerProps) {
                 language={props.language}
                 value={props.defaultText}
                 editorDidMount={handleIsEditorMounted}
+                options={props.options}
             /></div>
     )
 }
