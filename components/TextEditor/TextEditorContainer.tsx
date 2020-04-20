@@ -5,8 +5,8 @@ import {editor} from "monaco-editor";
 type EditorContentGetter = () => string;
 
 interface TextEditorContainerProps {
-    containerClassName : string,
-    theme? : "light" | "dark",
+    containerClassName: string,
+    theme?: "light" | "dark",
     height: string,
     width: string,
     language: string,
@@ -14,10 +14,10 @@ interface TextEditorContainerProps {
     options?: editor.IEditorOptions
 }
 
-function TextEditorContainer(props:TextEditorContainerProps) {
+function TextEditorContainer(props: TextEditorContainerProps) {
     const [isEditorReady, setIsEditorReady] = useState(false);
     const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
-    
+
     function handleIsEditorMounted(_getEditorContents: EditorContentGetter) {
         setIsEditorReady(true);
         getEditorContentIfMountedRef.current = _getEditorContents;
@@ -42,7 +42,7 @@ function TextEditorContainer(props:TextEditorContainerProps) {
                 editorDidMount={handleIsEditorMounted}
                 options={props.options}
             /></div>
-    )
+    );
 }
 
 export default TextEditorContainer;
