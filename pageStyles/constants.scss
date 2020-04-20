@@ -10,15 +10,3 @@ $desktopHeaderFontSize: 60px;
 $desktopSubHeaderFontSize: 36px;
 $buttonFontSize: 27px;
 
-//Background
-@mixin Background {
-  background-color: $softwireBlack;
-  width: 100%;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  border-style: none;
-  font-family: $softwireFont;
-
-}
-
