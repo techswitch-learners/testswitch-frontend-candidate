@@ -1,0 +1,23 @@
+@import "constants";
+
+.submitHeader {
+  color: $softwireYellow;
+  font-size: $desktopHeaderFontSize;
+}
+
+.submitMessage {
+  color: $softwireWhite;
+  font-size: $desktopSubHeaderFontSize;
+}
+
+section, h1, .content {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3px;
+  font-family: Open Sans, sans-serif;
+  text-decoration: none;
+}

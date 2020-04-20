@@ -1,4 +1,51 @@
-﻿﻿$font-size: 60px;
-.example {
-  font-size: $font-size;
+﻿@import "constants";
+
+.welcome {
+  color: $softwireYellow;
+  font-size: $desktopHeaderFontSize;
 }
+
+a {
+  width: 135px;
+  height: 30px;
+  margin: 30px;
+  text-decoration: none;
+  align-items: center;
+  text-align: center;
+  border-width: 9px;
+  border-color: $softwireYellow;
+  border-style: solid;
+  background-color: $softwireYellow;
+  color: $softwireBlack;
+  font-size: $buttonFontSize;
+  justify-content: center;
+  padding: 3px;
+  font-family: Open Sans, sans-serif;
+}
+section, .content {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3px;
+  font-family: Open Sans, sans-serif;
+  text-decoration: none;
+}
+
+.instructionsHeader {
+  color: $softwireWhite;
+  font-size: $desktopSubHeaderFontSize;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+.instructions {
+  color: $softwireWhite;
+  font-size: $buttonFontSize;
+  justify-content: left;
+  text-align: left;
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
