@@ -1,11 +1,12 @@
 import React from "react";
-import LogoHeader from "./logoHeader";
-import scss from '../../pageStyles/layout.module.scss';
+import scss from './layout.module.scss';
 
-const Layout: any = (props: { children: React.ReactNode }) => (
+type LayoutProps = {children: React.ReactNode };
+const Layout = ({children}: LayoutProps): JSX.Element => (
     <div className={scss.layout}>
-        <LogoHeader/>
-            {props.children}
+        <img className={scss.logoHeader} alt="TechSwitch" src='/logo.png'>
+        </img>
+        {children}
     </div>
 );
 

@@ -4,8 +4,8 @@ import scss from '../pageStyles/index.module.scss'
 import Layout from "../components/Layout/layout";
 import Link from 'next/link'
 
-const Home: NextPage = () => {
-    return <Layout>
+const Home: NextPage = () =>  
+    <Layout>
         <section className={scss.content}>
             <h1 className={scss.welcome} data-testid='page-render-test'>Welcome to the Test Zone</h1>
             <div className={scss.content}>
@@ -20,8 +20,7 @@ const Home: NextPage = () => {
             </Link>
             </div>
         </section>
-    </Layout>
-};
+    </Layout>;
 export default Home;
 
 

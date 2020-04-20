@@ -6,38 +6,15 @@ $softwireWhite: rgb(255, 255, 255);
 
 //Fonts
 $softwireFont: Open Sans, sans-serif;
-$desktopHeaderFontSize: 20px;
-$desktopSubHeaderFontSize: 12px;
-$buttonFontSize: 9px;
-@mixin LargeHeaderYellow() {
-  color: $softwireYellow;
-  font-size: $desktopHeaderFontSize;
-  justify-content: flex-end;
-}
-@mixin MediumWhiteHeader() {
-  color: $softwireWhite;
-  font-size: $desktopSubHeaderFontSize;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  padding: 2% 2% 1% 2%;
- 
-}
-@mixin Instructions() {
-  color: $softwireWhite;
-  font-size: $buttonFontSize;
-  justify-content: left;
-  text-align: left;
-  margin: 3px;
-  padding: 1% 2% 2% 2%;
-}
+$desktopHeaderFontSize: 60px;
+$desktopSubHeaderFontSize: 36px;
+$buttonFontSize: 27px;
 
 //Background
 @mixin Background {
   background-color: $softwireBlack;
   width: 100%;
-  height: auto;
+  min-height: 100vh;
   padding: 0;
   margin: 0;
   border-style: none;
@@ -45,20 +22,3 @@ $buttonFontSize: 9px;
 
 }
 
-//Buttons
-@mixin Buttons($color, $fontColor)  {
-  width: 45px;
-  height: 10px;
-  margin: 10px;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  border-width: 3px;
-  border-color: $softwireYellow;
-  border-style: solid;
-  background-color: $color;
-  color: $fontColor;
-  font-size: $buttonFontSize;
-  }
