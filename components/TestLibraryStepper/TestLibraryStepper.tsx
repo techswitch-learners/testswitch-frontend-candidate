@@ -26,11 +26,11 @@ export default function TestLibraryStepper(){
     };
     
     return (
-        <div className="stepper-container">
+        <div className="stepperContainer">
             <Stepper alternativeLabel activeStep={activeStep}>
                 {steps.map((label)=>(
                     <Step key={label}>
-                        <StepLabel>{label}</StepLabel>
+                        <StepLabel className="stepLabel">{label}</StepLabel>
                     </Step>
                 ))}
             </Stepper>
@@ -45,13 +45,12 @@ export default function TestLibraryStepper(){
                     <div>
                         <Typography>{getStepContent(activeStep)}</Typography>
                         <div>
-                            <Button
-                                variant="contained"
-                                color="primary"
+                            <a href="#"
+                                style={{color: "white"}}
                                 onClick={getNext}
                             >
                                 {activeStep === steps.length - 1 ? 'Start Final Test' : 'Start Next Test'}
-                            </Button>
+                            </a>
                         </div>
                     </div>
                 )}
