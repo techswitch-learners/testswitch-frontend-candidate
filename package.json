@@ -47,6 +47,7 @@
     }
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.11",
     "@monaco-editor/react": "^3.3.0",
     "@zeit/next-sass": "^1.0.1",
     "monaco-editor": "^0.20.0",
