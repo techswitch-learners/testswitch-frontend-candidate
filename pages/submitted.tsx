@@ -8,7 +8,7 @@ const Submitted: NextPage = () =>  (
             <section className={scss.content}>
                 <h1 className={scss.submitHeader}>Your Test Has Been Submitted</h1>
                 <h2 className={scss.submitMessage}>We will review your results and get back to you by email shortly</h2>
-                <h1 className={scss.submitHeader}>Thank You!</h1>
+                <h3 className={scss.thankyou}>Thank You!</h3>
             </section>
         </Layout>
 );
