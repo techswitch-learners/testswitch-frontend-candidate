@@ -8,10 +8,10 @@ type EditorContentGetter = () => string;
 
 interface TextEditorContainerProps {
     containerClassName: string;
-    theme?: TextEditorThemes
+    theme?: TextEditorThemes;
     height: string;
     width: string;
-    language: SupportedLanguages
+    language: SupportedLanguages;
     defaultText: string;
     options?: TextEditorOptions;
 }
