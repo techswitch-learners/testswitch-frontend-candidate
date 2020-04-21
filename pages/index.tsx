@@ -17,6 +17,7 @@ const Home: NextPage = () =>
             <Link href="/testpage">
                 <a className="buttonYellow" id="buttonYellow">Start Test</a>
             </Link>
+            <Link href={"/testlibrary"}>go to test library</Link>
         </section>
     </Layout>;
 export default Home;
