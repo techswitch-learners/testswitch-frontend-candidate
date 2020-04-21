@@ -32,6 +32,7 @@ section, .content {
   padding: 3px;
   font-family: Open Sans, sans-serif;
   text-decoration: none;
+  text-align: center;
 }
 
 .instructionsHeader {
@@ -47,5 +48,12 @@ section, .content {
   text-align: left;
   margin-top: 12px;
   margin-bottom: 24px;
+}
+ul {
+  list-style: none;
+  
+}
+li {
+  text-align: center;
 }
 
