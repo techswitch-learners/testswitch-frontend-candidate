@@ -1,8 +1,12 @@
-﻿export async function apiGetClientTestList(candidateId: number, testId: number): Promise<string[]> {
+﻿import { NextApiRequest, NextApiResponse} from "next";
+
+export async function apiGetClientTestList(candidateId: number, testId: number): Promise<string[]> {
     //get json candidate by current id from results api
     var currentCandidateId = "";
+    
+    const apiBaseRoute: string = 'https://localhost:5001/results';
 
-    var fetchCandidateResult = fetch(`https://localhost:5001/results`)
+    var fetchCandidateResult = fetch(apiBaseRoute)
         .then(response => {
             if (!response.ok) {
                 throw new Error(response.statusText)
@@ -14,7 +18,7 @@
 
 //put into list
 
-var candidateTestList = [""];
+    var candidateTestList = ["Test 1"];
 
-return candidateTestList;
+    return candidateTestList;
 }

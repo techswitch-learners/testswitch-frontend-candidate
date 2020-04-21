@@ -14,10 +14,9 @@ const Home: NextPage = () =>
                     <li>There is no time limit for this test, but time taken will be reviewed as part of our assessment.</li>
                     <li>When you are ready and sure you won’t be disturbed, please click “Start”</li>
                 </ul>
-            <Link href="/testpage">
+            <Link href="/testlibrary">
                 <a className="buttonYellow" id="buttonYellow">Start Test</a>
             </Link>
-            <Link href={"/testlibrary"}>go to test library</Link>
         </section>
     </Layout>;
 export default Home;
