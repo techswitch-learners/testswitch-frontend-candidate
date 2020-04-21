@@ -1,1 +1,1 @@
-﻿export type SupportedLanguages = 'javascript' | 'typescript';
+﻿export type SupportedLanguages = 'javascript' | 'typescript' | 'unset';

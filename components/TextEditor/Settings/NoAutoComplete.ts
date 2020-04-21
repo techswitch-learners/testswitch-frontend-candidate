@@ -5,6 +5,11 @@ const noAutoComplete: TextEditorOptions = {
     autoClosingBrackets: "never",
     autoClosingQuotes : "never",
     codeLens: false,
+    lightbulb : {
+        enabled : false
+    },
+    folding : false,
+    
     suggest: {
         showMethods: false,
         showFunctions: false,
