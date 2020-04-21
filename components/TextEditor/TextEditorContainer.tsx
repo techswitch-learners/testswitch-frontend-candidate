@@ -1,17 +1,19 @@
 import React, {MutableRefObject, useRef, useState} from "react";
 import Editor from "@monaco-editor/react";
-import {editor} from "monaco-editor";
+import {SupportedLanguages} from "../../Models/SupportedLanguages";
+import {TextEditorThemes} from "../../Models/TextEditorThemes";
+import {TextEditorOptions} from "../../Models/TextEditorOptions";
 
 type EditorContentGetter = () => string;
 
 interface TextEditorContainerProps {
     containerClassName: string;
-    theme?: "light" | "dark";
+    theme?: TextEditorThemes
     height: string;
     width: string;
-    language: string;
-    defaultText?: string;
-    options?: editor.IEditorOptions;
+    language: SupportedLanguages
+    defaultText: string;
+    options?: TextEditorOptions;
 }
 
 function TextEditorContainer(props: TextEditorContainerProps) {
