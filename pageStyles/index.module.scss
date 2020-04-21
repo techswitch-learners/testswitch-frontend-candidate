@@ -3,6 +3,9 @@
 .welcome {
   color: $softwireYellow;
   font-size: $desktopHeaderFontSize;
+  max-width: $welcomeHeaderWidth;
+  margin: 5px;
+  padding: 5px;
 }
 
 a {
@@ -40,20 +43,20 @@ section, .content {
   font-size: $desktopSubHeaderFontSize;
   margin-top: 24px;
   margin-bottom: 12px;
+  padding: 5px;
 }
 .instructions {
   color: $softwireWhite;
   font-size: $buttonFontSize;
   justify-content: left;
   text-align: left;
+  padding: 5px;
   margin-top: 12px;
   margin-bottom: 24px;
+  margin-right: 5px;
+  margin-left: 5px;
+  max-width: $welcomeHeaderWidth;
 }
-ul {
-  list-style: none;
-  
-}
-li {
-  text-align: center;
-}
+
+
 
