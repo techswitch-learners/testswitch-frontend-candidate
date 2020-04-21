@@ -16,7 +16,7 @@ interface TextEditorContainerProps {
     options?: TextEditorOptions;
 }
 
-function TextEditorContainer(props: TextEditorContainerProps):JSX.Element {
+function TextEditorContainer(props: TextEditorContainerProps): JSX.Element {
     const [isEditorReady, setIsEditorReady] = useState(false);
     const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
 
