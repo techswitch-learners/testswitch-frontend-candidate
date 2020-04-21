@@ -1,4 +1,5 @@
 ﻿import React, {useState} from "react";
+import scss from "./TestLibraryStepper.module.scss";
 import { Stepper, Step, StepLabel, StepConnector, Typography, Button} from '@material-ui/core';
 import {Check, MoreHoriz} from '@material-ui/icons';
 
@@ -18,7 +19,7 @@ function getStepContent(step:number){
 }
 
 export default function TestLibraryStepper(){
-    const [activeStep, setActiveStep] = useState(1);
+    const [activeStep, setActiveStep] = useState(0);
     const steps = getSteps();
     
     const getNext = () => {
@@ -38,12 +39,11 @@ export default function TestLibraryStepper(){
                 {activeStep === steps.length ? (
                     <div>
                         <Typography className="finished">
-                            All steps completed - you&apos;re finished
+                            All tests completed.
                         </Typography>
                     </div>
                 ) : (
                     <div>
-                        <Typography>{getStepContent(activeStep)}</Typography>
                         <div>
                             <a href="#"
                                 style={{color: "white"}}
