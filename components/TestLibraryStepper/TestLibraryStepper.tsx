@@ -1,12 +1,15 @@
 ﻿import React, {useState} from "react";
-import {Step, StepButton, StepLabel, Stepper, Typography, StepConnector} from '@material-ui/core';
-import {createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
+import {Step, StepButton, StepLabel, Stepper, Typography, StepConnector, StepIconProps} from '@material-ui/core';
+import {makeStyles, createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
 import Router from "next/router";
 import {withStyles} from "@material-ui/styles";
+import {Check, MoreHoriz} from "@material-ui/icons";
+import clsx from "clsx";
+import scss from "./TestLibraryStepper.module.scss";
 
 function getActiveStep() {
     //set current step based on tests completed
-    return 2;
+    return 1;
 }
 
 function getSteps() {
@@ -33,7 +36,7 @@ export default function TestLibraryStepper() {
         setActiveStep(steps => lastTest + 1)
     };
 
-    //override for material ui stepper styles
+    //overrides for material ui stepper styles
     const testSwitchTheme = createMuiTheme({
         palette: {
             primary: {
@@ -57,8 +60,60 @@ export default function TestLibraryStepper() {
             borderColor: '#eaeaf0',
             borderTopWidth: 3,
             borderRadius: 1,
+            zIndex:-2,
         },
     })(StepConnector);
+
+    /*const TestSwitchIconStyles = makeStyles({
+        root: {
+            backgroundColor: '#eaeaf0',
+            zIndex: 1,
+            color: '#fff',
+            fontSize: 18,
+            width: 50,
+            height: 50,
+            display: 'flex',
+            borderRadius: '50%',
+            justifyContent: 'center',
+        },
+        active: {
+            color: 'rgb(255, 193, 0)',
+            fontSize: 18,
+        },
+        current: {
+            color: 'rgb(255, 255, 255)',
+            zIndex: 0,
+            fontSize: 18,
+            width: 50,
+            height: 50,
+            borderRadius: '50%',
+            backgroundColor: 'rgb(255, 193, 0)',
+        },
+        completed: {
+            color: 'rgb(255, 255, 255)',
+            zIndex: 0,
+            fontSize: 18,
+            width: 50,
+            height: 50,
+            borderRadius: '50%',
+            backgroundColor: 'rgb(255, 193, 0)',
+        },
+    });
+
+    function TestSwitchStepIcon(props: StepIconProps) {
+        const classes = TestSwitchIconStyles();
+        const { active, completed } = props;
+        return (
+            <div
+                className={clsx(classes.root, {
+                    [classes.active]: active,
+                })}
+            >
+                {completed ? <Check className={classes.completed} /> : <MoreHoriz className={classes.root} />}
+            </div>
+        );
+    }*/
+
 
     return (
         <div className="stepperContainer">
@@ -73,23 +128,22 @@ export default function TestLibraryStepper() {
             </MuiThemeProvider>
             <div className="stepperBtnContainer">
                 {activeStep === steps.length ? (
-                    <section>
+                    <div>
                         <Typography align={"center"} className="finished">
                             All tests completed.
                         </Typography>
-                    </section>
+                    </div>
                 ) : (
                     <div className="stepperBtnContainer">
-                        <section>
+                        <div>
                             <Typography align={"center"}>
                                     <a href="#"
-                                        style={{color: "white"}}
                                        onClick={() => Router.push(`/test${activeStep+1}`)}
                                     >
                                     {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
                                 </a>
                             </Typography>
-                        </section>
+                        </div>
                     </div>
                 )}
             </div>
