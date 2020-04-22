@@ -3,7 +3,10 @@ import scss from "./TestLibraryStepper.module.scss";
 import {Stepper, Step, StepLabel, StepConnector, Typography, Button, StepButton, StepIcon} from '@material-ui/core';
 import {Check, MoreHoriz} from '@material-ui/icons';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
-import {getCompletedTests} from '../../pages/api/candidateApiClient.module'
+
+function getActiveStep(){
+    
+}
 
 function getSteps() {
     //set number of steps

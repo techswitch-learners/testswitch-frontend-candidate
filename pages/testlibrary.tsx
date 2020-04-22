@@ -4,6 +4,7 @@ import scss from '../pageStyles/testlibrary.module.scss'
 import Link from "next/link";
 import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStepper";
 import TestLibraryLayout from "../components/TestLibraryLayout/TestLibraryLayout";
+import {getCompletedTests} from './api/candidateApiClient.module';
 
 const TestLibrary: NextPage = () =>
     <TestLibraryLayout>
@@ -11,5 +12,9 @@ const TestLibrary: NextPage = () =>
             <TestLibraryStepper/>
         </div>
     </TestLibraryLayout>;
-
+    
+    TestLibrary.getInitialProps = () => {
+        return getCompletedTests(1, 'https://localhost:5001/candidates');
+    };
+    
 export default TestLibrary;
