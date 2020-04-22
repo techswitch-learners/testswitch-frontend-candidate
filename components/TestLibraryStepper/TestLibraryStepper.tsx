@@ -6,7 +6,7 @@ import {withStyles} from "@material-ui/styles";
 
 function getActiveStep() {
     //set current step based on tests completed
-    return 0;
+    return 2;
 }
 
 function getSteps() {
@@ -66,9 +66,7 @@ export default function TestLibraryStepper() {
                 <Stepper alternativeLabel activeStep={activeStep} connector={<TestSwitchConnector/>}>
                     {steps.map((label) => (
                         <Step key={label}>
-                            <StepButton onClick={() => Router.push(`/test${activeStep+1}`)}>
                                 <StepLabel className="stepLabel">{label}</StepLabel>
-                            </StepButton>
                         </Step>
                     ))}
                 </Stepper>

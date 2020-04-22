@@ -1,21 +1,33 @@
 ﻿import React from "react";
-import {NextPage} from "next";
+import {GetServerSideProps, NextPage} from "next";
 import scss from '../pageStyles/testlibrary.module.scss'
-import Link from "next/link";
 import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStepper";
 import TestLibraryLayout from "../components/TestLibraryLayout/TestLibraryLayout";
 import {getCompletedTests} from './api/candidateApiClient.module';
+import fetch from "node-fetch";
 
-const TestLibrary: NextPage = () =>
+type CandidateTestStatus = {
+    id: string
+}
+
+const TestLibrary: NextPage/*<{data: CandidateTestStatus}>*/ = (props) =>
     <TestLibraryLayout>
         <div>
             <TestLibraryStepper/>
         </div>
     </TestLibraryLayout>;
     
-   /* TestLibrary.getInitialProps = () => {
-        const response = getCompletedTests(1, 'https://localhost:5001/candidates');
-        return response;
+/*    export const getServerSideProps:GetServerSideProps = async ({
+        res
+    })=>{
+        const result= await fetch(
+            'https://localhost:5001/candidates'
+        );
+        const data : CandidateTestStatus = await result.json();
+
+        return {
+            props:{data}
+        };
     };*/
     
 export default TestLibrary;
