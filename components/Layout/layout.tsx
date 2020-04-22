@@ -4,15 +4,11 @@ import Head from "next/head";
 
 type LayoutProps = {children: React.ReactNode };
 const Layout = ({children}: LayoutProps): JSX.Element => (
-    <html title={"layout"} lang={"en"} className={scss.layout}>
-    <Head>
-        <title>TestSwitch</title>
-        <meta name="layout" content="initial-scale=1.0, width=device-width" />
-    </Head>    
+    <section title={"layout"} className={scss.layout}>
     <img className={scss.logoHeader} alt="TechSwitch" src='/logo.png'>
         </img>
         {children}
-    </html>
+    </section>
 );
 
 export default Layout;

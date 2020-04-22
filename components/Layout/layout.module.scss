@@ -4,17 +4,18 @@
   background-color: $softwireBlack;
   width: 100%;
   min-height: 100vh;
-  padding: 0;
+  padding: 5px;
   margin: 0;
   border-style: none;
   font-family: $softwireFont;
+  justify-content: start;
 }
 body {
   margin: 0;
 }
 .logoHeader {
   max-width: 180px;
-  padding: 15px;
+  padding: 10px;
   margin: 6px;
   align-self: flex-start;
 }

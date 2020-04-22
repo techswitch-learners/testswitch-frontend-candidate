@@ -8,7 +8,7 @@ export interface CandidateTest {
     input: any;
 }
 
-async function testsApiFetch(): Promise<Array<CandidateTest>>  {
+async function fetchTestsFromApi(): Promise<Array<CandidateTest>>  {
     const apiUrl = "";
     const apiResponse = await fetch(apiUrl);
     const jsonResponse = await apiResponse.json();
@@ -17,7 +17,7 @@ async function testsApiFetch(): Promise<Array<CandidateTest>>  {
 export function getCandidateTests() {
     const [candidateTests, setCandidateTests] = useState<CandidateTest[] | null>(null);
     useEffect(() => {
-        testsApiFetch()
+        fetchTestsFromApi()
             .then(tests => setCandidateTests(tests));
     }, [test.length]);
     return candidateTests;
