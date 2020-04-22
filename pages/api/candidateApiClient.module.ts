@@ -1,6 +1,6 @@
 ﻿import { NextApiRequest, NextApiResponse} from "next";
 
-export async function apiGetClientTestList(candidateId: number, testId: number): Promise<string[]> {
+export async function apiGetClientTestList(candidateId: number): Promise<string[]> {
     //get json candidate by current id from results api
     var currentCandidateId = "";
     
