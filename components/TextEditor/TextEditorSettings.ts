@@ -1,7 +1,6 @@
-﻿﻿import {TextEditorOptions} from "../../Models/TextEditorOptions";
+﻿import {TextEditorOptions} from '../../Models/TextEditorOptions';
 
 const limitedAutoComplete: TextEditorOptions = {
-
     autoClosingBrackets: "languageDefined",
     autoClosingQuotes: "languageDefined",
     codeLens: false,
