@@ -1,24 +1,24 @@
 ﻿import { NextApiRequest, NextApiResponse} from "next";
+export interface CandidateTestStatus {
+    candidateId: number;
+    testId: number;
+    status: string;
+}
 
-export async function apiGetClientTestList(candidateId: number): Promise<string[]> {
-    //get json candidate by current id from results api
-    var currentCandidateId = "";
-    
-    const apiBaseRoute: string = 'https://localhost:5001/results';
-
-    var fetchCandidateResult = fetch(apiBaseRoute)
+//change promise<string[]> to CandidateTestStatus interface
+export async function getCompletedTests(candidateId: number, apiBaseRoute: string): Promise<CandidateTestStatus> {
+    //get json candidate by current id from current-test-status api
+    const fetchCandidateTestStatus = await fetch(apiBaseRoute)
         .then(response => {
             if (!response.ok) {
                 throw new Error(response.statusText)
             }
-            return response.json().then(data => data as string[]);
+            return response.json();
         });
 
-//get json candidate test ids from results api
+//get json candidate tests and status
+//get number of completed tests
 
-//put into list
-
-    var candidateTestList = ["Test 1"];
-
-    return candidateTestList;
+    var completedTests = fetchCandidateTestStatus.find(tests => tests.status =="Completed");
+    return completedTests.length;
 }

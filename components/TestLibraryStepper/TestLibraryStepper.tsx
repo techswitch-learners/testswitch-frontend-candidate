@@ -3,28 +3,26 @@ import scss from "./TestLibraryStepper.module.scss";
 import {Stepper, Step, StepLabel, StepConnector, Typography, Button, StepButton, StepIcon} from '@material-ui/core';
 import {Check, MoreHoriz} from '@material-ui/icons';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
-import {apiGetClientTestList} from '../../pages/api/candidateApiClient.module'
+import {getCompletedTests} from '../../pages/api/candidateApiClient.module'
 
 function getSteps() {
-    return ['Test 1', 'Test 2', 'Test 3'];
-}
-
-function getStepContent(step:number){
-    switch (step) {
-        case 0:
-            return 'Test 1';
-        case 1:
-            return 'Test 2';
-        case 2:
-            return 'Test 3';
+    //set number of steps
+    const [testNumber, setTestNumber] = useState(3);
+    
+    //set labels for steps
+    const testLabelArray = [];
+    while(testLabelArray.length+1 <= testNumber) {
+        testLabelArray.push(`Test ${testLabelArray.length+1}`);
     }
+    return testLabelArray;
 }
 
 export default function TestLibraryStepper(){
     const [activeStep, setActiveStep] = useState(0);
     const steps = getSteps();
-    //TODO: this si example data. Test list will be passed by api fetch
+    //TODO: this is example data. Test list will be passed by api fetch
     const testList: string[] = ["1"];
+    //js array find function to search array for criteria
     const lastTest: number = (parseInt(testList.slice(-1)[0])-1);
     const getNext = () => {
         setActiveStep(steps => lastTest+1)
