@@ -1,7 +1,7 @@
 ﻿import React, {useState} from "react";
 import {Step, StepButton, StepLabel, Stepper, Typography, StepConnector} from '@material-ui/core';
 import {createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
-import Link from "next/link";
+import Router from "next/router";
 import {withStyles} from "@material-ui/styles";
 
 function getActiveStep() {
@@ -20,10 +20,6 @@ function getSteps() {
     }
     return testLabelArray;
 }
-
-const testClick = () => {
-    <Link href="/test"></Link>
-};
 
 export default function TestLibraryStepper() {
     const steps = getSteps();
@@ -70,7 +66,7 @@ export default function TestLibraryStepper() {
                 <Stepper alternativeLabel activeStep={activeStep} connector={<TestSwitchConnector/>}>
                     {steps.map((label) => (
                         <Step key={label}>
-                            <StepButton onClick={testClick}>
+                            <StepButton onClick={() => Router.push(`/test${activeStep+1}`)}>
                                 <StepLabel className="stepLabel">{label}</StepLabel>
                             </StepButton>
                         </Step>
@@ -88,10 +84,10 @@ export default function TestLibraryStepper() {
                     <div className="stepperBtnContainer">
                         <section>
                             <Typography align={"center"}>
-                                <a href="#"
-                                   style={{color: "white"}}
-                                   onClick={getNext}
-                                >
+                                    <a href="#"
+                                        style={{color: "white"}}
+                                       onClick={() => Router.push(`/test${activeStep+1}`)}
+                                    >
                                     {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
                                 </a>
                             </Typography>

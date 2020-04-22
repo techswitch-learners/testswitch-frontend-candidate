@@ -4,7 +4,7 @@
     testAnswer: string;
 }
 
-export async function getCompletedTests(candidateId: number, apiBaseRoute: string): Promise<CandidateTestStatus> {
+export async function getCompletedTests(candidateId: number, apiBaseRoute: string): Promise<string[]>{
     //get json candidate by current id from current-test-status api
     const fetchCandidateTestStatus = await fetch(apiBaseRoute)
         .then(response => {
