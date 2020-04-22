@@ -1,4 +1,4 @@
-﻿import {TextEditorOptions} from "../../../Models/TextEditorOptions";
+﻿﻿import {TextEditorOptions} from "../../Models/TextEditorOptions";
 
 const limitedAutoComplete: TextEditorOptions = {
 
@@ -38,4 +38,4 @@ const limitedAutoComplete: TextEditorOptions = {
         maxVisibleSuggestions: 5,
     }
 };
-export default limitedAutoComplete;
+export {limitedAutoComplete};
