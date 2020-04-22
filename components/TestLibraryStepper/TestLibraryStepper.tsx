@@ -3,8 +3,6 @@ import {Step, StepButton, StepLabel, Stepper, Typography, StepConnector, StepIco
 import {makeStyles, createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
 import Router from "next/router";
 import {withStyles} from "@material-ui/styles";
-import {Check, MoreHoriz} from "@material-ui/icons";
-import clsx from "clsx";
 import scss from "./TestLibraryStepper.module.scss";
 
 function getActiveStep() {
@@ -42,7 +40,7 @@ export default function TestLibraryStepper() {
             primary: {
                 main: 'rgb(255, 193, 0)'
             }
-        }
+        },
     });
 
     const TestSwitchConnector = withStyles({
@@ -63,58 +61,7 @@ export default function TestLibraryStepper() {
             zIndex:-2,
         },
     })(StepConnector);
-
-    /*const TestSwitchIconStyles = makeStyles({
-        root: {
-            backgroundColor: '#eaeaf0',
-            zIndex: 1,
-            color: '#fff',
-            fontSize: 18,
-            width: 50,
-            height: 50,
-            display: 'flex',
-            borderRadius: '50%',
-            justifyContent: 'center',
-        },
-        active: {
-            color: 'rgb(255, 193, 0)',
-            fontSize: 18,
-        },
-        current: {
-            color: 'rgb(255, 255, 255)',
-            zIndex: 0,
-            fontSize: 18,
-            width: 50,
-            height: 50,
-            borderRadius: '50%',
-            backgroundColor: 'rgb(255, 193, 0)',
-        },
-        completed: {
-            color: 'rgb(255, 255, 255)',
-            zIndex: 0,
-            fontSize: 18,
-            width: 50,
-            height: 50,
-            borderRadius: '50%',
-            backgroundColor: 'rgb(255, 193, 0)',
-        },
-    });
-
-    function TestSwitchStepIcon(props: StepIconProps) {
-        const classes = TestSwitchIconStyles();
-        const { active, completed } = props;
-        return (
-            <div
-                className={clsx(classes.root, {
-                    [classes.active]: active,
-                })}
-            >
-                {completed ? <Check className={classes.completed} /> : <MoreHoriz className={classes.root} />}
-            </div>
-        );
-    }*/
-
-
+    
     return (
         <div className="stepperContainer">
             <MuiThemeProvider theme={testSwitchTheme}>
@@ -137,7 +84,7 @@ export default function TestLibraryStepper() {
                     <div className="stepperBtnContainer">
                         <div>
                             <Typography align={"center"}>
-                                    <a href="#"
+                                    <a className="stepperBtn" href="#"
                                        onClick={() => Router.push(`/test${activeStep+1}`)}
                                     >
                                     {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}

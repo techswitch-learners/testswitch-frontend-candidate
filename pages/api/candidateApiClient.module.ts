@@ -1,7 +1,8 @@
 ﻿import fetch from "node-fetch";
 
 type CandidateTestStatus = {
-    id: string
+    testName:string;
+    testResult:string;
 }
 
 export async function getCompletedTests(apiBaseRoute: string): Promise<CandidateTestStatus>{

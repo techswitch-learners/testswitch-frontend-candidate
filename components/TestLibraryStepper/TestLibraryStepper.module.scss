@@ -1,9 +1,19 @@
 ﻿@import '../../pageStyles/constants';
-//Site Colours
-$softwireBlack: rgb(24, 24, 24);
-$softwireYellow: rgb(255, 193, 0);
-$softwireWhite: rgb(255, 255, 255);
 
-.stepperBtnContainer {
+.stepperBtn {
+  width: 135px;
+  height: 30px;
+  margin: 30px;
+  text-decoration: none;
+  align-items: center;
   text-align: center;
+  border-width: 9px;
+  border-color: $softwireYellow;
+  border-style: solid;
+  background-color: $softwireYellow;
+  color: $softwireBlack;
+  font-size: $buttonFontSize;
+  justify-content: center;
+  padding: 3px;
+  font-family: Open Sans, sans-serif;
 }
