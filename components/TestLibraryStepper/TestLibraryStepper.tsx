@@ -1,73 +1,101 @@
 ﻿import React, {useState} from "react";
-import scss from "./TestLibraryStepper.module.scss";
-import {Stepper, Step, StepLabel, StepConnector, Typography, Button, StepButton, StepIcon} from '@material-ui/core';
-import {Check, MoreHoriz} from '@material-ui/icons';
-import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
+import {Step, StepButton, StepLabel, Stepper, Typography, StepConnector} from '@material-ui/core';
+import {createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
+import Link from "next/link";
+import {withStyles} from "@material-ui/styles";
 
-function getActiveStep(){
-    
+function getActiveStep() {
+    //set current step based on tests completed
+    return 0;
 }
 
 function getSteps() {
-    //set number of steps
+    //set number of steps based on test range
     const [testNumber, setTestNumber] = useState(3);
-    
+
     //set labels for steps
     const testLabelArray = [];
-    while(testLabelArray.length+1 <= testNumber) {
-        testLabelArray.push(`Test ${testLabelArray.length+1}`);
+    while (testLabelArray.length + 1 <= testNumber) {
+        testLabelArray.push(`Test ${testLabelArray.length + 1}`);
     }
     return testLabelArray;
 }
 
-export default function TestLibraryStepper(){
-    const [activeStep, setActiveStep] = useState(0);
+const testClick = () => {
+    <Link href="/test"></Link>
+};
+
+export default function TestLibraryStepper() {
     const steps = getSteps();
+    const [activeStep, setActiveStep] = useState(getActiveStep);
+
     //TODO: this is example data. Test list will be passed by api fetch
     const testList: string[] = ["1"];
-    //js array find function to search array for criteria
-    const lastTest: number = (parseInt(testList.slice(-1)[0])-1);
+
+    const lastTest: number = (parseInt(testList.slice(-1)[0]) - 1);
     const getNext = () => {
-        setActiveStep(steps => lastTest+1)
+        setActiveStep(steps => lastTest + 1)
     };
-    
+
     //override for material ui stepper styles
     const testSwitchTheme = createMuiTheme({
-       palette: {
+        palette: {
             primary: {
                 main: 'rgb(255, 193, 0)'
             }
-        },
+        }
     });
-    
+
+    const TestSwitchConnector = withStyles({
+        active: {
+            '& $line': {
+                borderColor: 'rgb(255, 193, 0)',
+            },
+        },
+        completed: {
+            '& $line': {
+                borderColor: 'rgb(255, 193, 0)',
+            },
+        },
+        line: {
+            borderColor: '#eaeaf0',
+            borderTopWidth: 3,
+            borderRadius: 1,
+        },
+    })(StepConnector);
+
     return (
         <div className="stepperContainer">
             <MuiThemeProvider theme={testSwitchTheme}>
-            <Stepper alternativeLabel activeStep={activeStep}>
-                {steps.map((label)=>(
-                    <Step key={label}>
-                        <StepLabel className="stepLabel">{label}</StepLabel>
-                    </Step>
-                ))}
-            </Stepper>
+                <Stepper alternativeLabel activeStep={activeStep} connector={<TestSwitchConnector/>}>
+                    {steps.map((label) => (
+                        <Step key={label}>
+                            <StepButton onClick={testClick}>
+                                <StepLabel className="stepLabel">{label}</StepLabel>
+                            </StepButton>
+                        </Step>
+                    ))}
+                </Stepper>
             </MuiThemeProvider>
             <div className="stepperBtnContainer">
                 {activeStep === steps.length ? (
-                    <div>
-                        <Typography className="finished">
+                    <section>
+                        <Typography align={"center"} className="finished">
                             All tests completed.
                         </Typography>
-                    </div>
+                    </section>
                 ) : (
-                    <div>
-                        <div>
-                            <a href="#"
-                                style={{color: "white"}}
-                                onClick={getNext}
-                            >
-                                {activeStep === steps.length - 1 ? 'Start Final Test' : 'Start Next Test'}
-                            </a>
-                        </div>
+                    <div className="stepperBtnContainer">
+                        <section>
+                            <Typography align={"center"}>
+                                <a href="#"
+                                   style={{color: "white"}}
+                                   onClick={getNext}
+                                >
+                                    {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
+                                </a>
+                            </Typography>
+                        </section>
                     </div>
                 )}
             </div>

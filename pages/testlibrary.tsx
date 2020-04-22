@@ -13,8 +13,9 @@ const TestLibrary: NextPage = () =>
         </div>
     </TestLibraryLayout>;
     
-    TestLibrary.getInitialProps = () => {
-        return getCompletedTests(1, 'https://localhost:5001/candidates');
-    };
+   /* TestLibrary.getInitialProps = () => {
+        const response = getCompletedTests(1, 'https://localhost:5001/candidates');
+        return response;
+    };*/
     
 export default TestLibrary;
