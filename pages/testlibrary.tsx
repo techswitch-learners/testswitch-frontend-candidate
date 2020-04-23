@@ -10,10 +10,18 @@ interface TestlibraryProps {
     candidateTestStatus: CandidateTestStatus[];
 }
 
-const TestLibrary: NextPage<TestlibraryProps> = ({candidateTestStatus}) =>
-    <TestLibraryLayout>
-        <TestLibraryStepper candidateTestStatus={candidateTestStatus}/>
-    </TestLibraryLayout>;
+const TestLibrary: NextPage<TestlibraryProps> = ({candidateTestStatus}) => {
+    const [key, setKey] = React.useState(0);
+
+    React.useEffect(() => {
+        setKey(1);
+    }, []);
+    return (
+        <TestLibraryLayout>
+            <TestLibraryStepper key={key} candidateTestStatus={candidateTestStatus}/>
+        </TestLibraryLayout>
+    );
+};
 
 //TODO placeholder id for candidateID, need to know how candidate id is paired with session
 const candidateId = () => {
@@ -23,7 +31,7 @@ const candidateId = () => {
 export const getServerSideProps: GetServerSideProps = async context => {
     const tests = getCandidateTests();
     const results = getCandidateTestResults();
-    
+
     return {
         props: {
             title: await tests,
