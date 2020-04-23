@@ -1,12 +1,13 @@
 ﻿import React, {useState} from "react";
-import {Step, StepButton, StepLabel, Stepper, Typography, StepConnector, StepIconProps} from '@material-ui/core';
-import {makeStyles, createMuiTheme, MuiThemeProvider} from '@material-ui/core/styles';
+import {Step, StepConnector, StepIconProps, StepLabel, Stepper, Typography} from '@material-ui/core';
+import {createMuiTheme, makeStyles, MuiThemeProvider} from '@material-ui/core/styles';
 import Router from "next/router";
 import {withStyles} from "@material-ui/styles";
-import scss from "./TestLibraryStepper.module.scss";
+import clsx from "clsx";
+import {Check, MoreHoriz} from "@material-ui/icons";
 
 function getActiveStep() {
-    //set current step based on tests completed
+    //TODO currently mock data, will be set current step based on tests completed by candidate
     return 1;
 }
 
@@ -43,6 +44,58 @@ export default function TestLibraryStepper() {
         },
     });
 
+    //overrides for material ui icon styles
+    const TestSwitchIconStyles = makeStyles({
+        root: {
+            backgroundColor: '#eaeaf0',
+            zIndex: 1,
+            color: '#fff',
+            fontSize: 18,
+            width: 30,
+            height: 30,
+            display: 'flex',
+            borderRadius: '50%',
+            justifyContent: 'center',
+        },
+        active: {
+            color: 'rgb(255, 193, 0)',
+            fontSize: 18,
+        },
+        current: {
+            color: 'rgb(255, 255, 255)',
+            zIndex: 0,
+            fontSize: 18,
+            width: 30,
+            height: 30,
+            borderRadius: '50%',
+            backgroundColor: 'rgb(255, 193, 0)',
+        },
+        completed: {
+            color: 'rgb(255, 255, 255)',
+            zIndex: 0,
+            fontSize: 18,
+            width: 30,
+            height: 30,
+            borderRadius: '50%',
+            backgroundColor: 'rgb(255, 193, 0)',
+        },
+    });
+
+    function TestSwitchStepIcon(props: StepIconProps) {
+        const classes = TestSwitchIconStyles();
+        const {active, completed} = props;
+        return (
+            <div
+                className={clsx(classes.root, {
+                    [classes.active]: active,
+                })}
+            >
+                {completed ? <Check className={classes.completed}/> : <MoreHoriz className={classes.current}/>}
+            </div>
+        );
+    }
+
+    //overrides for material ui stepper connector styles
     const TestSwitchConnector = withStyles({
         active: {
             '& $line': {
@@ -56,19 +109,20 @@ export default function TestLibraryStepper() {
         },
         line: {
             borderColor: '#eaeaf0',
-            borderTopWidth: 3,
+            borderTopWidth: 4,
             borderRadius: 1,
-            zIndex:-2,
+            zIndex: -2,
+            lineHeight: 50,
         },
     })(StepConnector);
-    
+
     return (
         <div className="stepperContainer">
             <MuiThemeProvider theme={testSwitchTheme}>
                 <Stepper alternativeLabel activeStep={activeStep} connector={<TestSwitchConnector/>}>
                     {steps.map((label) => (
                         <Step key={label}>
-                                <StepLabel className="stepLabel">{label}</StepLabel>
+                            <StepLabel StepIconComponent={TestSwitchStepIcon} className="stepLabel">{label}</StepLabel>
                         </Step>
                     ))}
                 </Stepper>
@@ -84,9 +138,9 @@ export default function TestLibraryStepper() {
                     <div className="stepperBtnContainer">
                         <div>
                             <Typography align={"center"}>
-                                    <a className="stepperBtn" href="#"
-                                       onClick={() => Router.push(`/test${activeStep+1}`)}
-                                    >
+                                <a className="stepperBtn" href="#"
+                                   onClick={() => Router.push(`/test${activeStep + 1}`)}
+                                >
                                     {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
                                 </a>
                             </Typography>
