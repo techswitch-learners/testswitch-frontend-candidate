@@ -1,7 +1,6 @@
-﻿import {TextEditorOptions} from "../../../Models/TextEditorOptions";
+﻿import {TextEditorOptions} from '../../Models/TextEditorOptions';
 
-const limitedAutoComplete: TextEditorOptions = {
-
+const TextEditorSettings: TextEditorOptions = {
     autoClosingBrackets: "languageDefined",
     autoClosingQuotes: "languageDefined",
     codeLens: false,
@@ -38,4 +37,4 @@ const limitedAutoComplete: TextEditorOptions = {
         maxVisibleSuggestions: 5,
     }
 };
-export default limitedAutoComplete;
+export {TextEditorSettings};
