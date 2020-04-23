@@ -4,9 +4,9 @@ import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStep
 import TestLibraryLayout from "../components/TestLibraryLayout/TestLibraryLayout";
 
 //TODO currently set to number but will change to output from api fetch
-type TestlibraryProps={data: number}
+type TestlibraryProps = { data: number }
 
-const TestLibrary: NextPage<{data: 1}> = (props:TestlibraryProps) =>
+const TestLibrary: NextPage<{ data: 1 }> = (props: TestlibraryProps) =>
     <TestLibraryLayout>
         <div>
             <TestLibraryStepper candidateTestStatus={props.data}/>
