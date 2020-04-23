@@ -1,13 +1,14 @@
 ﻿import {TextEditorOptions} from "../../../Models/TextEditorOptions";
+import {number} from "prop-types";
 
 const limitedAutoComplete: TextEditorOptions = {
-
     autoClosingBrackets: "languageDefined",
     autoClosingQuotes: "languageDefined",
     codeLens: false,
     lightbulb: {
         enabled: false
     },
+    fontSize: 26,
     folding: false,
     suggest: {
         showMethods: false,
@@ -37,5 +38,6 @@ const limitedAutoComplete: TextEditorOptions = {
         showSnippets: false,
         maxVisibleSuggestions: 5,
     }
+    
 };
 export default limitedAutoComplete;

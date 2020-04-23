@@ -3,10 +3,11 @@ import Editor from "@monaco-editor/react";
 import {SupportedLanguages} from "../../Models/SupportedLanguages";
 import {TextEditorThemes} from "../../Models/TextEditorThemes";
 import {TextEditorOptions} from "../../Models/TextEditorOptions";
-
+import scss from "../../pageStyles/testpage.module.scss";
+import "../Buttons/buttons.module.scss";
 type EditorContentGetter = () => string;
 
-interface TextEditorContainerProps {
+export interface TextEditorContainerProps {
     containerClassName: string;
     theme?: TextEditorThemes;
     height: string;
@@ -16,9 +17,9 @@ interface TextEditorContainerProps {
     options?: TextEditorOptions;
 }
 
-function TextEditorContainer(props: TextEditorContainerProps): JSX.Element {
+export function TextEditorContainer(props: TextEditorContainerProps): JSX.Element {
     const [isEditorReady, setIsEditorReady] = useState(false);
-    const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
+       const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
 
     function handleIsEditorMounted(_getEditorContents: EditorContentGetter) {
         setIsEditorReady(true);
@@ -28,13 +29,10 @@ function TextEditorContainer(props: TextEditorContainerProps): JSX.Element {
     function handleShowValue() {
         alert(`You have submitted this code: ${getEditorContentIfMountedRef.current()}`);
     }
-
+    
     return (
-        <div className={props.containerClassName}>
-            <button onClick={handleShowValue} disabled={!isEditorReady}>
-                Submit Code
-            </button>
-
+        <section className={props.containerClassName}>
+            <div className={scss.editorBox}>
             <Editor
                 theme={props.theme}
                 height={props.height}
@@ -43,7 +41,12 @@ function TextEditorContainer(props: TextEditorContainerProps): JSX.Element {
                 value={props.defaultText}
                 editorDidMount={handleIsEditorMounted}
                 options={props.options}
-            /></div>
+            />
+            </div>
+            <button onClick={handleShowValue} disabled={!isEditorReady}>
+                Submit Code
+            </button>
+        </section>
     );
 }
 

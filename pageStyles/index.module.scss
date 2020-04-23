@@ -3,6 +3,9 @@
 .welcome {
   color: $softwireYellow;
   font-size: $desktopHeaderFontSize;
+  max-width: $welcomeHeaderWidth;
+  margin: 5px;
+  padding: 5px;
 }
 
 a {
@@ -19,7 +22,7 @@ a {
   color: $softwireBlack;
   font-size: $buttonFontSize;
   justify-content: center;
-  padding: 3px;
+  padding: 5px;
   font-family: Open Sans, sans-serif;
 }
 section, .content {
@@ -32,20 +35,29 @@ section, .content {
   padding: 3px;
   font-family: Open Sans, sans-serif;
   text-decoration: none;
+  text-align: center;
 }
-
+ 
 .instructionsHeader {
   color: $softwireWhite;
   font-size: $desktopSubHeaderFontSize;
   margin-top: 24px;
   margin-bottom: 12px;
+  padding: 5px;
 }
 .instructions {
   color: $softwireWhite;
   font-size: $buttonFontSize;
   justify-content: left;
   text-align: left;
+  padding: 5px;
   margin-top: 12px;
   margin-bottom: 24px;
+  margin-right: 5px;
+  margin-left: 5px;
+  max-width: $welcomeHeaderWidth;
 }
+
+
+
 
