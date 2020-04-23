@@ -7,7 +7,7 @@ import {CandidateTestStatus, getCandidateTestResults, getCandidateTests} from ".
 
 //TODO currently set to number but will change to output from api fetch
 interface TestlibraryProps {
-    candidateTestStatus: CandidateTestStatus[]
+    candidateTestStatus: CandidateTestStatus[];
 }
 
 const TestLibrary: NextPage<TestlibraryProps> = ({candidateTestStatus}) =>
