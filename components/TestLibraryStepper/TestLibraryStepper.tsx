@@ -9,7 +9,7 @@ import {CandidateTestStatus} from "../../pages/api/candidateApiClient.module";
 import {fontSize} from "@material-ui/system";
 
 interface TestLibraryStepperProps {
-    candidateTestStatus: number
+    candidateTestStatus: number;
 }
 
 function getSteps() {
