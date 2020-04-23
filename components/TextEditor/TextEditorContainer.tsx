@@ -1,22 +1,16 @@
-import React, {MutableRefObject, useRef, useState} from "react";
+import React, {FunctionComponent, MutableRefObject, useRef, useState} from "react";
 import Editor from "@monaco-editor/react";
-import {SupportedLanguages} from "../../Models/SupportedLanguages";
-import {TextEditorThemes} from "../../Models/TextEditorThemes";
-import {TextEditorOptions} from "../../Models/TextEditorOptions";
+import {TextEditorSettings} from "./TextEditorSettings";
 
 type EditorContentGetter = () => string;
 
 interface TextEditorContainerProps {
-    containerClassName: string;
-    theme?: TextEditorThemes;
     height: string;
     width: string;
-    language: SupportedLanguages;
     defaultText: string;
-    options?: TextEditorOptions;
 }
 
-function TextEditorContainer(props: TextEditorContainerProps): JSX.Element {
+const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({height, width, defaultText}) => {
     const [isEditorReady, setIsEditorReady] = useState(false);
     const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
 
@@ -30,19 +24,19 @@ function TextEditorContainer(props: TextEditorContainerProps): JSX.Element {
     }
 
     return (
-        <div className={props.containerClassName}>
+        <div>
             <button onClick={handleShowValue} disabled={!isEditorReady}>
                 Submit Code
             </button>
 
             <Editor
-                theme={props.theme}
-                height={props.height}
-                width={props.width}
-                language={props.language}
-                value={props.defaultText}
+                theme="dark"
+                height={height}
+                width={width}
+                language="javascript"
+                value={defaultText}
                 editorDidMount={handleIsEditorMounted}
-                options={props.options}
+                options={TextEditorSettings}
             /></div>
     );
 }
