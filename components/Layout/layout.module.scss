@@ -1,7 +1,15 @@
 @import '../../pageStyles/constants';
 
-.layout {
+@mixin bgColor($bgcolor: primary) {
+if($bgcolor:primary) {
   background-color: $softwireBlack;
+} if($bgcolor:secondary) {
+  background-color: $softwireWhite;
+}
+}
+
+.layout {
+  @include bgColor(primary);
   width: 100%;
   min-height: 100vh;
   padding: 0;
@@ -9,12 +17,18 @@
   border-style: none;
   font-family: $softwireFont;
 }
+
 body {
   margin: 0;
 }
+
 .logoHeader {
   max-width: 180px;
   padding: 15px;
   margin: 6px;
   align-self: flex-start;
+}
+
+.testLibLayout {
+  @include bgColor(secondary);
 }

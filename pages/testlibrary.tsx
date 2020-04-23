@@ -1,14 +1,35 @@
 ﻿import React from "react";
-import {NextPage} from "next";
+import {GetServerSideProps, NextPage} from "next";
 import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStepper";
 import TestLibraryLayout from "../components/TestLibraryLayout/TestLibraryLayout";
+import {CandidateTestStatus, getCandidateTestResults, getCandidateTests} from "./api/candidateApiClient.module"
+
 
 //TODO currently set to number but will change to output from api fetch
-type TestlibraryProps = { data: number }
+interface TestlibraryProps {
+    candidateTestStatus: CandidateTestStatus[]
+}
 
-const TestLibrary: NextPage<TestlibraryProps> = ({data}) =>
+const TestLibrary: NextPage<TestlibraryProps> = ({candidateTestStatus}) =>
     <TestLibraryLayout>
-        <TestLibraryStepper candidateTestStatus={data}/>
+        <TestLibraryStepper candidateTestStatus={candidateTestStatus}/>
     </TestLibraryLayout>;
+
+//TODO placeholder id for candidateID, need to know how candidate id is paired with session
+const candidateId = () => {
+    return 1;
+};
+
+export const getServerSideProps: GetServerSideProps = async context => {
+    const tests = getCandidateTests();
+    const results = getCandidateTestResults();
+
+    return {
+        props: {
+            title: await tests,
+            status: await results,
+        }
+    }
+};
 
 export default TestLibrary;

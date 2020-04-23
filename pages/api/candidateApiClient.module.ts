@@ -1,25 +1,26 @@
 ﻿import fetch from "node-fetch";
-import {GetServerSideProps} from "next";
 
-export interface CandidateTestStatus{
-    testNumber: number;
+export interface CandidateTestStatus {
+    title: string
+    status: string
 }
 
-//TODO placeholder id for candidateID, need to know how candidate id is paired with session
-const candidateId = ()=> {
-    return 1;
-};
+const baseUrl = `https://localhost:5001`;
 
-export const getServerSideProps: GetServerSideProps = async ({
-                                                                 res
-                                                             }) => {
+export async function getCandidateTestResults() {
     const result = await fetch(
-        `https://localhost:5001/candidate-results/${candidateId}`
+        //TODO: placeholder endpoint
+        `${baseUrl}/candidates`
     );
-    const data: CandidateTestStatus = await result.json();
+    const data = await result.json();
+    return data.items;
+}
 
-    return {
-        props: {data}
-    };
-};
-//TODO get number of tests with testAnswers, need to know how the json response is structured
+export async function getCandidateTests() {
+    const result = await fetch(
+        //TODO: placeholder endpoint
+        `${baseUrl}/candidates`
+    );
+    const data = await result.json();
+    return data.totalNumberOfItems;
+}
