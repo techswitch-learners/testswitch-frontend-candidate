@@ -6,11 +6,9 @@ import TestLibraryLayout from "../components/TestLibraryLayout/TestLibraryLayout
 //TODO currently set to number but will change to output from api fetch
 type TestlibraryProps = { data: number }
 
-const TestLibrary: NextPage<{ data: 1 }> = (props: TestlibraryProps) =>
+const TestLibrary: NextPage<TestlibraryProps> = ({data}) =>
     <TestLibraryLayout>
-        <div>
-            <TestLibraryStepper candidateTestStatus={props.data}/>
-        </div>
+        <TestLibraryStepper candidateTestStatus={data}/>
     </TestLibraryLayout>;
 
 export default TestLibrary;
