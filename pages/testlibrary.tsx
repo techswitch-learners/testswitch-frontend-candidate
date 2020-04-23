@@ -23,7 +23,7 @@ const candidateId = () => {
 export const getServerSideProps: GetServerSideProps = async context => {
     const tests = getCandidateTests();
     const results = getCandidateTestResults();
-
+    
     return {
         props: {
             title: await tests,

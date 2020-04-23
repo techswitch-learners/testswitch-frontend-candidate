@@ -4,7 +4,7 @@ import scss from '../Layout/layout.module.scss';
 type TestLibraryLayoutProps = { children: React.ReactNode };
 
 const TestLibraryLayout = ({children}: TestLibraryLayoutProps): JSX.Element => (
-    <div className={scss.testLibLayout}>
+    <div>
         <img className={scss.logoHeader} alt="TechSwitch" src='/logo.png'>
         </img>
         {children}

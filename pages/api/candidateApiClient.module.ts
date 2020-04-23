@@ -10,7 +10,7 @@ const baseUrl = `https://localhost:5001`;
 export async function getCandidateTestResults() {
     const result = await fetch(
         //TODO: placeholder endpoint
-        `${baseUrl}/candidates`
+        `https://testswitch-api-staging.herokuapp.com/candidates`
     );
     const data = await result.json();
     return data.items;
@@ -19,7 +19,7 @@ export async function getCandidateTestResults() {
 export async function getCandidateTests() {
     const result = await fetch(
         //TODO: placeholder endpoint
-        `${baseUrl}/candidates`
+        `https://testswitch-api-staging.herokuapp.com/candidates`
     );
     const data = await result.json();
     return data.totalNumberOfItems;

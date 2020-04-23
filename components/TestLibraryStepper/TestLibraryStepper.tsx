@@ -12,8 +12,8 @@ interface TestLibraryStepperProps {
 }
 
 function getSteps() {
-    //set number of steps based on test range
-    const [testNumber, setTestNumber] = useState(3);
+    //TODO: mock data, set number of steps based on test range, maybe props.candidateTestStatus.tests.length?
+    const testNumber = 3;
 
     //set labels for steps
     const testLabelArray = [];
@@ -25,16 +25,8 @@ function getSteps() {
 
 export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
     const steps = getSteps();
-    //TODO this is example data. replace 1 with props.candidateTestStatus.testNumber
-    const [activeStep, setActiveStep] = useState(1);
-
-    //TODO: this is example data. Test list will be passed by api fetch
-    const testList: string[] = ["1"];
-
-    const lastTest: number = (parseInt(testList.slice(-1)[0]) - 1);
-    const getNext = () => {
-        setActiveStep(steps => lastTest + 1)
-    };
+    //TODO this is example data, set active step with candidate number of results, maybe props.candidateTestStatus.results.length?
+    const activeStep = 2;
 
     //overrides for material ui stepper styles
     const testSwitchTheme = createMuiTheme({
