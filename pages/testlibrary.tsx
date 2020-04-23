@@ -2,15 +2,12 @@
 import {NextPage} from "next";
 import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStepper";
 import TestLibraryLayout from "../components/TestLibraryLayout/TestLibraryLayout";
+import {Data} from "popper.js";
 
-type CandidateTestStatus = {
-    id: string
-}
-
-const TestLibrary: NextPage/*<{data: CandidateTestStatus}>*/ = (props) =>
+const TestLibrary: NextPage<{data: 1}> = (props) =>
     <TestLibraryLayout>
         <div>
-            <TestLibraryStepper/>
+            <TestLibraryStepper candidateTestStatus={props.data}/>
         </div>
     </TestLibraryLayout>;
 

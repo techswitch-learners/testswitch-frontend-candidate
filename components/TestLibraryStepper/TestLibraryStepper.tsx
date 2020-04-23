@@ -5,10 +5,10 @@ import Router from "next/router";
 import {withStyles} from "@material-ui/styles";
 import clsx from "clsx";
 import {Check, MoreHoriz} from "@material-ui/icons";
+import {CandidateTestStatus} from "../../pages/api/candidateApiClient.module";
 
-function getActiveStep() {
-    //TODO currently mock data, will be set current step based on tests completed by candidate
-    return 1;
+interface TestLibraryStepperProps {
+    candidateTestStatus: Number
 }
 
 function getSteps() {
@@ -23,9 +23,10 @@ function getSteps() {
     return testLabelArray;
 }
 
-export default function TestLibraryStepper() {
+export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
     const steps = getSteps();
-    const [activeStep, setActiveStep] = useState(getActiveStep);
+    //TODO this is example data. replace 1 with props.candidateTestStatus.testNumber
+    const [activeStep, setActiveStep] = useState(1);
 
     //TODO: this is example data. Test list will be passed by api fetch
     const testList: string[] = ["1"];

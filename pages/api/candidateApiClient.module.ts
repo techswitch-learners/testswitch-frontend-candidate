@@ -1,9 +1,8 @@
 ﻿import fetch from "node-fetch";
 import {GetServerSideProps} from "next";
 
-type CandidateTestStatus = {
-    testName: string;
-    testResult: string;
+export interface CandidateTestStatus{
+    testNumber: number;
 }
 
 //TODO placeholder id for candidateID, need to know how candidate id is paired with session
