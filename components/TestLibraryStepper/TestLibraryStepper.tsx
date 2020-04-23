@@ -6,9 +6,10 @@ import {withStyles} from "@material-ui/styles";
 import clsx from "clsx";
 import {Check, MoreHoriz} from "@material-ui/icons";
 import {CandidateTestStatus} from "../../pages/api/candidateApiClient.module";
+import {fontSize} from "@material-ui/system";
 
 interface TestLibraryStepperProps {
-    candidateTestStatus: Number
+    candidateTestStatus: number
 }
 
 function getSteps() {
@@ -151,6 +152,5 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
             </div>
         </div>
     )
-
-};
+}
     
