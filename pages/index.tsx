@@ -3,6 +3,7 @@ import {NextPage} from 'next';
 import scss from '../pageStyles/index.module.scss'
 import Layout from "../components/Layout/layout";
 import Link from 'next/link'
+import {CheckUuid} from "../components/Uuid/Uuid";
 
 const Home: NextPage = () =>  
     <Layout>
@@ -14,9 +15,7 @@ const Home: NextPage = () =>
                     <li>You must complete the test in one sitting</li>
                     <li>When you are ready and sure you won’t be disturbed, please click “Start”</li>
                 </ul>
-            <Link href="/testpage">
-                <a className="buttonYellow" id="buttonYellow">Start Test</a>
-            </Link>
+            <CheckUuid/>
         </section>
     </Layout>;
 export default Home;
