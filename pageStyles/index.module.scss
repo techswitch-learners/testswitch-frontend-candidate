@@ -25,6 +25,7 @@ a {
   padding: 5px;
   font-family: Open Sans, sans-serif;
 }
+
 .content {
   width: 100%;
   align-items: center;
@@ -37,7 +38,7 @@ a {
   text-decoration: none;
   text-align: center;
 }
- 
+
 .instructionsHeader {
   color: $softwireWhite;
   font-size: $desktopSubHeaderFontSize;
@@ -45,6 +46,7 @@ a {
   margin-bottom: 12px;
   padding: 5px;
 }
+
 .instructions {
   color: $softwireWhite;
   font-size: $buttonFontSize;

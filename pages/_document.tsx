@@ -1,4 +1,4 @@
-import Document, {Html, Head, Main, NextScript, DocumentInitialProps} from 'next/document'
+import Document, {DocumentInitialProps, Head, Html, Main, NextScript} from 'next/document'
 import React from "react";
 import {NextPageContext} from "next";
 import {RenderPage} from "next/dist/next-server/lib/utils";
@@ -6,7 +6,7 @@ import {RenderPage} from "next/dist/next-server/lib/utils";
 class MyDocument extends Document {
     static async getInitialProps(ctx: NextPageContext & { renderPage: RenderPage }): Promise<DocumentInitialProps> {
         const initialProps = await Document.getInitialProps(ctx);
-        return { ...initialProps }
+        return {...initialProps}
     }
 
     render() {
@@ -14,8 +14,8 @@ class MyDocument extends Document {
             <Html lang={"en"} title={"TestSwitch"}>
                 <Head><title>TestSwitch</title></Head>
                 <body>
-                <Main />
-                <NextScript />
+                <Main/>
+                <NextScript/>
                 </body>
             </Html>
         )

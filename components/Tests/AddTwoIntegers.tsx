@@ -1,5 +1,10 @@
 import {CandidateTestModel, GetCandidateTestModel} from "../../Models/CandidateTestModel";
-import InstructionsBlock, { GetInputOutputProps, GetInstructionsProps, InputOutputProps, InstructionsProps } from "../Instructions/Instructions";
+import InstructionsBlock, {
+    GetInputOutputProps,
+    GetInstructionsProps,
+    InputOutputProps,
+    InstructionsProps
+} from "../Instructions/Instructions";
 import {CandidateTest} from "../ApiFetch/TestFetcher";
 import {GetTest} from "./TestEditorBuilder";
 

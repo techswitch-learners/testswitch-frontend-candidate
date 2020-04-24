@@ -5,6 +5,7 @@ import {TextEditorThemes} from "../../Models/TextEditorThemes";
 import {TextEditorOptions} from "../../Models/TextEditorOptions";
 import scss from "../../pageStyles/testpage.module.scss";
 import "../Buttons/buttons.module.scss";
+
 type EditorContentGetter = () => string;
 
 export interface TextEditorContainerProps {
@@ -19,7 +20,7 @@ export interface TextEditorContainerProps {
 
 export function TextEditorContainer(props: TextEditorContainerProps): JSX.Element {
     const [isEditorReady, setIsEditorReady] = useState(false);
-       const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
+    const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
 
     function handleIsEditorMounted(_getEditorContents: EditorContentGetter) {
         setIsEditorReady(true);
@@ -29,19 +30,19 @@ export function TextEditorContainer(props: TextEditorContainerProps): JSX.Elemen
     function handleShowValue() {
         alert(`You have submitted this code: ${getEditorContentIfMountedRef.current()}`);
     }
-    
+
     return (
         <section className={props.containerClassName}>
             <div className={scss.editorBox}>
-            <Editor
-                theme={props.theme}
-                height={props.height}
-                width={props.width}
-                language={props.language}
-                value={props.defaultText}
-                editorDidMount={handleIsEditorMounted}
-                options={props.options}
-            />
+                <Editor
+                    theme={props.theme}
+                    height={props.height}
+                    width={props.width}
+                    language={props.language}
+                    value={props.defaultText}
+                    editorDidMount={handleIsEditorMounted}
+                    options={props.options}
+                />
             </div>
             <button onClick={handleShowValue} disabled={!isEditorReady}>
                 Submit Code

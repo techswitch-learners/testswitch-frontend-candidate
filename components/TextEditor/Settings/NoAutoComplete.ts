@@ -3,13 +3,13 @@
 const noAutoComplete: TextEditorOptions = {
     wordSeparators: undefined,
     autoClosingBrackets: "never",
-    autoClosingQuotes : "never",
+    autoClosingQuotes: "never",
     codeLens: false,
-    lightbulb : {
-        enabled : false
+    lightbulb: {
+        enabled: false
     },
-    folding : false,
-    
+    folding: false,
+
     suggest: {
         showMethods: false,
         showFunctions: false,

@@ -15,6 +15,7 @@ export interface CandidateTestModel {
     executionTimeLimit: string;
     jsTips: string;
 }
+
 function BuildCandidateTestModel(candidateTestX: CandidateTestModel): CandidateTestModel {
     return candidateTestX;
 }

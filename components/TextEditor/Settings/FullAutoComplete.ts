@@ -2,12 +2,12 @@
 
 const fullAutoComplete: TextEditorOptions = {
     autoClosingBrackets: "languageDefined",
-    autoClosingQuotes : "languageDefined",
+    autoClosingQuotes: "languageDefined",
     codeLens: true,
-    lightbulb : {
-        enabled : true
+    lightbulb: {
+        enabled: true
     },
-    folding : true,
+    folding: true,
     suggest: {
         showMethods: true,
         showFunctions: true,

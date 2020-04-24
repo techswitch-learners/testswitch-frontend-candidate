@@ -7,7 +7,7 @@ import {getEditorProps} from "./TestEditorBuilder";
 import {AddTwoIntegersTest} from "./AddTwoIntegers";
 
 const EditorProps = getEditorProps(AddTwoIntegersTest);
-type CandidateTestProps = {props: CandidateTest };
+type CandidateTestProps = { props: CandidateTest };
 
 const CandidateTestView = ({props}: CandidateTestProps): JSX.Element => (
     <div>

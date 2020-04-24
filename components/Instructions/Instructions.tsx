@@ -12,15 +12,16 @@ export interface InputOutputProps {
     executionTimeLimit: string;
     inputType: string;
     inputDescription: string;
-    input: string | number | string[] |number[];
+    input: string | number | string[] | number[];
     outputType: string;
     outputDescription: string;
-    expectedOutput: string | number | string[] |number[];
+    expectedOutput: string | number | string[] | number[];
 }
 
-function buildInstructionsProps (testX: InstructionsProps) {
+function buildInstructionsProps(testX: InstructionsProps) {
     return testX;
 }
+
 export function GetInstructionsProps(number: number, brief: string, example: string, inputOutput: InputOutputProps, jsTips: string): InstructionsProps {
     let InstructionsX: InstructionsProps;
     buildInstructionsProps(InstructionsX = {
@@ -33,10 +34,11 @@ export function GetInstructionsProps(number: number, brief: string, example: str
     return InstructionsX;
 }
 
-function buildInputOutputProps (inputOutputX: InputOutputProps) {
+function buildInputOutputProps(inputOutputX: InputOutputProps) {
     return inputOutputX;
 }
-export function GetInputOutputProps(executionTimeLimit: string, inputType: string, input: string | number | string[] |number[], inputDescription: string, outputType: string, outputDescription: string, expectedOutput: string | number | string[] |number[]): InputOutputProps {
+
+export function GetInputOutputProps(executionTimeLimit: string, inputType: string, input: string | number | string[] | number[], inputDescription: string, outputType: string, outputDescription: string, expectedOutput: string | number | string[] | number[]): InputOutputProps {
     let InputOutputX: InputOutputProps;
     buildInputOutputProps(InputOutputX = {
         executionTimeLimit: executionTimeLimit,
@@ -52,30 +54,30 @@ export function GetInputOutputProps(executionTimeLimit: string, inputType: strin
 
 type InstructionsBlockProps = InstructionsProps;
 const InstructionsBlock = ({inputOutput, brief, jsTips, example, number}: InstructionsBlockProps): JSX.Element => (
-        <div>
-          <p>{brief}</p>
+    <div>
+        <p>{brief}</p>
+        <br/>
+        <h2>Example</h2>
+        <p>{example}</p>
+        <br/>
+        <h2>Input/Output</h2>
+        <ul>
+            <li><b>[execution time limit] {inputOutput.executionTimeLimit} (js)</b></li>
             <br/>
-            <h2>Example</h2>
-            <p>{example}</p>
+            <li><b>[input] {inputOutput.inputType}</b><br/>{inputOutput.inputDescription}</li>
             <br/>
-            <h2>Input/Output</h2>
-            <ul>
-                <li><b>[execution time limit] {inputOutput.executionTimeLimit} (js)</b></li>
-                <br/>
-                <li><b>[input] {inputOutput.inputType}</b><br/>{inputOutput.inputDescription}</li>
-                <br/>
-                <li><b>[output] {inputOutput.outputType}</b><br/>{inputOutput.outputDescription}</li>
-            </ul>
-            <br/>
-            <h2>[JavaScript (ES6)] Syntax Tips</h2>
-            <p>{jsTips}</p>
-            <br/>
-            <h2>TEST {number}</h2>
-            <p><b>Input:</b></p>
-            <p>{inputOutput.input}</p>
-            <p><b>Expected Output:</b></p>
-            <p>{inputOutput.expectedOutput}</p>
-        </div>
-    );
+            <li><b>[output] {inputOutput.outputType}</b><br/>{inputOutput.outputDescription}</li>
+        </ul>
+        <br/>
+        <h2>[JavaScript (ES6)] Syntax Tips</h2>
+        <p>{jsTips}</p>
+        <br/>
+        <h2>TEST {number}</h2>
+        <p><b>Input:</b></p>
+        <p>{inputOutput.input}</p>
+        <p><b>Expected Output:</b></p>
+        <p>{inputOutput.expectedOutput}</p>
+    </div>
+);
 
 export default InstructionsBlock;

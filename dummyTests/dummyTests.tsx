@@ -82,7 +82,7 @@ export const ModelAnswer1 = "'use strict';\n" +
     "    greeting(parameterVariable);\n" +
     "}";
 
-export function buildTest (testX: CandidateTest) {
+export function buildTest(testX: CandidateTest) {
     return testX;
 }
 

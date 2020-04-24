@@ -1,5 +1,4 @@
-﻿import { NextPage } from 'next';
-import scss from "../pageStyles/testpage.module.scss";
+﻿import {NextPage} from 'next';
 import React from "react";
 import Layout from "../components/Layout/layout";
 import CandidateTestView from "../components/Tests/CandidateTestView";

@@ -1,5 +1,4 @@
 ﻿import {TextEditorOptions} from "../../../Models/TextEditorOptions";
-import {number} from "prop-types";
 
 const limitedAutoComplete: TextEditorOptions = {
     autoClosingBrackets: "languageDefined",
@@ -38,6 +37,6 @@ const limitedAutoComplete: TextEditorOptions = {
         showSnippets: false,
         maxVisibleSuggestions: 5,
     }
-    
+
 };
 export default limitedAutoComplete;

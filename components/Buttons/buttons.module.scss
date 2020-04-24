@@ -23,11 +23,13 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+
 button:hover,
 button:focus {
   background: $softwireYellow;
   color: $softwireBlack;
 }
+
 .buttonYellow {
   border-style: solid;
   background-color: $softwireYellow;
@@ -37,6 +39,7 @@ button:focus {
   padding: 3px;
   font-family: Open Sans, sans-serif;
 }
+
 .buttonYellow:hover,
 .buttonYellow:focus {
   background: transparent;
