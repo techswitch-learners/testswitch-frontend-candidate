@@ -1,7 +1,9 @@
 import React from "react";
 import {NextPage} from 'next';
-import scss from '../pageStyles/index.module.scss'
+import scss from '../pageStyles/index.module.scss';
+import button from '../components/Buttons/buttons.module.scss';
 import Layout from "../components/Layout/layout";
+import Link from "next/link";
 
 const Home: NextPage = () =>  
     <Layout>
@@ -13,6 +15,9 @@ const Home: NextPage = () =>
                     <li>You must complete the test in one sitting</li>
                     <li>When you are ready and sure you won’t be disturbed, please click “Start”</li>
                 </ul>
+            <Link href="/testpage">
+                <button className={button.buttonYellow}>Start</button>
+            </Link>
         </section>
     </Layout>;
 export default Home;

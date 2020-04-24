@@ -1,6 +1,6 @@
 import {CandidateTest} from "../ApiFetch/TestFetcher";
 import scss from "../../pageStyles/testpage.module.scss";
-import TextEditorContainer, {TextEditorContainerProps} from "../TextEditor/TextEditorContainer";
+import TextEditorContainer from "../TextEditor/TextEditorContainer";
 import limitedAutoComplete from "../TextEditor/Settings/LimitedAutoComplete";
 import React from "react";
 import {getEditorProps} from "./TestEditorBuilder";

@@ -10,9 +10,9 @@ export interface CandidateTest {
 }
 
 
-export async function getCandidateTests(uuid: string | null): Promise<CandidateTest> {
-    const testUrl: string = "";
-    const apiResponse = await fetch(testUrl);
-    const jsonResponse = await apiResponse.json();
-    return jsonResponse.test[0];
-}
+// export async function getCandidateTests(uuid: string | null): Promise<CandidateTest> {
+// //     const testUrl: string = "";
+// //     const apiResponse = await fetch(testUrl);
+// //     const jsonResponse = await apiResponse.json();
+// //     return jsonResponse.test[0];
+// // }
