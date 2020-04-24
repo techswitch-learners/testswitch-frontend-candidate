@@ -1,5 +1,3 @@
-import {JSX} from "@babel/types";
-
 export interface CandidateTestModel {
     title: string;
     brief: string;

@@ -17,7 +17,7 @@ const Home: NextPage = () =>
                 <li>When you are ready and sure you won’t be disturbed, please click “Start”</li>
             </ul>
             <Link href="/testpage">
-                <button className={button.buttonYellow}>Start</button>
+                <a className={button.buttonYellow}>Start</a>
             </Link>
         </section>
     </Layout>;

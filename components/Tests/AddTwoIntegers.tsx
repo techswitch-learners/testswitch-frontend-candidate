@@ -5,8 +5,7 @@ import InstructionsBlock, {
     InputOutputProps,
     InstructionsProps
 } from "../Instructions/Instructions";
-import {CandidateTest} from "./CandidateTestView";
-import {GetTest} from "./TestEditorBuilder";
+import {CandidateTest, GetTest} from "./CandidateTestView";
 
 const Number = 1;
 const Title = "Add Two Integers";

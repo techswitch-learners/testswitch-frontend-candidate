@@ -1,13 +1,24 @@
 import React, {MutableRefObject, useRef, useState} from "react";
 import Editor from "@monaco-editor/react";
-import {SupportedLanguages} from "../../Models/SupportedLanguages";
-import {TextEditorThemes} from "../../Models/TextEditorThemes";
-import {TextEditorOptions} from "../../Models/TextEditorOptions";
+import {SupportedLanguages, TextEditorOptions, TextEditorThemes} from "../../Models/TextEditorOptions";
 import button from "../../components/Buttons/buttons.module.scss";
 import scss from "../../pageStyles/testpage.module.scss"
+import {CandidateTest} from "../Tests/CandidateTestView";
+
 
 type EditorContentGetter = () => string;
-
+export function getEditorProps(test: CandidateTest): TextEditorContainerProps {
+    type SupportedLanguages = 'javascript' | 'unset';
+    const javascript: SupportedLanguages = "javascript";
+    return {
+        containerClassName: "textEditor",
+        theme: "dark",
+        height: "90vh",
+        width: "90vw",
+        language: javascript,
+        defaultText: test.modelAnswer
+    };
+}
 export interface TextEditorContainerProps {
     containerClassName: string;
     theme?: TextEditorThemes;

@@ -1,9 +1,10 @@
 import scss from "../../pageStyles/testpage.module.scss";
 import TextEditorContainer from "../TextEditor/TextEditorContainer";
-import limitedAutoComplete from "../TextEditor/Settings/LimitedAutoComplete";
+import {limitedAutoComplete} from "../../Models/TextEditorOptions";
 import React from "react";
-import {getEditorProps} from "./TestEditorBuilder";
+import {getEditorProps} from "../TextEditor/TextEditorContainer";
 import {AddTwoIntegersTest} from "./AddTwoIntegers";
+import {CandidateTestModel} from "../../Models/CandidateTestModel";
 
 export interface CandidateTest {
     title: string;
@@ -13,7 +14,16 @@ export interface CandidateTest {
     input: string | number | string[] | number[];
     expectedOutput: string | number | string[] | number[];
 }
-
+export function GetTest(testInstructions: JSX.Element, testModel: CandidateTestModel): CandidateTest {
+    return {
+        title: testModel.title,
+        number: testModel.number,
+        instructions: testInstructions,
+        modelAnswer: testModel.modelAnswer,
+        input: testModel.input,
+        expectedOutput: testModel.expectedOutput
+    };
+}
 const EditorProps = getEditorProps(AddTwoIntegersTest);
 type CandidateTestProps = { props: CandidateTest };
 
