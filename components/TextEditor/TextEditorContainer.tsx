@@ -1,8 +1,8 @@
 import React, {MutableRefObject, useRef, useState} from "react";
 import Editor from "@monaco-editor/react";
 import {SupportedLanguages, TextEditorOptions, TextEditorThemes} from "../../Models/TextEditorOptions";
-import button from "../../components/Buttons/buttons.module.scss";
-import scss from "../../pageStyles/testpage.module.scss"
+import button from "../Buttons/buttons.module.scss";
+import scss from "../TextEditor/TextEditorContainer.module.scss";
 import {CandidateTest} from "../Tests/CandidateTestView";
 import Link from "next/link";
 
@@ -40,7 +40,10 @@ export function TextEditorContainer(props: TextEditorContainerProps): JSX.Elemen
     }
 
     function handleShowValue(): void {
-        alert(`You have submitted this code: ${getEditorContentIfMountedRef.current()}`);
+        if(isEditorReady){
+            alert(`You have submitted this code: ${getEditorContentIfMountedRef.current()}`);
+        }
+        
     }
 
     return (
