@@ -22,12 +22,12 @@ export function TextEditorContainer(props: TextEditorContainerProps): JSX.Elemen
     const [isEditorReady, setIsEditorReady] = useState(false);
     const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
 
-    function handleIsEditorMounted(_getEditorContents: EditorContentGetter) {
+    function handleIsEditorMounted(_getEditorContents: EditorContentGetter): void {
         setIsEditorReady(true);
         getEditorContentIfMountedRef.current = _getEditorContents;
     }
 
-    function handleShowValue() {
+    function handleShowValue(): void {
         alert(`You have submitted this code: ${getEditorContentIfMountedRef.current()}`);
     }
 

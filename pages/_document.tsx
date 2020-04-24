@@ -9,7 +9,7 @@ class MyDocument extends Document {
         return {...initialProps}
     }
 
-    render() {
+    render(): JSX.Element {
         return (
             <Html lang={"en"} title={"TestSwitch"}>
                 <Head><title>TestSwitch</title></Head>

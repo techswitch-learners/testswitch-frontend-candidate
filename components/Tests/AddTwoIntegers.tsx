@@ -5,7 +5,7 @@ import InstructionsBlock, {
     InputOutputProps,
     InstructionsProps
 } from "../Instructions/Instructions";
-import {CandidateTest} from "../ApiFetch/TestFetcher";
+import {CandidateTest} from "./CandidateTestView";
 import {GetTest} from "./TestEditorBuilder";
 
 const Number = 1;
@@ -14,8 +14,8 @@ const Brief = "You are given a two-digit integer n. Return the sum of its digits
 const Example = "For n = 29, the output should be\n" +
     "addTwoDigits(n) = 11.";
 const ModelAnswer = "function addTwoDigits(n) {\n}";
-const Input: any = 29;
-const ExpectedOutput: any = 11;
+const Input: string | number | string[] | number[] = 29;
+const ExpectedOutput: string | number | string[] | number[] = 11;
 const JsTips = "// Prints help message to the console\n" +
     "// Returns a string\n" +
     "function helloWorld(name) {\n" +

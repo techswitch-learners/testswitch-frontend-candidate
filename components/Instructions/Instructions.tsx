@@ -18,29 +18,18 @@ export interface InputOutputProps {
     expectedOutput: string | number | string[] | number[];
 }
 
-function buildInstructionsProps(testX: InstructionsProps) {
-    return testX;
-}
-
 export function GetInstructionsProps(number: number, brief: string, example: string, inputOutput: InputOutputProps, jsTips: string): InstructionsProps {
-    let InstructionsX: InstructionsProps;
-    buildInstructionsProps(InstructionsX = {
+    return {
         number: number,
         brief: brief,
         example: example,
         inputOutput: inputOutput,
         jsTips: jsTips
-    });
-    return InstructionsX;
-}
-
-function buildInputOutputProps(inputOutputX: InputOutputProps) {
-    return inputOutputX;
+    };
 }
 
 export function GetInputOutputProps(executionTimeLimit: string, inputType: string, input: string | number | string[] | number[], inputDescription: string, outputType: string, outputDescription: string, expectedOutput: string | number | string[] | number[]): InputOutputProps {
-    let InputOutputX: InputOutputProps;
-    buildInputOutputProps(InputOutputX = {
+    return {
         executionTimeLimit: executionTimeLimit,
         inputType: inputType,
         inputDescription: inputDescription,
@@ -48,8 +37,7 @@ export function GetInputOutputProps(executionTimeLimit: string, inputType: strin
         outputType: outputType,
         outputDescription: outputDescription,
         expectedOutput: expectedOutput
-    });
-    return InputOutputX;
+    };
 }
 
 type InstructionsBlockProps = InstructionsProps;

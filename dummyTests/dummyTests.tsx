@@ -1,6 +1,4 @@
-﻿import {CandidateTest} from "../components/ApiFetch/TestFetcher";
-
-export const Title1 = "Hello, World!";
+﻿export const Title1 = "Hello, World!";
 export const Question1 = "Objective\n" +
     "\n" +
     "In this challenge, we review some basic concepts that will get you started with this series. Check out the tutorial to learn more about JavaScript's lexical structure.\n" +
@@ -82,9 +80,6 @@ export const ModelAnswer1 = "'use strict';\n" +
     "    greeting(parameterVariable);\n" +
     "}";
 
-export function buildTest(testX: CandidateTest) {
-    return testX;
-}
 
 
 

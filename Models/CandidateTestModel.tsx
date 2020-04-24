@@ -8,21 +8,16 @@ export interface CandidateTestModel {
     modelAnswer: string;
     inputType: string;
     inputDescription: string;
-    input: any;
+    input: string | number | string[] | number[];
     outputType: string;
     outputDescription: string;
-    expectedOutput: any;
+    expectedOutput: string | number | string[] | number[];
     executionTimeLimit: string;
     jsTips: string;
 }
 
-function BuildCandidateTestModel(candidateTestX: CandidateTestModel): CandidateTestModel {
-    return candidateTestX;
-}
-
-export function GetCandidateTestModel(title: string, brief: string, number: number, instructions: JSX.Element, modelAnswer: string, inputType: string, inputDescription: string, input: any, outputType: string, outputDescription: string, expectedOutput: any, executionTimeLimit: string, jsTips: string): CandidateTestModel {
-    let CandidateTestModelX: CandidateTestModel;
-    BuildCandidateTestModel(CandidateTestModelX = {
+export function GetCandidateTestModel(title: string, brief: string, number: number, instructions: JSX.Element, modelAnswer: string, inputType: string, inputDescription: string, input: string | number | string[] | number[], outputType: string, outputDescription: string, expectedOutput: string | number | string[] | number[], executionTimeLimit: string, jsTips: string): CandidateTestModel {
+    return {
         title: title,
         brief: brief,
         number: number,
@@ -36,6 +31,5 @@ export function GetCandidateTestModel(title: string, brief: string, number: numb
         expectedOutput: expectedOutput,
         executionTimeLimit: executionTimeLimit,
         jsTips: jsTips
-    });
-    return CandidateTestModelX;
+    };
 }
