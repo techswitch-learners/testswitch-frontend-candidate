@@ -4,6 +4,7 @@ import {SupportedLanguages, TextEditorOptions, TextEditorThemes} from "../../Mod
 import button from "../../components/Buttons/buttons.module.scss";
 import scss from "../../pageStyles/testpage.module.scss"
 import {CandidateTest} from "../Tests/CandidateTestView";
+import Link from "next/link";
 
 
 type EditorContentGetter = () => string;
@@ -55,9 +56,9 @@ export function TextEditorContainer(props: TextEditorContainerProps): JSX.Elemen
                     options={props.options}
                 />
             </div>
-            <button className={button.buttonBlack} onClick={handleShowValue} disabled={!isEditorReady}>
-                Submit Code
-            </button>
+            <Link href={"/submitted"}>
+            <a className={button.buttonBlack} onClick={handleShowValue}>Submit Code</a>
+            </Link>
         </section>
     );
 }
