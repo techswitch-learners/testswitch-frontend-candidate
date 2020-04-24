@@ -11,8 +11,10 @@ export interface InstructionsProps {
 export interface InputOutputProps {
     executionTimeLimit: string;
     inputType: string;
+    inputDescription: string;
     input: string | number | string[] |number[];
     outputType: string;
+    outputDescription: string;
     expectedOutput: string | number | string[] |number[];
 }
 
@@ -34,13 +36,15 @@ export function GetInstructionsProps(number: number, brief: string, example: str
 function buildInputOutputProps (inputOutputX: InputOutputProps) {
     return inputOutputX;
 }
-export function GetInputOutputProps(executionTimeLimit: string, inputType: string, input: string | number | string[] |number[], outputType: string, output: string | number | string[] |number[]): InputOutputProps {
+export function GetInputOutputProps(executionTimeLimit: string, inputType: string, input: string | number | string[] |number[], inputDescription: string, outputType: string, output: string | number | string[] |number[],  outputDescription: string): InputOutputProps {
     let InputOutputX: InputOutputProps;
     buildInputOutputProps(InputOutputX = {
         executionTimeLimit: executionTimeLimit,
         inputType: inputType,
+        inputDescription: inputDescription,
         input: input,
         outputType: outputType,
+        outputDescription: outputDescription,
         expectedOutput: output
     });
     return InputOutputX;
@@ -57,8 +61,8 @@ const InstructionsBlock = ({inputOutput, brief, jsTips, example, number}: Instru
             <h2>Input/Output</h2>
             <ul>
                 <li><b>[execution time limit] {inputOutput.executionTimeLimit} (js)</b></li>
-                <li><b>[input] {inputOutput.inputType}</b><br/>{inputOutput.input}</li>
-                <li><b>[output] {inputOutput.outputType}</b><br/>{inputOutput.expectedOutput}</li>
+                <li><b>[input] {inputOutput.inputType}</b><br/>{inputOutput.inputDescription}</li>
+                <li><b>[output] {inputOutput.outputType}</b><br/>{inputOutput.outputDescription}</li>
             </ul>
             <br/>
             <h2>[JavaScript (ES6)] Syntax Tips</h2>

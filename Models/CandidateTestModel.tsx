@@ -7,8 +7,10 @@ export interface CandidateTestModel {
     instructions: JSX.Element;
     modelAnswer: string;
     inputType: string;
+    inputDescription: string;
     input: any;
     outputType: string;
+    outputDescription: string;
     expectedOutput: any;
     executionTimeLimit: string;
     jsTips: string;
@@ -17,7 +19,7 @@ function BuildCandidateTestModel(candidateTestX: CandidateTestModel): CandidateT
     return candidateTestX;
 }
 
-export function GetCandidateTestModel(title: string, brief: string, number: number, instructions: JSX.Element, modelAnswer: string, inputType: string, input: any, outputType: string, expectedOutput: any, executionTimeLimit: string, jsTips: string): CandidateTestModel {
+export function GetCandidateTestModel(title: string, brief: string, number: number, instructions: JSX.Element, modelAnswer: string, inputType: string, inputDescription: string, input: any, outputType: string, outputDescription: string, expectedOutput: any, executionTimeLimit: string, jsTips: string): CandidateTestModel {
     let CandidateTestModelX: CandidateTestModel;
     BuildCandidateTestModel(CandidateTestModelX = {
         title: title,
@@ -26,8 +28,10 @@ export function GetCandidateTestModel(title: string, brief: string, number: numb
         instructions: instructions,
         modelAnswer: modelAnswer,
         inputType: inputType,
+        inputDescription: inputDescription,
         input: input,
         outputType: outputType,
+        outputDescription: outputDescription,
         expectedOutput: expectedOutput,
         executionTimeLimit: executionTimeLimit,
         jsTips: jsTips
