@@ -1,4 +1,4 @@
-﻿import {CandidateTest} from "../components/ApiFetch/getTests";
+﻿import {CandidateTest} from "../components/ApiFetch/TestFetcher";
 
 export const Title1 = "Hello, World!";
 export const Question1 = "Objective\n" +

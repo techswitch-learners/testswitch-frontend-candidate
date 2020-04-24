@@ -3,7 +3,7 @@
 export interface CandidateTest {
     title: string;
     number: number;
-    instructions: string;
+    instructions: JSX.Element;
     modelAnswer: string;
     input: any;
     expectedOutput: any;
