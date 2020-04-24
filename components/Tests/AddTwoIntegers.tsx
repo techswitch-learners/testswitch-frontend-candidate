@@ -19,12 +19,11 @@ const JsTips = "// Prints help message to the console\n" +
     "}";
 const ExecutionTimeLimit = "4 seconds";
 const InputType = "integer n";
-const InputDescription = "\n" +
-    "A positive two-digit integer.\n" +
+const InputDescription = "A positive two-digit integer.\n" +
     "Guaranteed constraints:\n" +
     "10 ≤ n ≤ 99.";
 const OutputType = "integer";
-const OutputDescription = "\nThe sum of the first and second digits of the input number.";
+const OutputDescription = "The sum of the first and second digits of the input number.";
 const InputOutput: InputOutputProps = GetInputOutputProps(ExecutionTimeLimit, InputType, Input, InputDescription, OutputType, OutputDescription, ExpectedOutput);
 const TestInstructionsProps: InstructionsProps = GetInstructionsProps(Number, Brief, Example, InputOutput, JsTips);
 const Instructions: JSX.Element = InstructionsBlock(TestInstructionsProps);

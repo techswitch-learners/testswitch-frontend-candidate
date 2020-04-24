@@ -36,7 +36,7 @@ export function GetInstructionsProps(number: number, brief: string, example: str
 function buildInputOutputProps (inputOutputX: InputOutputProps) {
     return inputOutputX;
 }
-export function GetInputOutputProps(executionTimeLimit: string, inputType: string, input: string | number | string[] |number[], inputDescription: string, outputType: string, output: string | number | string[] |number[],  outputDescription: string): InputOutputProps {
+export function GetInputOutputProps(executionTimeLimit: string, inputType: string, input: string | number | string[] |number[], inputDescription: string, outputType: string, outputDescription: string, expectedOutput: string | number | string[] |number[]): InputOutputProps {
     let InputOutputX: InputOutputProps;
     buildInputOutputProps(InputOutputX = {
         executionTimeLimit: executionTimeLimit,
@@ -45,7 +45,7 @@ export function GetInputOutputProps(executionTimeLimit: string, inputType: strin
         input: input,
         outputType: outputType,
         outputDescription: outputDescription,
-        expectedOutput: output
+        expectedOutput: expectedOutput
     });
     return InputOutputX;
 }
@@ -61,7 +61,9 @@ const InstructionsBlock = ({inputOutput, brief, jsTips, example, number}: Instru
             <h2>Input/Output</h2>
             <ul>
                 <li><b>[execution time limit] {inputOutput.executionTimeLimit} (js)</b></li>
+                <br/>
                 <li><b>[input] {inputOutput.inputType}</b><br/>{inputOutput.inputDescription}</li>
+                <br/>
                 <li><b>[output] {inputOutput.outputType}</b><br/>{inputOutput.outputDescription}</li>
             </ul>
             <br/>
