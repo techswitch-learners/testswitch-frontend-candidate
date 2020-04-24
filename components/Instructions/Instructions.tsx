@@ -1,4 +1,5 @@
 import React from "react";
+import scss from "../../pageStyles/testpage.module.scss";
 
 export interface InstructionsProps {
     number: number;
@@ -43,28 +44,22 @@ export function GetInputOutputProps(executionTimeLimit: string, inputType: strin
 type InstructionsBlockProps = InstructionsProps;
 const InstructionsBlock = ({inputOutput, brief, jsTips, example, number}: InstructionsBlockProps): JSX.Element => (
     <div>
-        <p>{brief}</p>
-        <br/>
+        <p className={scss.instructionList}>{brief}</p>
         <h2>Example</h2>
-        <p>{example}</p>
-        <br/>
+        <p className={scss.instructionList}>{example}</p>
         <h2>Input/Output</h2>
-        <ul>
-            <li><b>[execution time limit] {inputOutput.executionTimeLimit} (js)</b></li>
-            <br/>
-            <li><b>[input] {inputOutput.inputType}</b><br/>{inputOutput.inputDescription}</li>
-            <br/>
-            <li><b>[output] {inputOutput.outputType}</b><br/>{inputOutput.outputDescription}</li>
+        <ul className={scss.instructionList}>
+            <li className={scss.instructionList}><strong>[execution time limit] {inputOutput.executionTimeLimit} (js)</strong></li>
+            <li className={scss.instructionList}><strong>[input] {inputOutput.inputType}</strong><br/>{inputOutput.inputDescription}</li>
+            <li className={scss.instructionList}><strong>[output] {inputOutput.outputType}</strong><br/>{inputOutput.outputDescription}</li>
         </ul>
-        <br/>
         <h2>[JavaScript (ES6)] Syntax Tips</h2>
-        <p>{jsTips}</p>
-        <br/>
+        <p className={scss.instructionList}>{jsTips}</p>
+        <section className={scss.sampleInputOutput}>
         <h2>TEST {number}</h2>
-        <p><b>Input:</b></p>
-        <p>{inputOutput.input}</p>
-        <p><b>Expected Output:</b></p>
-        <p>{inputOutput.expectedOutput}</p>
+        <p className={scss.instructionList}><strong>Input:</strong> {inputOutput.input}</p>
+        <p className={scss.instructionList}><strong>Expected Output:</strong> {inputOutput.expectedOutput}</p>
+        </section>
     </div>
 );
 

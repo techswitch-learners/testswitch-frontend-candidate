@@ -1,47 +1,37 @@
 @import '../../pageStyles/constants';
-
-button {
+.buttonYellow {
   width: 180px;
   height: 60px;
   margin-top: 20px;
-  margin-left: 0;
-  margin-right: 0;
-  display: inline-block;
-  padding: 5px;
-  border-width: 5px;
-  border-color: $softwireYellow;
-  border-style: solid;
-  text-decoration: none;
-  background: transparent;
+  padding: 3px;
+  border: 5px solid $softwireYellow;
+  color: $softwireBlack;
+  font-family: $softwireFont;
+  font-size: $buttonFontSize;
+  text-align: center;
+  transition: all 250ms ease;
+  background: $softwireYellow;
+
+  &:hover, &:active {
+    background: transparent;
+    color: $softwireYellow;
+  }
+}
+.buttonBlack {
+  width: 180px;
+  height: 60px;
+  margin-top: 20px;
+  padding: 3px;
+  border: 5px solid $softwireYellow;
   color: $softwireYellow;
   font-family: $softwireFont;
   font-size: $buttonFontSize;
-  cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out,
-  transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-button:hover,
-button:focus {
-  background: $softwireYellow;
-  color: $softwireBlack;
-}
-
-.buttonYellow {
-  border-style: solid;
-  background-color: $softwireYellow;
-  color: $softwireBlack;
-  font-size: $buttonFontSize;
-  justify-content: center;
-  padding: 3px;
-  font-family: Open Sans, sans-serif;
-}
-
-.buttonYellow:hover,
-.buttonYellow:focus {
+  transition: all 250ms ease;
   background: transparent;
-  color: $softwireYellow;
+
+  &:hover, &:active {
+    background: $softwireYellow;
+    color: $softwireBlack;
+  }
 }

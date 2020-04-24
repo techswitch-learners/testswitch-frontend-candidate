@@ -3,8 +3,8 @@ import Editor from "@monaco-editor/react";
 import {SupportedLanguages} from "../../Models/SupportedLanguages";
 import {TextEditorThemes} from "../../Models/TextEditorThemes";
 import {TextEditorOptions} from "../../Models/TextEditorOptions";
-import scss from "../../pageStyles/testpage.module.scss";
-import "../Buttons/buttons.module.scss";
+import button from "../../components/Buttons/buttons.module.scss";
+import scss from "../../pageStyles/testpage.module.scss"
 
 type EditorContentGetter = () => string;
 
@@ -44,7 +44,7 @@ export function TextEditorContainer(props: TextEditorContainerProps): JSX.Elemen
                     options={props.options}
                 />
             </div>
-            <button onClick={handleShowValue} disabled={!isEditorReady}>
+            <button className={button.buttonBlack} onClick={handleShowValue} disabled={!isEditorReady}>
                 Submit Code
             </button>
         </section>
