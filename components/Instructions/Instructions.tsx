@@ -1,19 +1,19 @@
 import React from "react";
 
 export interface InstructionsProps {
-    number: number,
-    brief: string,
-    example: string,
-    inputOutput: InputOutputProps,
-    jsTips: string
+    number: number;
+    brief: string;
+    example: string;
+    inputOutput: InputOutputProps;
+    jsTips: string;
 }
 
 export interface InputOutputProps {
-    executionTimeLimit: string,
-    inputType: string,
-    input: string | number | string[] |number[],
-    outputType: string,
-    expectedOutput: string | number | string[] |number[]
+    executionTimeLimit: string;
+    inputType: string;
+    input: string | number | string[] |number[];
+    outputType: string;
+    expectedOutput: string | number | string[] |number[];
 }
 
 function buildInstructionsProps (testX: InstructionsProps) {

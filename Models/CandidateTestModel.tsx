@@ -1,19 +1,19 @@
 import {JSX} from "@babel/types";
 
 export interface CandidateTestModel {
-    title: string,
-    brief: string,
-    number: number,
-    instructions: JSX.Element,
-    modelAnswer: string,
-    inputType: string,
-    input: any,
-    outputType: string,
-    expectedOutput: any,
-    executionTimeLimit: string,
+    title: string;
+    brief: string;
+    number: number;
+    instructions: JSX.Element;
+    modelAnswer: string;
+    inputType: string;
+    input: any;
+    outputType: string;
+    expectedOutput: any;
+    executionTimeLimit: string;
     jsTips: string;
 }
-function BuildCandidateTestModel(candidateTestX: CandidateTestModel) : CandidateTestModel {
+function BuildCandidateTestModel(candidateTestX: CandidateTestModel): CandidateTestModel {
     return candidateTestX;
 }
 
