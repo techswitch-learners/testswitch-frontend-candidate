@@ -4,8 +4,6 @@ import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStep
 import TestLibraryLayout from "../components/TestLibraryLayout/TestLibraryLayout";
 import {CandidateTestStatus, getCandidateTestResults, getCandidateTests} from "./api/candidateApiClient.module"
 
-
-//TODO currently set to number but will change to output from api fetch
 interface TestlibraryProps {
     candidateTestStatus: CandidateTestStatus[];
 }
@@ -34,10 +32,11 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
     return {
         props: {
-            title: await tests,
-            status: await results,
+            tests: await tests,
+            results: await results,
         }
     }
 };
+
 
 export default TestLibrary;

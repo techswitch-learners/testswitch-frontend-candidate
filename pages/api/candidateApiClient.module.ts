@@ -1,8 +1,8 @@
 ﻿import fetch from "node-fetch";
 
 export interface CandidateTestStatus {
-    title: string;
-    status: string;
+    testId: string;
+    testResult: string;
 }
 
 const baseUrl = `https://localhost:5001`;
@@ -10,17 +10,17 @@ const baseUrl = `https://localhost:5001`;
 export async function getCandidateTestResults() {
     const result = await fetch(
         //TODO: placeholder endpoint
-        `https://testswitch-api-staging.herokuapp.com/candidates`
+        `${baseUrl}/candidates`
     );
     const data = await result.json();
-    return data.items;
+    return data.testResults;
 }
 
 export async function getCandidateTests() {
     const result = await fetch(
         //TODO: placeholder endpoint
-        `https://testswitch-api-staging.herokuapp.com/candidates`
+        `${baseUrl}/candidates`
     );
     const data = await result.json();
-    return data.totalNumberOfItems;
+    return data;
 }
