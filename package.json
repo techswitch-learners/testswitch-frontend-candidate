@@ -72,6 +72,7 @@
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-react": "^7.19.0",
     "jest": "^25.3.0",
+    "node-fetch": "^2.6.0",
     "monaco-editor": "^0.20.0",
     "node-sass": "^4.13.1",
     "ts-jest": "^25.3.1",
