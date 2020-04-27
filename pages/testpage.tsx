@@ -1,12 +1,11 @@
 ﻿import {NextPage} from 'next';
 import React from "react";
 import Layout from "../components/Layout/layout";
-import {AddTwoIntegersTest} from "../components/CandidateTestView/Tests/AddTwoIntegers";
-import {HelloWorldTest} from "../components/CandidateTestView/Tests/HelloWorld";
 import CandidateTestView from "../components/CandidateTestView/CandidateTestView";
+import {TestList} from "../components/CandidateTestView/Tests/TestList";
 
 const TestPage: NextPage = () => {
-    const testToRender = HelloWorldTest;
+    const testToRender = TestList[0];
     return (
         <Layout>
             <div>Test</div>

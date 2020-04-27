@@ -3,10 +3,7 @@ import {limitedAutoComplete} from "../../Models/TextEditorOptions";
 import React from "react";
 import {CandidateTestModel} from "../../Models/CandidateTestModel";
 import TextEditorContainer, {getEditorProps} from "./TextEditor/TextEditorContainer";
-import {HelloWorldTest} from "./Tests/HelloWorld";
 import InstructionsBlock from "./Instructions/Instructions";
-
-const EditorProps = getEditorProps(HelloWorldTest);
 
 const CandidateTestView = (testModel: CandidateTestModel): JSX.Element => (
     <div>
@@ -24,7 +21,7 @@ const CandidateTestView = (testModel: CandidateTestModel): JSX.Element => (
                                      height="50vh"
                                      width="50vw"
                                      language="javascript"
-                                     defaultText={EditorProps.defaultText}
+                                     defaultText={getEditorProps(testModel).defaultText}
                                      options={limitedAutoComplete}
                 />
             </section>
