@@ -5,7 +5,7 @@ import CandidateTestView from "../components/CandidateTestView/CandidateTestView
 import {TestList} from "../components/CandidateTestView/Tests/TestList";
 
 const TestPage: NextPage = () => {
-    const testToRender = TestList[0];
+    const testToRender = TestList[1];
     return (
         <Layout>
             <div>Test</div>
