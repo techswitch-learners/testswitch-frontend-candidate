@@ -8,7 +8,7 @@ import InstructionsBlock from "./Instructions/Instructions";
 const CandidateTestView = (testModel: CandidateTestModel): JSX.Element => (
     <div>
         <h1 className={scss.testTitle}>Test {testModel.number}: {testModel.title}</h1>
-        <section className={scss.testPage}>
+        <div className={scss.testPage}>
             <section className={scss.testInstructions}>
                 <h2 className={scss.instructionsHeader}>{testModel.title}</h2>
                 <div id={"testInstructions"} className={scss.instructions}>
@@ -25,7 +25,7 @@ const CandidateTestView = (testModel: CandidateTestModel): JSX.Element => (
                                      options={limitedAutoComplete}
                 />
             </section>
-        </section>
+        </div>
     </div>
 );
 export default CandidateTestView;
