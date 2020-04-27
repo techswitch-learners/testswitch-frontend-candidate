@@ -8,7 +8,7 @@ import {CandidateTestModel} from "../../../Models/CandidateTestModel";
 
 type EditorContentGetter = () => string;
 export function getEditorProps(test: CandidateTestModel): TextEditorContainerProps {
-    type SupportedLanguages = 'javascript' | 'unset';
+    type SupportedLanguages = 'javascript';
     const javascript: SupportedLanguages = "javascript";
     return {
         containerClassName: "textEditor",
