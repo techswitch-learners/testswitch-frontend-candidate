@@ -45,10 +45,20 @@
       {"property": "freeze", "object": "Object"},
       {"property": "myFavoriteWrapper"}
     ],
-    "linkComponents": [
-      // Components used as alternatives to <a> for linking, eg. <Link to={ url } />
-      "Hyperlink",
-      {"name": "Link", "linkAttribute": "to"}
-    ]
-  }
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": ["react", "@typescript-eslint"],
+    "rules": {
+        "react/prop-types": 0
+    }
 }
