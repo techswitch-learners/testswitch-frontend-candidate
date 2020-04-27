@@ -1,7 +1,6 @@
 import React from "react";
 import {NextPage} from 'next';
 import scss from '../pageStyles/index.module.scss';
-import button from '../components/Buttons/buttons.module.scss';
 import Layout from "../components/Layout/layout";
 import Link from "next/link";
 
@@ -17,7 +16,7 @@ const Home: NextPage = () =>
                 <li>When you are ready and sure you won’t be disturbed, please click “Start”</li>
             </ul>
             <Link href={"/testpage"}>
-                <a className={button.buttonYellow}>Start</a>
+                <a className={scss.buttonYellow}>Start</a>
             </Link>
         </section>
     </Layout>;

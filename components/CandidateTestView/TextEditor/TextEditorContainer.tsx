@@ -1,7 +1,6 @@
 import React, {MutableRefObject, useRef, useState} from "react";
 import Editor from "@monaco-editor/react";
 import {SupportedLanguages, TextEditorOptions, TextEditorThemes} from "../../../Models/TextEditorOptions";
-import button from "../../Buttons/buttons.module.scss";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
 import Link from "next/link";
 import {CandidateTestModel} from "../../../Models/CandidateTestModel";
@@ -60,7 +59,7 @@ export function TextEditorContainer(props: TextEditorContainerProps): JSX.Elemen
                 />
             </div>
             <Link href={"/submitted"}>
-            <a className={button.buttonBlack} onClick={handleShowValue}>Submit Code</a>
+            <a className={scss.buttonBlack} onClick={handleShowValue}>Submit Code</a>
             </Link>
         </section>
     );

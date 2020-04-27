@@ -1,7 +1,7 @@
 ﻿@import "constants";
 
 .welcome {
-  color: $softwireYellow;
+  color: $techSwitchYellow;
   font-size: $desktopHeaderFontSize;
   max-width: $welcomeHeaderWidth;
   margin: 5px;
@@ -22,7 +22,7 @@
 }
 
 .instructionsHeader {
-  color: $softwireWhite;
+  color: $techSwitchWhite;
   font-size: $desktopSubHeaderFontSize;
   margin-top: 24px;
   margin-bottom: 12px;
@@ -30,7 +30,7 @@
 }
 
 .instructions {
-  color: $softwireWhite;
+  color: $techSwitchWhite;
   font-size: $buttonFontSize;
   justify-content: left;
   text-align: left;
@@ -40,6 +40,9 @@
   margin-right: 5px;
   margin-left: 5px;
   max-width: $welcomeHeaderWidth;
+}
+.buttonYellow{
+  @include techSwitchButton($techSwitchYellow, $techSwitchBlack)
 }
 
 
