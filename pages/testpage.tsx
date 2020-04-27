@@ -1,14 +1,16 @@
 ﻿import {NextPage} from 'next';
 import React from "react";
 import Layout from "../components/Layout/layout";
-import CandidateTestView from "../components/Tests/CandidateTestView";
-import {AddTwoIntegersTest} from "../components/Tests/AddTwoIntegers";
+import {AddTwoIntegersTest} from "../components/CandidateTestView/Tests/AddTwoIntegers";
+import {HelloWorldTest} from "../components/CandidateTestView/Tests/HelloWorld";
+import CandidateTestView from "../components/CandidateTestView/CandidateTestView";
 
 const TestPage: NextPage = () => {
+    const testToRender = HelloWorldTest;
     return (
         <Layout>
             <div>Test</div>
-            <CandidateTestView props={AddTwoIntegersTest}/>
+            <CandidateTestView number={testToRender.number} title={testToRender.title} brief={testToRender.brief} example={testToRender.example} executionTimeLimit={testToRender.executionTimeLimit} jsTips={testToRender.jsTips} expectedOutput={testToRender.expectedOutput} input={testToRender.input} inputDescription={testToRender.inputDescription} inputType={testToRender.inputType} modelAnswer={testToRender.modelAnswer} outputDescription={testToRender.outputDescription} outputType={testToRender.outputType}/>
         </Layout>
     )
 };

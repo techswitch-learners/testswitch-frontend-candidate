@@ -1,14 +1,14 @@
 import React, {MutableRefObject, useRef, useState} from "react";
 import Editor from "@monaco-editor/react";
-import {SupportedLanguages, TextEditorOptions, TextEditorThemes} from "../../Models/TextEditorOptions";
-import button from "../Buttons/buttons.module.scss";
+import {SupportedLanguages, TextEditorOptions, TextEditorThemes} from "../../../Models/TextEditorOptions";
+import button from "../../Buttons/buttons.module.scss";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
-import {CandidateTest} from "../Tests/CandidateTestView";
 import Link from "next/link";
+import {CandidateTestModel} from "../../../Models/CandidateTestModel";
 
 
 type EditorContentGetter = () => string;
-export function getEditorProps(test: CandidateTest): TextEditorContainerProps {
+export function getEditorProps(test: CandidateTestModel): TextEditorContainerProps {
     type SupportedLanguages = 'javascript' | 'unset';
     const javascript: SupportedLanguages = "javascript";
     return {

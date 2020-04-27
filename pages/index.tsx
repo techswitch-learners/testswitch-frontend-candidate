@@ -16,7 +16,7 @@ const Home: NextPage = () =>
                 <li>You must complete the test in one sitting</li>
                 <li>When you are ready and sure you won’t be disturbed, please click “Start”</li>
             </ul>
-            <Link href="/testpage">
+            <Link href={"/testpage"}>
                 <a className={button.buttonYellow}>Start</a>
             </Link>
         </section>
