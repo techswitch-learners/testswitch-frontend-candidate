@@ -1,4 +1,4 @@
-import scss from "../../pageStyles/testpage.module.scss";
+import scss from "../CandidateTestView/candidateTestView.module.scss";
 import {limitedAutoComplete} from "../../Models/TextEditorOptions";
 import React from "react";
 import {CandidateTestModel} from "../../Models/CandidateTestModel";
