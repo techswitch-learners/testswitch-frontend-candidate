@@ -51,9 +51,11 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                     <div className="stepperBtnContainer">
                         <div>
                             <Typography align={"center"}>
-                                <Link href={`/test${activeStep + 1}`}><a className="stepperBtn">
+                                <Link href={`/test${activeStep + 1}`}>
+                                    <a className="stepperBtn">
                                     {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
-                                </a></Link>
+                                    </a>
+                                </Link>
                             </Typography>
                         </div>
                     </div>
