@@ -3,7 +3,7 @@ import {Step, StepLabel, Stepper, Typography} from '@material-ui/core';
 import {MuiThemeProvider} from '@material-ui/core/styles';
 import {CandidateTestStatus} from "../../pages/api/candidateApiClient.module";
 import TestSwitchStepIcon from "../TestLibraryStepperIcons/TestLibraryStepperIcons";
-import {TestSwitchConnector, /*TestSwitchStepIcon,*/ TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
+import {TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
 import Link from "next/link";
 
 interface TestLibraryStepperProps {
@@ -25,16 +25,17 @@ function getSteps() {
 export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
     const steps = getSteps();
     //TODO this is example data, set active step with candidate number of results, maybe props.candidateTestStatus.results.length?
-    const activeStep = 2;
+    const activeStep = 1;
 
 
     return (
         <div className="stepperContainer">
             <MuiThemeProvider theme={TestSwitchTheme}>
                 <Stepper alternativeLabel activeStep={activeStep} connector={<TestSwitchConnector/>}>
-                    {steps.map((label) => (
+                    {steps.map((label, status) => (
                         <Step key={label}>
-                            <StepLabel StepIconComponent={TestSwitchStepIcon} className="stepLabel">{label}</StepLabel>
+                            <StepLabel StepIconComponent={TestSwitchStepIcon} className="stepLabel"><h2>{label}</h2>
+                            </StepLabel>
                         </Step>
                     ))}
                 </Stepper>

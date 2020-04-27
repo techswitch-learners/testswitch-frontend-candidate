@@ -15,7 +15,8 @@ export async function getCandidateTestResults() {
         );
         const data = await result.json();
         //without JSON.parse and stringify getServerSideProps cannot be serialized as JSON
-        return JSON.parse(JSON.stringify(data.testResults));
+        console.log(data.items);
+        return data.items;
     } catch (error) {
         console.error(error);
         return error.message;
@@ -29,7 +30,8 @@ export async function getCandidateTests() {
             `https://testswitch-api-staging.herokuapp.com/candidates`
         );
         const data = await result.json();
-        return data.items[0];
+        console.log(data.items[0].id);
+        return data.items[0].id;
     } catch (error) {
         console.error(error);
         return error.message;

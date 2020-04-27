@@ -11,8 +11,8 @@ export const TestSwitchIconStyles = makeStyles({
         zIndex: 1,
         color: '#fff',
         fontSize: 18,
-        width: 30,
-        height: 30,
+        width: 70,
+        height: 70,
         display: 'flex',
         borderRadius: '50%',
         justifyContent: 'center',
@@ -25,8 +25,8 @@ export const TestSwitchIconStyles = makeStyles({
         color: 'rgb(255, 255, 255)',
         zIndex: 0,
         fontSize: 18,
-        width: 30,
-        height: 30,
+        width: 70,
+        height: 70,
         borderRadius: '50%',
         backgroundColor: 'rgb(255, 193, 0)',
     },
@@ -34,8 +34,8 @@ export const TestSwitchIconStyles = makeStyles({
         color: 'rgb(255, 255, 255)',
         zIndex: 0,
         fontSize: 18,
-        width: 30,
-        height: 30,
+        width: 70,
+        height: 70,
         borderRadius: '50%',
         backgroundColor: 'rgb(255, 193, 0)',
     },
@@ -50,7 +50,8 @@ export default function TestSwitchStepIcon(props: StepIconProps) {
                 [classes.active]: active,
             })}
         >
-            {completed ? <Check className={classes.completed}/> : <MoreHoriz className={classes.current}/>}
+            {completed ? <Check className={classes.completed}/> : (active ? <MoreHoriz className={classes.current}/> :
+                <MoreHoriz className={classes.root}/>)}
         </div>
     );
 }
