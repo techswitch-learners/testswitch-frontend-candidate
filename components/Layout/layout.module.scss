@@ -13,8 +13,14 @@ body {
   margin: 0;
 }
 .logoHeader {
-  max-width: 180px;
+  width: 100px;
   padding: 15px;
   margin: 6px;
   align-self: flex-start;
+}
+
+@media (min-width: 768px){
+  .logoHeader{
+    width: 200px;
+  }
 }

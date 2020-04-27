@@ -1,0 +1,17 @@
+﻿@import '../../pageStyles/constants';
+
+.stepperBtn {
+  width: 135px;
+  height: 30px;
+  margin: 30px;
+  text-decoration: none;
+  text-align: center;
+  border-width: 9px;
+  border-color: $softwireYellow;
+  border-style: solid;
+  background-color: $softwireYellow;
+  color: $softwireBlack;
+  font-size: $buttonFontSize;
+  padding: 3px;
+  font-family: Open Sans, sans-serif;
+}
