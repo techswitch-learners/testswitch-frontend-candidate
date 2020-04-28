@@ -31,6 +31,6 @@ export const TestSwitchConnector = withStyles({
         zIndex: -2,
     },
     root: {
-        paddingTop: 20,
+        paddingTop: 40,
     },
 })(StepConnector);
