@@ -1,17 +1,19 @@
 @import '../../pageStyles/constants';
 
 .layout {
-  background-color: $softwireBlack;
+  background-color: $techSwitchBlack;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   padding: 0;
   margin: 0;
   border-style: none;
-  font-family: $softwireFont;
+  font-family: $techSwitchFont;
 }
+
 body {
   margin: 0;
 }
+
 .logoHeader {
   width: 100px;
   padding: 15px;

@@ -1,0 +1,10 @@
+@import "../../pageStyles/constants";
+.editorBox {
+  border-style: solid;
+  border-width: 5px;
+  border-color: $techSwitchYellow;
+}
+
+.buttonBlack{
+  @include techSwitchButton()
+}
