@@ -10,6 +10,10 @@ const TextEditorSettings: TextEditorOptions = {
     },
     folding: false,
     fontSize: 26,
+    minimap: {
+        enabled: true,
+        scale: 100
+    },
     suggest: {
         showMethods: false,
         showFunctions: false,

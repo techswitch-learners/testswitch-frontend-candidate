@@ -2,12 +2,13 @@
 
 .layout {
   background-color: $techSwitchBlack;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   padding: 0;
   margin: 0;
   border-style: none;
   font-family: $techSwitchFont;
+  overflow: hidden;
 }
 
 body {
