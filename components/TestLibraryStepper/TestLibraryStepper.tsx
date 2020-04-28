@@ -25,11 +25,11 @@ function getSteps() {
 export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
     const steps = getSteps();
     //TODO this is example data, set active step with candidate number of results, maybe props.candidateTestStatus.results.length?
-    const activeStep = 1;
+    const activeStep = 3;
 
 
     return (
-        <main role="main" className="stepperContainer">
+        <article className="stepperContainer">
             <MuiThemeProvider theme={TestSwitchTheme}>
                 <Stepper alternativeLabel activeStep={activeStep} connector={<TestSwitchConnector/>}>
                     {steps.map((label, status) => (
@@ -42,13 +42,10 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
             </MuiThemeProvider>
             <section className="stepperBtnContainer">
                 {activeStep === steps.length ? (
-                    <div role="contentinfo">
                         <Typography align={"center"} className="finished">
                             All tests completed.
                         </Typography>
-                    </div>
                 ) : (
-                    <div role="navigation" className="stepperBtnContainer">
                         <Typography align={"center"}>
                             <Link href={`/test${activeStep + 1}`}>
                                 <a className="stepperBtn">
@@ -56,10 +53,9 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                                 </a>
                             </Link>
                         </Typography>
-                    </div>
                 )}
             </section>
-        </main>
+        </article>
     )
 }
     
