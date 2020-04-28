@@ -8,9 +8,9 @@ export const DummyTest: CandidateTestModel = {
     brief: "Describe the task", 
     example: "example",
     executionTimeLimit: DefaultExecutionTimeLimit,
-    inputType: "e.g. string, integer or array",
+    inputType: "e.g. string or integer",
     inputDescription: "",
-    outputType: "e.g. string, integer or array",
+    outputType: "e.g. string or integer",
     outputDescription: "",
     testStarterCode: "//Starter code to populate the test code editor e.g.\nfunction dummyTest(n) {\n}",
     jsTips: DefaultJsTips

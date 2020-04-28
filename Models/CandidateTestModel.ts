@@ -10,10 +10,10 @@ export interface CandidateTestModel {
     testStarterCode: string;
     inputType: string;
     inputDescription: string;
-    input: string | number | string[] | number[];
+    input: string | number;
     outputType: string;
     outputDescription: string;
-    expectedOutput: string | number | string[] | number[];
+    expectedOutput: string | number;
     executionTimeLimit: string;
     jsTips: string;
 }
