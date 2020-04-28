@@ -3,7 +3,10 @@ import {NextPage} from 'next';
 import scss from '../pageStyles/index.module.scss';
 import Layout from "../components/Layout/layout";
 import Link from "next/link";
+import {CandidateTestModel} from "../Models/CandidateTestModel";
+import {TestList} from "../components/CandidateTestView/Tests/TestList";
 
+export const testToRender: CandidateTestModel = TestList[1];
 const Home: NextPage = () =>
     <Layout>
         <section className={scss.content}>
@@ -15,7 +18,7 @@ const Home: NextPage = () =>
                 <li>You must complete the test in one sitting</li>
                 <li>When you are ready and sure you won’t be disturbed, please click “Start”</li>
             </ul>
-            <Link href={"/testpage"}>
+            <Link passHref={true} href={"/testpage"} as={testToRender.title}>
                 <a className={scss.buttonYellow}>Start</a>
             </Link>
         </section>
