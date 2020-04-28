@@ -29,39 +29,37 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
 
 
     return (
-        <div className="stepperContainer">
+        <main role="main" className="stepperContainer">
             <MuiThemeProvider theme={TestSwitchTheme}>
                 <Stepper alternativeLabel activeStep={activeStep} connector={<TestSwitchConnector/>}>
                     {steps.map((label, status) => (
                         <Step key={label}>
-                            <StepLabel StepIconComponent={TestSwitchStepIcon} className="stepLabel"><h2>{label}</h2>
+                            <StepLabel StepIconComponent={TestSwitchStepIcon} className="stepLabel"><h1>{label}</h1>
                             </StepLabel>
                         </Step>
                     ))}
                 </Stepper>
             </MuiThemeProvider>
-            <div className="stepperBtnContainer">
+            <section className="stepperBtnContainer">
                 {activeStep === steps.length ? (
-                    <div>
+                    <div role="contentinfo">
                         <Typography align={"center"} className="finished">
                             All tests completed.
                         </Typography>
                     </div>
                 ) : (
-                    <div className="stepperBtnContainer">
-                        <div>
-                            <Typography align={"center"}>
-                                <Link href={`/test${activeStep + 1}`}>
-                                    <a className="stepperBtn">
+                    <div role="navigation" className="stepperBtnContainer">
+                        <Typography align={"center"}>
+                            <Link href={`/test${activeStep + 1}`}>
+                                <a className="stepperBtn">
                                     {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
-                                    </a>
-                                </Link>
-                            </Typography>
-                        </div>
+                                </a>
+                            </Link>
+                        </Typography>
                     </div>
                 )}
-            </div>
-        </div>
+            </section>
+        </main>
     )
 }
     
