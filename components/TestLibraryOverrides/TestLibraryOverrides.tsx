@@ -36,6 +36,6 @@ export const TestSwitchConnector = withStyles({
     },
 })(StepConnector);
 
-export const h1Style:CSS.Properties= {
-    color:'rgb(255, 255, 255)',
+export const h1Style: CSS.Properties = {
+    color: 'rgb(255, 255, 255)',
 };
