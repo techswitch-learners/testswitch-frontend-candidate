@@ -12,6 +12,6 @@ export const DummyTest: CandidateTestModel = {
     inputDescription: "",
     outputType: "e.g. string, integer or array",
     outputDescription: "",
-    modelAnswer: "//Starter code to populate the test code editor e.g.\nfunction dummyTest(n) {\n}",
+    testStarterCode: "//Starter code to populate the test code editor e.g.\nfunction dummyTest(n) {\n}",
     jsTips: DefaultJsTips
 };

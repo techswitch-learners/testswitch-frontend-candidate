@@ -12,5 +12,5 @@ export const AddTwoIntegersTest: CandidateTestModel = {
     inputDescription: "A positive two-digit integer.\n" + "Guaranteed constraints:\n" + "10 ≤ n ≤ 99.",
     outputType: "integer",
     outputDescription: "The sum of the first and second digits of the input number.",
-    modelAnswer: "function addTwoDigits(n) {\n}",
+    testStarterCode: "function addTwoDigits(n) {\n}",
     jsTips: DefaultJsTips};

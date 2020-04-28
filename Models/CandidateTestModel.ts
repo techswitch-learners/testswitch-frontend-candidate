@@ -7,7 +7,7 @@ export interface CandidateTestModel {
     brief: string;
     example: string;
     number: number;
-    modelAnswer: string;
+    testStarterCode: string;
     inputType: string;
     inputDescription: string;
     input: string | number | string[] | number[];

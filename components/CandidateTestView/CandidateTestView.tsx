@@ -18,7 +18,7 @@ const CandidateTestView = (testModel: CandidateTestModel): JSX.Element => (
                 <TextEditorContainer 
                                      height="50vh" 
                                      width="50vw"
-                                     defaultText={testModel.modelAnswer}
+                                     defaultText={testModel.testStarterCode}
                 />
             </section>
         </div>
