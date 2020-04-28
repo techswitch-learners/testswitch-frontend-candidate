@@ -8,7 +8,6 @@ const TestPage: NextPage = () => {
     const testToRender = TestList[1];
     return (
         <Layout>
-            <div>Test</div>
             <CandidateTestView number={testToRender.number} title={testToRender.title} brief={testToRender.brief} example={testToRender.example} executionTimeLimit={testToRender.executionTimeLimit} jsTips={testToRender.jsTips} expectedOutput={testToRender.expectedOutput} input={testToRender.input} inputDescription={testToRender.inputDescription} inputType={testToRender.inputType} modelAnswer={testToRender.modelAnswer} outputDescription={testToRender.outputDescription} outputType={testToRender.outputType}/>
         </Layout>
     )

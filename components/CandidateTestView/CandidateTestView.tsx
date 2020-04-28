@@ -1,8 +1,7 @@
 import scss from "../CandidateTestView/candidateTestView.module.scss";
-import {limitedAutoComplete} from "../../Models/TextEditorOptions";
 import React from "react";
 import {CandidateTestModel} from "../../Models/CandidateTestModel";
-import TextEditorContainer, {getEditorProps} from "./TextEditor/TextEditorContainer";
+import TextEditorContainer from "../TextEditor/TextEditorContainer";
 import InstructionsBlock from "./Instructions/Instructions";
 
 const CandidateTestView = (testModel: CandidateTestModel): JSX.Element => (
@@ -16,13 +15,10 @@ const CandidateTestView = (testModel: CandidateTestModel): JSX.Element => (
                 </div>
             </section>
             <section className={scss.textEditor}>
-                <TextEditorContainer containerClassName="textEditor"
-                                     theme="dark"
-                                     height="50vh"
+                <TextEditorContainer 
+                                     height="50vh" 
                                      width="50vw"
-                                     language="javascript"
-                                     defaultText={getEditorProps(testModel).defaultText}
-                                     options={limitedAutoComplete}
+                                     defaultText={testModel.modelAnswer}
                 />
             </section>
         </div>

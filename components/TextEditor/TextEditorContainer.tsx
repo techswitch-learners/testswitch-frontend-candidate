@@ -1,7 +1,8 @@
 import React, {FunctionComponent, MutableRefObject, useRef, useState} from "react";
 import Editor from "@monaco-editor/react";
 import {TextEditorSettings} from "./TextEditorSettings";
-
+import scss from "../TextEditor/TextEditorContainer.module.scss";
+import Link from "next/link";
 type EditorContentGetter = () => string;
 
 interface TextEditorContainerProps {
@@ -9,7 +10,6 @@ interface TextEditorContainerProps {
     width: string;
     defaultText: string;
 }
-
 const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({height, width, defaultText}) => {
     const [isEditorReady, setIsEditorReady] = useState(false);
     const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
@@ -24,12 +24,9 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
     }
 
     return (
-        <div>
-            <button onClick={handleShowValue} disabled={!isEditorReady}>
-                Submit Code
-            </button>
-
-            <Editor
+        <section>
+        <div className={scss.editorBox}>
+          <Editor
                 theme="dark"
                 height={height}
                 width={width}
@@ -37,7 +34,13 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
                 value={defaultText}
                 editorDidMount={handleIsEditorMounted}
                 options={TextEditorSettings}
-            /></div>
+            />
+        </div>
+            <Link href={"/submitted"}>
+                <a className={scss.buttonBlack} onClick={handleShowValue}>Submit Code</a>
+            </Link>
+        </section>
+        
     );
 }
 
