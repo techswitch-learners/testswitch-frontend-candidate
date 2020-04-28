@@ -2,8 +2,8 @@
 import {GetServerSideProps, NextPage} from "next";
 import Head from "next/head";
 import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStepper";
-import TestLibraryLayout from "../components/TestLibraryLayout/TestLibraryLayout";
 import {CandidateTestStatus, getCandidateTestResults, getCandidateTests} from "./api/candidateApiClient.module"
+import Layout from "../components/Layout/layout";
 
 interface TestlibraryProps {
     candidateTestStatus: CandidateTestStatus[];
@@ -16,12 +16,12 @@ const TestLibrary: NextPage<TestlibraryProps> = ({candidateTestStatus}) => {
         setKey(1);
     }, []);
     return (
-        <TestLibraryLayout>
+        <Layout>
             <Head>
                 <title>TestSwitch Test Library</title>
             </Head>
             <TestLibraryStepper key={key} candidateTestStatus={candidateTestStatus}/>
-        </TestLibraryLayout>
+        </Layout>
     );
 };
 
