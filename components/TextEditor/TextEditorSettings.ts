@@ -1,4 +1,5 @@
-﻿import {TextEditorOptions} from '../../Models/TextEditorOptions';
+﻿import {editor} from "monaco-editor";
+type TextEditorOptions = editor.IEditorOptions;
 
 const TextEditorSettings: TextEditorOptions = {
     autoClosingBrackets: "languageDefined",
@@ -8,6 +9,7 @@ const TextEditorSettings: TextEditorOptions = {
         enabled: false
     },
     folding: false,
+    fontSize: 26,
     suggest: {
         showMethods: false,
         showFunctions: false,

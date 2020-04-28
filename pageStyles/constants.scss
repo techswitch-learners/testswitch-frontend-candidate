@@ -1,12 +1,38 @@
-﻿
+﻿//Default Header Width
+$welcomeHeaderWidth: 760px;
 //Site Colours
-$softwireBlack: rgb(24, 24, 24);
-$softwireYellow: rgb(255, 193, 0);
-$softwireWhite: rgb(255, 255, 255);
+$techSwitchBlack: rgb(24, 24, 24);
+$techSwitchYellow: rgb(255, 193, 0);
+$techSwitchWhite: rgb(255, 255, 255);
 
 //Fonts
-$softwireFont: Open Sans, sans-serif;
+$techSwitchFont: Open Sans, sans-serif;
 $desktopHeaderFontSize: 60px;
 $desktopSubHeaderFontSize: 36px;
 $buttonFontSize: 27px;
+$bodyFontSize: 20px;
+
+//Buttons
+@mixin techSwitchButton($backgroundColour: $techSwitchBlack, $inverseColour: $techSwitchYellow) {
+    width: 180px;
+    height: 60px;
+    margin-top: 20px;
+    padding: 3px;
+    display: inline-block;
+    block-size: auto;
+    border: 5px solid $techSwitchYellow;
+    color: $inverseColour;
+    font-family: $techSwitchFont;
+    font-size: $buttonFontSize;
+    text-align: center;
+   text-decoration: none;
+    transition: all 250ms ease;
+    background: $backgroundColour;
+
+    &:hover, &:active {
+      background: $inverseColour;
+      color: $backgroundColour;
+    }
+  }
+
 
