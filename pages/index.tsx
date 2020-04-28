@@ -18,8 +18,8 @@ const Home: NextPage = () =>
                 <li>You must complete the test in one sitting</li>
                 <li>When you are ready and sure you won’t be disturbed, please click “Start”</li>
             </ul>
-            <Link href={"/testpage"} as={testToRender.title}>
-                <a className={scss.buttonYellow}>Start</a>
+            <Link href={"/testlibrary"}>
+                <a className={scss.buttonYellow}>Start Tests</a>
             </Link>
         </section>
     </Layout>;
