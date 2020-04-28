@@ -2,10 +2,10 @@
 import React from "react";
 import Layout from "../components/Layout/layout";
 import CandidateTestView from "../components/CandidateTestView/CandidateTestView";
-import {TestList} from "../components/CandidateTestView/Tests/TestList";
+import {CandidateTestModel} from "../Models/CandidateTestModel";
+import {testToRender} from "./index";
 
-const TestPage: NextPage = () => {
-    const testToRender = TestList[1];
+const TestPage: NextPage<CandidateTestModel> = () => {
     return (
         <Layout>
             <CandidateTestView test={testToRender}/>
