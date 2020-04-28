@@ -1,4 +1,4 @@
-import {CandidateTestModel, DefaultExecutionTimeLimit, DefaultJsTips} from "../../../Models/CandidateTestModel";
+import {CandidateTestModel} from "../../../Models/CandidateTestModel";
 
 export const DummyTest: CandidateTestModel = {
     number: 0,
@@ -7,11 +7,9 @@ export const DummyTest: CandidateTestModel = {
     input: 0,
     brief: "Describe the task", 
     example: "example",
-    executionTimeLimit: DefaultExecutionTimeLimit,
     inputType: "e.g. string or integer",
     inputDescription: "",
     outputType: "e.g. string or integer",
     outputDescription: "",
-    testStarterCode: "//Starter code to populate the test code editor e.g.\nfunction dummyTest(n) {\n}",
-    jsTips: DefaultJsTips
+    testStarterCode: "//Starter code to populate the test code editor e.g.\nfunction dummyTest(n) {\n}"
 };
