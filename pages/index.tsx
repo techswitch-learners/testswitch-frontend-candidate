@@ -7,7 +7,7 @@ import {CandidateTestModel} from "../Models/CandidateTestModel";
 import {TestList} from "../components/CandidateTestView/Tests/TestList";
 
 export const testToRender: CandidateTestModel = TestList[1];
-const Home: NextPage<CandidateTestModel[]> = () =>
+const Home: NextPage = () =>
     <Layout>
         <section className={scss.content}>
             <h1 className={scss.welcome} data-testid='page-render-test'>Welcome to the Test Zone</h1>
