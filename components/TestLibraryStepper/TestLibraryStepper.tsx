@@ -25,7 +25,7 @@ function getSteps() {
 export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
     const steps = getSteps();
     //TODO this is example data, set active step with candidate number of results, maybe props.candidateTestStatus.results.length?
-    const activeStep = 3;
+    const activeStep = 1;
 
 
     return (
