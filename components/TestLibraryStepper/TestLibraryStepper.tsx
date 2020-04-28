@@ -5,6 +5,8 @@ import {CandidateTestStatus} from "../../pages/api/candidateApiClient.module";
 import TestSwitchStepIcon from "../TestLibraryStepperIcons/TestLibraryStepperIcons";
 import {h1Style, TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
 import Link from "next/link";
+import scss from '../../pageStyles/index.module.scss';
+
 
 interface TestLibraryStepperProps {
     candidateTestStatus: CandidateTestStatus[];
@@ -49,7 +51,7 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                 ) : (
                     <Typography align={"center"}>
                         <Link href={`/test${activeStep + 1}`}>
-                            <a className="stepperBtn">
+                            <a className={scss.buttonYellow}>
                                 {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
                             </a>
                         </Link>
