@@ -3,13 +3,15 @@ import scss from './layout.module.scss';
 
 type LayoutProps = { children: React.ReactNode };
 const Layout = ({children}: LayoutProps): JSX.Element => (
-    <main className={scss.layout}>
-        <header title={"layoutHeader"} className={scss.layoutHeader}>
+    <section>
+    <header title={"layoutHeader"} className={scss.layoutHeader}>
         <img className={scss.logoHeader} alt="TechSwitch" src={'/logo.png'}>
         </img>
         </header>
+        <main className={scss.layout}>
         {children}
-    </main>
+        </main>
+    </section>
 );
 
 export default Layout;

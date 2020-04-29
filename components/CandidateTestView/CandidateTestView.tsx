@@ -20,7 +20,7 @@ const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.
             <section className={scss.textEditor}>
                 <TextEditorContainer 
                      height="50vh" 
-                     width="50vw"
+                     width="100%"
                      defaultText={candidateTestViewProps.test.testStarterCode}
                 />
             </section>
