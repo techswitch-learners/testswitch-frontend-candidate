@@ -1,2 +1,5 @@
-﻿@import '../../pageStyles/index.module';
+﻿@import '../../pageStyles/constants';
 
+.buttonYellow{
+  @include techSwitchButton($techSwitchYellow, $techSwitchBlack)
+}
