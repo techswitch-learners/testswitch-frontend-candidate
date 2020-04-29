@@ -8,7 +8,7 @@ interface CandidateTestViewProps {
     test: CandidateTestModel;
 }
 const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.Element => (
-    <div>
+    <body>
         <h1 className={scss.testTitle}>Test {candidateTestViewProps.test.number}: {candidateTestViewProps.test.title}</h1>
         <div className={scss.testPage}>
             <section className={scss.testInstructions}>
@@ -19,12 +19,12 @@ const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.
             </section>
             <section className={scss.textEditor}>
                 <TextEditorContainer 
-                                     height="50vh" 
-                                     width="50vw"
-                                     defaultText={candidateTestViewProps.test.testStarterCode}
+                     height="50vh" 
+                     width="50vw"
+                     defaultText={candidateTestViewProps.test.testStarterCode}
                 />
             </section>
         </div>
-    </div>
+    </body>
 );
 export default CandidateTestView;

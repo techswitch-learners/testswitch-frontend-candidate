@@ -37,7 +37,7 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
             />
         </div>
             <Link href={"/submitted"}>
-                <a className={scss.buttonBlack} onClick={handleShowValue}>Submit Code</a>
+                <p className={scss.buttonBlack} onClick={handleShowValue}>Submit Code</p>
             </Link>
         </section>
         
