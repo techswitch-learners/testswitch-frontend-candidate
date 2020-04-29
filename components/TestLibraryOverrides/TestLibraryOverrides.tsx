@@ -3,6 +3,7 @@ import {createMuiTheme} from "@material-ui/core/styles";
 import {StepConnector} from "@material-ui/core";
 import {withStyles} from "@material-ui/styles";
 import React from "react";
+import CSS from "csstype";
 
 export const TestSwitchTheme = createMuiTheme({
     palette: {
@@ -25,7 +26,7 @@ export const TestSwitchConnector = withStyles({
         },
     },
     line: {
-        borderColor: '#eaeaf0',
+        borderColor: '#9a9aa0',
         borderTopWidth: 4,
         borderRadius: 1,
         zIndex: -2,
@@ -34,3 +35,7 @@ export const TestSwitchConnector = withStyles({
         paddingTop: 40,
     },
 })(StepConnector);
+
+export const h1Style: CSS.Properties = {
+    color: 'rgb(255, 255, 255)',
+};

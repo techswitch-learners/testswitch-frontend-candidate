@@ -7,7 +7,7 @@ import {makeStyles} from "@material-ui/core/styles";
 //overrides for material ui icon styles
 export const TestSwitchIconStyles = makeStyles({
     root: {
-        backgroundColor: '#eaeaf0',
+        backgroundColor: '#9a9aa0',
         zIndex: 1,
         color: '#fff',
         fontSize: 18,
