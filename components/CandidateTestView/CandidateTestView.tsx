@@ -8,9 +8,9 @@ interface CandidateTestViewProps {
     test: CandidateTestModel;
 }
 const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.Element => (
-    <body>
-        <h1 className={scss.testTitle}>Test {candidateTestViewProps.test.number}: {candidateTestViewProps.test.title}</h1>
+    
         <div className={scss.testPage}>
+            <h1 className={scss.testTitle}>Test {candidateTestViewProps.test.number}: {candidateTestViewProps.test.title}</h1>
             <section className={scss.testInstructions}>
                 <h2 className={scss.instructionsHeader}>{candidateTestViewProps.test.title}</h2>
                 <div id={"testInstructions"} className={scss.instructions}>
@@ -25,6 +25,6 @@ const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.
                 />
             </section>
         </div>
-    </body>
+
 );
 export default CandidateTestView;

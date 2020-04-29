@@ -9,7 +9,7 @@ import {TestList} from "../components/CandidateTestView/Tests/TestList";
 export const testToRender: CandidateTestModel = TestList[1];
 const Home: NextPage = () =>
     <Layout>
-        <body className={scss.content}>
+        <section className={scss.content}>
             <h1 className={scss.welcome} data-testid='page-render-test'>Welcome to the Test Zone</h1>
             <h2 className={scss.instructionsHeader}>Test Instructions</h2>
             <ul className={scss.instructions}>
@@ -21,7 +21,7 @@ const Home: NextPage = () =>
             <Link href={"/testpage"} as={testToRender.title}>
                 <p className={scss.buttonYellow}>Start</p>
             </Link>
-        </body>
+        </section>
     </Layout>;
 export default Home;
 
