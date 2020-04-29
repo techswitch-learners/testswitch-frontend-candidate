@@ -6,6 +6,8 @@ import TestSwitchStepIcon from "../TestLibraryStepperIcons/TestLibraryStepperIco
 import {h1Style, TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
 import Link from "next/link";
 import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
+import {TestList} from "../CandidateTestView/Tests/TestList";
+import {testToRender} from "../../pages";
 
 
 interface TestLibraryStepperProps {
@@ -14,7 +16,8 @@ interface TestLibraryStepperProps {
 
 function getSteps() {
     //TODO: mock data, set number of steps based on test range, maybe props.candidateTestStatus.tests.length?
-    const testNumber = 3;
+    //Temporarily counts tests in list
+    const testNumber = TestList.length;
 
     //set labels for steps
     const testLabelArray = [];
@@ -27,7 +30,7 @@ function getSteps() {
 export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
     const steps = getSteps();
     //TODO this is example data, set active step with candidate number of results, maybe props.candidateTestStatus.results.length?
-    const activeStep = 1;
+    const activeStep = 0;
 
     return (
         <article className="stepperContainer">
@@ -50,10 +53,8 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                     </Typography>
                 ) : (
                     <Typography align={"center"}>
-                        <Link href={`/test${activeStep + 1}`}>
-                            <a className={scss.buttonYellow}>
-                                {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
-                            </a>
+                        <Link href={"/testpage"} as={testToRender.title}>
+                            <a className={scss.buttonYellow}>{activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}</a>
                         </Link>
                     </Typography>
                 )}
