@@ -7,5 +7,6 @@
 }
 
 .buttonBlack{
-  @include techSwitchButton()
+  @include techSwitchButton();
+  display: block;
 }
