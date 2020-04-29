@@ -19,7 +19,7 @@ const Home: NextPage = () =>
                 <li>When you are ready and sure you won’t be disturbed, please click “Start”</li>
             </ul>
             <Link href={"/testpage"} as={testToRender.title}>
-                <p className={scss.buttonYellow}>Start</p>
+                <a className={scss.buttonYellow}>Start</a>
             </Link>
         </section>
     </Layout>;
