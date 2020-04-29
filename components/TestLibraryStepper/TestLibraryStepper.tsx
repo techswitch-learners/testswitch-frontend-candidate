@@ -6,6 +6,8 @@ import TestSwitchStepIcon from "../TestLibraryStepperIcons/TestLibraryStepperIco
 import {h1Style, TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
 import Link from "next/link";
 import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
+import {TestList} from "../CandidateTestView/Tests/TestList";
+import {testToRender} from "../../pages";
 
 
 interface TestLibraryStepperProps {
