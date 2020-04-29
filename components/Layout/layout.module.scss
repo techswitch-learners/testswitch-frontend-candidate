@@ -2,13 +2,11 @@
 
 .layout {
   background-color: $techSwitchBlack;
-  width: 100vw;
-  height: 100vh;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   border-style: none;
   font-family: $techSwitchFont;
-  overflow: hidden;
 }
 
 body {
@@ -26,4 +24,9 @@ body {
   .logoHeader{
     width: 200px;
   }
+}
+
+.layoutHeader {
+  width: 100vw;
+  text-align: left;
 }

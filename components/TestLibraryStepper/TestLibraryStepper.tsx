@@ -5,9 +5,7 @@ import {CandidateTestStatus} from "../../pages/api/candidateApiClient.module";
 import TestSwitchStepIcon from "../TestLibraryStepperIcons/TestLibraryStepperIcons";
 import {h1Style, TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
 import Link from "next/link";
-import scss from '../../pageStyles/index.module.scss';
-import {TestList} from "../CandidateTestView/Tests/TestList";
-import {testToRender} from "../../pages";
+import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
 
 
 interface TestLibraryStepperProps {
