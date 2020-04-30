@@ -65,7 +65,7 @@
     margin-bottom: 0.8vh;
   }
   .buttonYellow{
-    @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $highResButtonFontSize)
+    @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $highResButtonFontSize);
     min-width: 10vw;
     margin: 3rem;
   }
