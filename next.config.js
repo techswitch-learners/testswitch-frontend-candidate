@@ -1,4 +1,10 @@
 ﻿const withSass = require('@zeit/next-sass');
+module.exports = {
+    publicRuntimeConfig: {
+        API_URL: process.env.API_URL,
+    }
+};
+
 module.exports = withSass({
     cssModules: true
 });
@@ -9,3 +15,4 @@ WebFontConfig = {
     },
     timeout: 2000
 };
+
