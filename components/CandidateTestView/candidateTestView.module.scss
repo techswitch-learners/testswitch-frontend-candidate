@@ -1,6 +1,7 @@
 ﻿﻿@import "../../pageStyles/constants";
 .testPage {
-  max-height: 800px;
+  box-sizing: border-box;
+  max-height: 100vh;
   max-width: 100vw;
   display: flex;
   flex-direction: column;
@@ -9,15 +10,18 @@
 }
 
 .testInstructions {
+  box-sizing: border-box;
   height: 500px;
   max-width: 50vw;
 
 }
 .instructionList {
+  box-sizing: border-box;
   margin-bottom: 1em;
 }
 
 .testInstructionsHeader {
+  box-sizing: border-box;
   color: $techSwitchWhite;
   font-size: $desktopSubHeaderFontSize;
   margin-bottom: 12px;
@@ -25,6 +29,7 @@
 }
 
 .testInstructions {
+  box-sizing: border-box;
   color: $techSwitchWhite;
   white-space: pre-wrap;
   font-size: $bodyFontSize;
@@ -40,6 +45,7 @@
 }
 
 .textEditor {
+  box-sizing: border-box;
   color: $techSwitchWhite;
   font-size: $desktopButtonFontSize;
   justify-content: right;
@@ -48,6 +54,7 @@
 }
 
 .testTitle {
+  box-sizing: border-box;
   color: $techSwitchYellow;
   font-size: $desktopHeaderFontSize;
   max-width: 40vw;
@@ -67,16 +74,54 @@
   border-color: $techSwitchYellow;
 }
 
-.sampleInputOutput {
-  margin: 5px;
-  padding: 5px;
-  top: 85vh;
-  left: 46vw;
-  display: flex;
-  flex-direction: column;
-  line-height: 0;
-  position: absolute;
-  overflow: hidden;
-}
+//Media Queries
+
+        @media (min-width: $mediaHighResMinWidth){
+          //High Resolution 2000px and above
+          .welcome {
+            font-size: $highResHeaderFontSize;
+          }
+          .instructionsHeader {
+            font-size: $highResSubHeaderFontSize;
+            margin-top: 2vh;
+            margin-bottom: 0.8vh;
+            padding: 2.5rem;
+          }
+          .instructions {
+            font-size: $highResBodyFontSize;
+            padding: 2rem;
+            margin-top: 1vh;
+            margin-bottom: 0.8vh;
+          }
+          .buttonYellow{
+            @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $highResButtonFontSize);
+            min-width: 10vw;
+            margin: 3rem;
+          }
+        }
+        @media (max-width: $mediaLowResMaxWidth){
+          //Low Resolution 800px and below
+          .welcome {
+            font-size: $lowResHeaderFontSize;
+            max-width: 80vw;
+            margin: 0.2em;
+            padding: 0.5rem;
+          }
+          .instructionsHeader {
+            font-size: $lowResSubHeaderFontSize;
+            margin-top: 0.75vh;
+            margin-bottom: 0.4vh;
+            padding: 0.25rem;
+          }
+          .instructions {
+            padding: 0.8rem;
+            margin: 0.8vh 0.2vw;
+            max-width: 80vw;
+          }
+          .buttonYellow{
+            @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $lowResButtonFontSize);
+            max-width: 40vw;
+          }
+        }
 
 
