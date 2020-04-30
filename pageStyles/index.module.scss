@@ -3,9 +3,9 @@
 .welcome {
   color: $techSwitchYellow;
   font-size: $desktopHeaderFontSize;
-  max-width: $welcomeHeaderWidth;
-  margin: 5px;
-  padding: 5px;
+  max-width: 40vw;
+  margin: 1rem;
+  padding: 1rem;
 }
 
 .content {
@@ -15,8 +15,8 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 3px;
-  font-family: Open Sans, sans-serif;
+  padding: 0.5rem;
+  font-family: $techSwitchFont;
   text-decoration: none;
   text-align: center;
 }
@@ -24,25 +24,73 @@
 .instructionsHeader {
   color: $techSwitchWhite;
   font-size: $desktopSubHeaderFontSize;
-  margin-top: 24px;
-  margin-bottom: 12px;
-  padding: 5px;
+  margin-top: 1.5vh;
+  margin-bottom: 0.8vh;
+  padding: 1rem;
 }
 
 .instructions {
   color: $techSwitchWhite;
-  font-size: $buttonFontSize;
+  font-size: $bodyFontSize;
   justify-content: left;
   text-align: left;
-  padding: 5px;
-  margin-top: 12px;
-  margin-bottom: 24px;
-  margin-right: 5px;
-  margin-left: 5px;
-  max-width: $welcomeHeaderWidth;
+  padding: 1rem;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  max-width: 40vw;
 }
 .buttonYellow{
-  @include techSwitchButton($techSwitchYellow, $techSwitchBlack)
+  @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $desktopButtonFontSize)
+}
+
+
+
+@media (min-width: $mediaHighResMinWidth){
+  //High Resolution 2000px and above
+  .welcome {
+    font-size: $highResHeaderFontSize;
+  }
+  .instructionsHeader {
+    font-size: $highResSubHeaderFontSize;
+    margin-top: 2vh;
+    margin-bottom: 0.8vh;
+    padding: 2.5rem;
+  }
+  .instructions {
+    font-size: $highResBodyFontSize;
+    padding: 2rem;
+    margin-top: 1vh;
+    margin-bottom: 0.8vh;
+  }
+  .buttonYellow{
+    @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $highResButtonFontSize)
+  }
+}
+@media (max-width: $mediaLowResMaxWidth){
+  //Low Resolution 800px and below
+  .welcome {
+    font-size: $lowResHeaderFontSize;
+    max-width: 80vw;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+  .instructionsHeader {
+    font-size: $lowResSubHeaderFontSize;
+    margin-top: 0.75vh;
+    margin-bottom: 0.4vh;
+    padding: 0.5rem;
+  }
+  .instructions {
+    padding: 0.8rem;
+    margin: 0.8vh 0.2vw;
+    max-width: 80vw;
+  }
+  .buttonYellow{
+    @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $lowResButtonFontSize)
+    max-width: 40vw;
+  }
 }
 
 

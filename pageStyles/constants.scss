@@ -1,19 +1,31 @@
-﻿//Default Header Width
-$welcomeHeaderWidth: 760px;
-//Site Colours
+﻿//Site Colours
 $techSwitchBlack: rgb(24, 24, 24);
 $techSwitchYellow: rgb(255, 193, 0);
 $techSwitchWhite: rgb(255, 255, 255);
 
 //Fonts
 $techSwitchFont: Open Sans, sans-serif;
-$desktopHeaderFontSize: 60px;
-$desktopSubHeaderFontSize: 36px;
-$buttonFontSize: 27px;
-$bodyFontSize: 20px;
+    //Desktop
+    $desktopHeaderFontSize: 2.5rem;
+    $desktopSubHeaderFontSize: 2rem;
+    $desktopButtonFontSize: 1.5rem;
+    $bodyFontSize: 1rem;
+    
+    //Low Resolution 800px and below
+    $mediaLowResMaxWidth: 800px;
+    $lowResHeaderFontSize: 2rem;
+    $lowResSubHeaderFontSize: 1.5rem;
+    $lowResButtonFontSize: 1.25rem;
+    
+    //High Resolution 2000px and above
+    $mediaHighResMinWidth: 2000px;
+    $highResHeaderFontSize: 5rem;
+    $highResSubHeaderFontSize: 4.6rem;
+    $highResButtonFontSize: 4rem;
+    $highResBodyFontSize: 3.6rem;
 
 //Buttons
-@mixin techSwitchButton($backgroundColour: $techSwitchBlack, $inverseColour: $techSwitchYellow) {
+@mixin techSwitchButton($backgroundColour: $techSwitchBlack, $inverseColour: $techSwitchYellow, $fontSize: $desktopButtonFontSize) {
     width: 180px;
     height: 60px;
     margin-top: 20px;
@@ -23,9 +35,9 @@ $bodyFontSize: 20px;
     border: 5px solid $techSwitchYellow;
     color: $inverseColour;
     font-family: $techSwitchFont;
-    font-size: $buttonFontSize;
+    font-size: $fontSize;
     text-align: center;
-   text-decoration: none;
+    text-decoration: none;
     transition: all 250ms ease;
     background: $backgroundColour;
 

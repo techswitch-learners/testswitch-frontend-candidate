@@ -12,21 +12,30 @@
 body {
   margin: 0;
 }
-
+  
 .logoHeader {
-  width: 100px;
-  padding: 15px;
-  margin: 6px;
+  width: 20rem;
+  padding: 1rem;
+  margin: 1rem;
   align-self: flex-start;
-}
-
-@media (min-width: 768px){
-  .logoHeader{
-    width: 200px;
-  }
 }
 
 .layoutHeader {
   width: 100vw;
   text-align: left;
 }
+
+@media (min-width: $mediaHighResMinWidth){
+  .logoHeader {
+    //High Resolution 2000px and above
+    width: 25rem;
+  }
+}
+@media (max-width: $mediaLowResMaxWidth){
+  .logoHeader {
+    //Low Resolution 800px and below
+    width: 12rem;
+  }
+}
+
+

@@ -41,7 +41,7 @@
 
 .textEditor {
   color: $techSwitchWhite;
-  font-size: $buttonFontSize;
+  font-size: $desktopButtonFontSize;
   justify-content: right;
   margin-top: 5vh;
   margin-right: 1vw;
@@ -49,7 +49,7 @@
 
 .testTitle {
   color: $techSwitchYellow;
-  font-size: 30pt;
+  font-size: $desktopHeaderFontSize;
   max-width: 40vw;
   white-space: nowrap;
   margin: 5px;
