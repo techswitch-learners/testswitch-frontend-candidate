@@ -3,26 +3,18 @@
 .layout {
   background-color: $techSwitchBlack;
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   border-style: none;
   font-family: $techSwitchFont;
+  max-height: 100vh;
+  max-width: 100vw;
 }
 
-body {
-  margin: 0;
-}
-  
 .logoHeader {
+  box-sizing: border-box;
   width: 15vw;
-  padding: 1rem;
-  margin: 1rem;
+  padding: 0.6rem;
+  margin: 0.6rem;
   align-self: flex-start;
-}
-
-.layoutHeader {
-  width: 100vw;
-  text-align: left;
 }
 
 @media (min-width: $mediaHighResMinWidth){
