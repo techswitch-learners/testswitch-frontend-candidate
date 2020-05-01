@@ -3,6 +3,7 @@ import Editor from "@monaco-editor/react";
 import {TextEditorSettings} from "./TextEditorSettings";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
 import Link from "next/link";
+import TokenLink from "../TokenLink/TokenLink";
 type EditorContentGetter = () => string;
 
 interface TextEditorContainerProps {
@@ -36,9 +37,9 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
                 options={TextEditorSettings}
             />
         </div>
-            <Link href={"/submitted"}>
+            <TokenLink href={"/submitted"}>
                 <a className={scss.buttonBlack} onClick={handleShowValue}>Submit Code</a>
-            </Link>
+            </TokenLink>
         </section>
         
     );
