@@ -1,6 +1,19 @@
 ﻿import {editor} from "monaco-editor";
+import {screenWidth} from "../../pages";
+
 type TextEditorOptions = editor.IEditorOptions;
 
+function getFontSize(): number {
+    let fontSize: number;
+    if(screenWidth < 1000) {
+        fontSize = 15;
+    } else if (screenWidth>3000) {
+        fontSize = 30
+    } else {
+        fontSize = 20;
+    }
+    return fontSize;
+}
 const TextEditorSettings: TextEditorOptions = {
     autoClosingBrackets: "languageDefined",
     autoClosingQuotes: "languageDefined",
@@ -9,11 +22,11 @@ const TextEditorSettings: TextEditorOptions = {
         enabled: false
     },
     folding: false,
-    fontSize: 26,
     minimap: {
         enabled: true,
         scale: 100
     },
+    fontSize: getFontSize(),
     suggest: {
         showMethods: false,
         showFunctions: false,
