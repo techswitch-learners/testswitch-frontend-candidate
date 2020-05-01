@@ -3,9 +3,9 @@ import {useRouter} from "next/router";
 import Link from "next/link";
 
 
-type QueryTokenProps = {children: React.ReactNode, href: string}
+type TokenLinkProps = {children: React.ReactNode, href: string}
 
-const QueryToken = ({children, href}:QueryTokenProps) => {
+const TokenLink = ({children, href}:TokenLinkProps) => {
   const router = useRouter();
   
   return (
@@ -18,4 +18,4 @@ const QueryToken = ({children, href}:QueryTokenProps) => {
 
 
 
-export default QueryToken;
+export default TokenLink;
