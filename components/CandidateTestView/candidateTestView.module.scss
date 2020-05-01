@@ -23,6 +23,8 @@
   box-sizing: border-box;
   color: $techSwitchWhite;
   font-size: $desktopSubHeaderFontSize;
+  margin: 0;
+  padding: 0;
 }
 
 .testInstructions {
@@ -41,8 +43,6 @@
   box-sizing: border-box;
   color: $techSwitchWhite;
   font-size: $desktopButtonFontSize;
-  margin-top: 5vh;
-  margin-right: 1vw;
   width: 50vw;
 }
 
@@ -57,7 +57,7 @@
   top: 0;
   right: 0;
   text-align: right;
-  margin: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 //Media Queries
@@ -69,8 +69,7 @@
           }
           .instructionsHeader {
             font-size: $highResSubHeaderFontSize;
-            margin-top: 2vh;
-            margin-bottom: 0.8vh;
+            margin-top: 2.5vh;
             padding: 2.5rem;
           }
           .instructions {
