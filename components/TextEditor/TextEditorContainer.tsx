@@ -3,6 +3,7 @@ import Editor from "@monaco-editor/react";
 import {TextEditorSettings} from "./TextEditorSettings";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
 import Link from "next/link";
+
 type EditorContentGetter = () => string;
 
 interface TextEditorContainerProps {
@@ -10,6 +11,8 @@ interface TextEditorContainerProps {
     width: string;
     defaultText: string;
 }
+
+
 const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({height, width, defaultText}) => {
     const [isEditorReady, setIsEditorReady] = useState(false);
     const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");

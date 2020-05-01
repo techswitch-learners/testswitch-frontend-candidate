@@ -3,7 +3,7 @@
 .welcome {
   color: $techSwitchYellow;
   font-size: $desktopHeaderFontSize;
-  max-width: 40vw;
+  max-width: 60vw;
   margin: 1rem;
   padding: 1rem;
 }
@@ -39,7 +39,7 @@
   margin-bottom: 2vh;
   margin-right: 1vw;
   margin-left: 1vw;
-  max-width: 40vw;
+  max-width: 60vw;
 }
 .buttonYellow{
   @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $desktopButtonFontSize)
