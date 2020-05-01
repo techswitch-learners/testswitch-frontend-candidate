@@ -45,16 +45,14 @@ export async function getCandidateTests() {
 export async function addTestSubmisson( tokenId:string,newTestSubmission: NewTestSubmission) {
     const { publicRuntimeConfig } = getConfig();
     const apiURL=publicRuntimeConfig.API_URL;
-    console.log(apiURL);
-    const response = await fetch(`${apiURL}/sessions/${tokenId}`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newTestSubmission),
-    });
-
-    if (!response.ok) {
-        throw new Error(await response.json())
-    }
+  
+        const response = await fetch(`${apiURL}/sessions/${tokenId}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newTestSubmission),
+        });
+    return await response;
+ 
 }

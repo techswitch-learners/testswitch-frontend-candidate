@@ -8,7 +8,7 @@ import {testToRender} from "./index";
 const TestPage: NextPage<CandidateTestModel> = () => {
     return (
         <Layout>
-            <CandidateTestView test={testToRender}/>
+            <CandidateTestView test={testToRender} token="66666"/>
         </Layout>
     )
 };
