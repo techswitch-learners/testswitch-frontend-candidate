@@ -8,25 +8,23 @@ $techSwitchFont: Open Sans, sans-serif;
     //Desktop
     $desktopHeaderFontSize: 2.5rem;
     $desktopSubHeaderFontSize: 2rem;
-    $desktopButtonFontSize: 1.5rem;
-    $bodyFontSize: 1rem;
+    $desktopBodyFontSize: 1.5rem;
     
     //Low Resolution 800px and below
     $mediaLowResMaxWidth: 900px;
     $lowResHeaderFontSize: 1.5rem;
     $lowResSubHeaderFontSize: 1rem;
-    $lowResButtonFontSize: 0.8rem;
-    $lowResBodyFontSize: 0.6rem;
+    $lowResBodyFontSize: 1rem;
+
     
     //High Resolution 2000px and above
     $mediaHighResMinWidth: 2500px;
     $highResHeaderFontSize: 5rem;
     $highResSubHeaderFontSize: 4rem;
-    $highResButtonFontSize: 3.5rem;
-    $highResBodyFontSize: 3rem;
+    $highResBodyFontSize: 3.5rem;
 
 //Buttons
-@mixin techSwitchButton($backgroundColour: $techSwitchBlack, $inverseColour: $techSwitchYellow, $fontSize: $desktopButtonFontSize) {
+@mixin techSwitchButton($backgroundColour: $techSwitchBlack, $inverseColour: $techSwitchYellow, $fontSize: $desktopBodyFontSize) {
     width: 180px;
     height: 60px;
     margin-top: 20px;

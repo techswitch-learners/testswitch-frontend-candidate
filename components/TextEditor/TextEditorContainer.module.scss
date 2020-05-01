@@ -19,7 +19,7 @@
   }
 
   .buttonBlack{
-    font-size: $highResButtonFontSize;
+    font-size: $highResBodyFontSize;
     border-width: 0.8rem;
     min-width: 400px;
   }
@@ -31,7 +31,7 @@
   }
 
   .buttonBlack{
-    font-size: $lowResButtonFontSize;
+    font-size: $lowResBodyFontSize;
     border-width: 0.2rem;
     max-width: 40vw;
   }

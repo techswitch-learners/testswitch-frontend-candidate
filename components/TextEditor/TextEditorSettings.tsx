@@ -4,7 +4,7 @@ import {screenWidth} from "../../pages";
 type TextEditorOptions = editor.IEditorOptions;
 
 function getFontSize(): number {
-    let fontSize = 15;
+    let fontSize = 18;
     if(!screenWidth) {
         return fontSize}
     else if(screenWidth < 2000) {
@@ -12,7 +12,7 @@ function getFontSize(): number {
     } else if (screenWidth>3000) {
         fontSize = 30
     } else {
-        fontSize = 20;
+        fontSize = 25;
     }
     return fontSize;
 }

@@ -42,7 +42,7 @@
     font-size: $highResSubHeaderFontSize;
   }
   .submitMessage {
-    font-size: $highResButtonFontSize;
+    font-size: $highResBodyFontSize;
     max-width: 1200px;
   }
 
@@ -62,7 +62,7 @@
     padding: 0.5rem;
   }
   .submitMessage {
-    font-size: $lowResButtonFontSize;
+    font-size: $lowResBodyFontSize;
     line-height: 150%;
     max-width: 80vw;
     margin: 0.2em;

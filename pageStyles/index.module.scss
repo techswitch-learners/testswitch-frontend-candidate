@@ -28,13 +28,13 @@
 
 .instructions {
   color: $techSwitchWhite;
-  font-size: $bodyFontSize;
+  font-size: $desktopBodyFontSize;
   justify-content: left;
   text-align: left;
   width: 500px;
 }
 .buttonYellow{
-  @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $desktopButtonFontSize)
+  @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $desktopBodyFontSize)
 }
 
  //Media Queries
@@ -54,7 +54,7 @@
         }
        
         .buttonYellow{
-          @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $highResButtonFontSize);
+          @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $highResBodyFontSize);
           min-width: 10vw;
           margin: 3rem;
         }
@@ -81,7 +81,7 @@
           min-width: 250px;
         }
         .buttonYellow{
-          @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $lowResButtonFontSize);
+          @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $lowResBodyFontSize);
           max-width: 40vw;
         }
       }
