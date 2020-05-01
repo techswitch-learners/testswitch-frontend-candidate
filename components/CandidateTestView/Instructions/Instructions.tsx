@@ -1,5 +1,5 @@
 import React from "react";
-import scss from "../Instructions/Instructions.module.scss";
+import scss from "../CandidateTestView.module.scss";
 import {CandidateTestModel} from "../../../Models/CandidateTestModel";
 
 const InstructionsBlock = (testModel: CandidateTestModel): JSX.Element => (

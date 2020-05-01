@@ -8,23 +8,23 @@
   justify-content: space-between;
   align-items: flex-start;
 }
-
 .testInstructions {
-  box-sizing: border-box;
-  height: 500px;
+  min-height: 60vh;
+  max-height: 90vh;
+  min-width: 40vw;
   max-width: 50vw;
-
 }
+
 .instructionList {
   box-sizing: border-box;
 }
-
+.instructionsHeader {
+  font-size: $desktopSubHeaderFontSize;
+}
 .testInstructionsHeader {
   box-sizing: border-box;
   color: $techSwitchWhite;
   font-size: $desktopSubHeaderFontSize;
-  margin: 0;
-  padding: 0;
 }
 
 .testInstructions {
@@ -35,7 +35,8 @@
   justify-content: left;
   text-align: left;
   width: 40vw;
-  line-height: 1.5;
+  margin-left: 1rem;
+  line-height: 200%;
  
 }
 
@@ -43,6 +44,8 @@
   box-sizing: border-box;
   color: $techSwitchWhite;
   font-size: $desktopButtonFontSize;
+  margin-top: 5vh;
+  margin-right: 1vw;
   width: 50vw;
 }
 
@@ -57,7 +60,7 @@
   top: 0;
   right: 0;
   text-align: right;
-  margin-left: 0.5rem;
+  margin: 0.5rem;
 }
 
 //Media Queries
@@ -69,14 +72,9 @@
           }
           .instructionsHeader {
             font-size: $highResSubHeaderFontSize;
-            margin-top: 2.5vh;
-            padding: 2.5rem;
           }
-          .instructions {
+          .testInstructions {
             font-size: $highResBodyFontSize;
-            padding: 2rem;
-            margin-top: 1vh;
-            margin-bottom: 0.8vh;
           }
           .testTitle {
             font-size: $highResSubHeaderFontSize;
@@ -100,15 +98,10 @@
           }
           .instructionsHeader {
             font-size: $lowResSubHeaderFontSize;
-            margin-top: 0.75vh;
-            margin-bottom: 0.4vh;
-            padding: 0.25rem;
           }
-          .instructions {
+          .testInstructions {
             font-size: $lowResBodyFontSize;
-            padding: 0.8rem;
-            margin: 0.8vh 0.2vw;
-            max-width: 80vw;
+            line-height: 150%;
           }
           .testTitle {
             font-size: $lowResSubHeaderFontSize;
