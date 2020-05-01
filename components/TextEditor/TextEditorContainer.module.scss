@@ -1,8 +1,9 @@
 @import "../../pageStyles/constants";
 .editorBox {
+  box-sizing: border-box;
   border-style: solid;
   border-width: 5px;
-  width: 50vw;
+  max-width: 50vw;
   border-color: $techSwitchYellow;
 }
 

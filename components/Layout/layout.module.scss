@@ -12,23 +12,23 @@
 .logoHeader {
   box-sizing: border-box;
   width: 15vw;
-  padding: 0.6rem;
-  margin: 0.6rem;
+  padding: 0.2rem;
+  margin: 0.2rem;
   align-self: flex-start;
 }
 
 @media (min-width: $mediaHighResMinWidth){
   .logoHeader {
     //High Resolution 2000px and above
-    width: 10vw;
+   width: 450px;
   }
 }
 @media (max-width: $mediaLowResMaxWidth){
   .logoHeader {
-    //Low Resolution 800px and below
-    width: 50vw;
-    padding: 0.2rem;
-    margin: 0.2rem;
+    //Low Resolution 900px and below
+    max-width: 70vw;
+    min-width: 120px;
+    
   }
 }
 

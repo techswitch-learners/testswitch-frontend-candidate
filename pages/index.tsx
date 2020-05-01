@@ -8,7 +8,7 @@ import {TestList} from "../components/CandidateTestView/Tests/TestList";
 
 export let screenWidth = 1080;
 export const testToRender: CandidateTestModel = TestList[1];
-function reportScreenWidth(): number {
+export function reportScreenWidth(): number {
     screenWidth = screen.width;
     window.addEventListener('resize', reportScreenWidth);
     return screenWidth;

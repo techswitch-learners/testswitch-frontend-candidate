@@ -3,6 +3,7 @@ import Editor from "@monaco-editor/react";
 import {TextEditorSettings} from "./TextEditorSettings";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
 import Link from "next/link";
+import {reportScreenWidth} from "../../pages";
 
 type EditorContentGetter = () => string;
 
@@ -19,6 +20,7 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
 
     function handleIsEditorMounted(_getEditorContents: EditorContentGetter): void {
         setIsEditorReady(true);
+        window.addEventListener('resize', reportScreenWidth);
         getEditorContentIfMountedRef.current = _getEditorContents;
     }
 

@@ -12,7 +12,7 @@ function getFontSize(): number {
     } else if (screenWidth>3000) {
         fontSize = 30
     } else {
-        fontSize = 25;
+        fontSize = 20;
     }
     return fontSize;
 }
