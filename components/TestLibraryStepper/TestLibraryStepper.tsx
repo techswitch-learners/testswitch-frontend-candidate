@@ -3,10 +3,15 @@ import {Step, StepLabel, Stepper, Typography} from '@material-ui/core';
 import {MuiThemeProvider} from '@material-ui/core/styles';
 import {CandidateTestStatus} from "../../pages/api/candidateApiClient.module";
 import TestSwitchStepIcon from "../TestLibraryStepperIcons/TestLibraryStepperIcons";
+<<<<<<< master
 import {h1Style, TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
 import Link from "next/link";
 import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
 
+=======
+import {TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
+import TokenLink from "../TokenLink/TokenLink";
+>>>>>>> changed querytoken to tokenlink
 
 interface TestLibraryStepperProps {
     candidateTestStatus: CandidateTestStatus[];
@@ -49,6 +54,7 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                         All tests completed.
                     </Typography>
                 ) : (
+<<<<<<< master
                     <Typography align={"center"}>
                         <Link href={`/test${activeStep + 1}`}>
                             <a className={scss.buttonYellow}>
@@ -56,6 +62,19 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                             </a>
                         </Link>
                     </Typography>
+=======
+                    <div className="stepperBtnContainer">
+                        <div>
+                            <Typography align={"center"}>
+                                <TokenLink href={`/test${activeStep + 1}`}>
+                                    <a className="stepperBtn">
+                                        {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
+                                    </a>
+                                </TokenLink>
+                            </Typography>
+                        </div>
+                    </div>
+>>>>>>> changed querytoken to tokenlink
                 )}
             </section>
         </article>
