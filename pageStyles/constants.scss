@@ -21,9 +21,9 @@ $techSwitchFont: Open Sans, sans-serif;
     //High Resolution 2000px and above
     $mediaHighResMinWidth: 2500px;
     $highResHeaderFontSize: 5rem;
-    $highResSubHeaderFontSize: 4.6rem;
-    $highResButtonFontSize: 4rem;
-    $highResBodyFontSize: 3.6rem;
+    $highResSubHeaderFontSize: 4rem;
+    $highResButtonFontSize: 3.5rem;
+    $highResBodyFontSize: 3rem;
 
 //Buttons
 @mixin techSwitchButton($backgroundColour: $techSwitchBlack, $inverseColour: $techSwitchYellow, $fontSize: $desktopButtonFontSize) {
