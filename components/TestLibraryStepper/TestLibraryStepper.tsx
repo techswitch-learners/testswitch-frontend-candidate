@@ -14,7 +14,7 @@ interface TestLibraryStepperProps {
     candidateTestStatus: CandidateTestStatus[];
 }
 
-function getSteps() {
+function getSteps(): string[] {
     //TODO: mock data, set number of steps based on test range, maybe props.candidateTestStatus.tests.length?
     //Temporarily counts tests in list
     const testNumber = TestList.length;
