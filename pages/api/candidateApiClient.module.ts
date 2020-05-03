@@ -1,8 +1,13 @@
 ﻿import fetch from "node-fetch";
+import getConfig from 'next/config';
 
 export interface CandidateTestStatus {
     testId: string;
     testResult: string;
+}
+export interface NewTestSubmission{
+    testId: number;
+    testAnswer: string;
 }
 
 const baseUrl = `https://localhost:5001`;
@@ -35,4 +40,17 @@ export async function getCandidateTests() {
         console.error(error);
         return error.message;
     }
+}
+
+export async function addTestSubmisson( tokenId: string, newTestSubmission: NewTestSubmission) {
+    const {publicRuntimeConfig} = getConfig();
+    const apiURL = publicRuntimeConfig.API_URL;
+
+    return await fetch(`${apiURL}/sessions/${tokenId}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newTestSubmission),
+    });
 }

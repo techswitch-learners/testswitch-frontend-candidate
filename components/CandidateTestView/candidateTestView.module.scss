@@ -7,25 +7,15 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0.8rem;
+  
 }
 .testInstructions {
-  min-height: 60vh;
-  max-height: 90vh;
-  min-width: 40vw;
-  max-width: 50vw;
+ padding: 1vw;
 }
 
-.instructionList {
-  box-sizing: border-box;
-}
-.instructionsHeader {
+.instructionsSubheader {
   font-size: $desktopSubHeaderFontSize;
-}
-.testInstructionsHeader {
-  box-sizing: border-box;
-  color: $techSwitchWhite;
-  font-size: $desktopSubHeaderFontSize;
+  line-height: 1rem;
 }
 
 .testInstructions {
@@ -56,7 +46,6 @@
   font-size: $desktopHeaderFontSize;
   max-width: 40vw;
   white-space: nowrap;
-  overflow-wrap: break-spaces;
   position: absolute;
   top: 0;
   right: 0;
@@ -68,7 +57,10 @@
 
         @media (min-width: $mediaHighResMinWidth){
           //High Resolution 2000px and above
-          
+          .instructionsSubheader {
+            box-sizing: border-box;
+            font-size: $highResSubHeaderFontSize;
+          }
           .instructionsHeader {
             font-size: $highResSubHeaderFontSize;
           }
@@ -90,7 +82,10 @@
         }
         @media (max-width: $mediaLowResMaxWidth){
           //Low Resolution 900px and below
-          
+          .instructionsSubheader {
+            box-sizing: border-box;
+            font-size: $lowResSubHeaderFontSize;
+          }
           .instructionsHeader {
             font-size: $lowResSubHeaderFontSize;
           }
@@ -99,6 +94,8 @@
           }
           .testTitle {
             font-size: $lowResHeaderFontSize;
+            white-space: normal;
+            overflow-wrap: break-spaces;
             margin-right: 3.8rem;
             margin-top: 1.5rem;
           }

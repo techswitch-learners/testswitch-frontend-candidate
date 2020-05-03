@@ -5,9 +5,9 @@ import {CandidateTestModel} from "../../../Models/CandidateTestModel";
 const InstructionsBlock = (testModel: CandidateTestModel): JSX.Element => (
     <div>
         <p className={scss.instructionList}>{testModel.brief}</p>
-        <h2>Example</h2>
+        <p className={scss.instructionsSubheader}><strong>Example</strong></p>
         <p className={scss.instructionList}>{testModel.example}</p>
-        <h2>Input/Output</h2>
+        <p className={scss.instructionsSubheader}><strong>Input/Output</strong></p>
         <ul className={scss.instructionList}>
             <li className={scss.instructionList}><strong>[input] {testModel.inputType}</strong><br/>{testModel.inputDescription}</li>
             <li className={scss.instructionList}><strong>[output] {testModel.outputType}</strong><br/>{testModel.outputDescription}</li>

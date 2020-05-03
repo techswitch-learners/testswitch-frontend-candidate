@@ -7,11 +7,13 @@
   font-family: $techSwitchFont;
   max-height: 100vh;
   max-width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
 .logoHeader {
   box-sizing: border-box;
-  width: 15vw;
+  width: 20vw;
   padding: 0.2rem;
   margin: 0.2rem;
   align-self: flex-start;
@@ -20,14 +22,13 @@
 @media (min-width: $mediaHighResMinWidth){
   .logoHeader {
     //High Resolution 2000px and above
-   width: 450px;
+   width: 12vw;
   }
 }
 @media (max-width: $mediaLowResMaxWidth){
   .logoHeader {
     //Low Resolution 900px and below
-    max-width: 70vw;
-    min-width: 120px;
+    width: 40vw;
     
   }
 }
