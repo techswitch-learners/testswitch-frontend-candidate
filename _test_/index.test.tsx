@@ -6,7 +6,8 @@ import * as NextRouter from "next/router";
 test('Check that the home page renders', async () => {
     
     const mockNextUseRouter = jest.spyOn(NextRouter, "useRouter");
-    // @ts-ignore esline-disable-next-line
+    //@ts-ignore 
+    //esline-disable-next-line
     mockNextUseRouter.mockReturnValue({query: {token: "100"}});
    
     const home = render(<Home/>);
