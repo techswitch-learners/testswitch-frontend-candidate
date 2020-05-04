@@ -2,11 +2,11 @@
 import {GetServerSideProps, NextPage} from "next";
 import Head from "next/head";
 import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStepper";
-import {SessionCandidate, getSessionCandidate} from "./api/candidateApiClient.module"
+import {getSessionCandidate, SessionCandidate} from "./api/candidateApiClient.module"
 import Layout from "../components/Layout/layout";
 
 interface TestlibraryProps {
-    sessionCandidate : SessionCandidate;
+    sessionCandidate: SessionCandidate;
 }
 
 const TestLibrary: NextPage<TestlibraryProps> = ({sessionCandidate}) => {

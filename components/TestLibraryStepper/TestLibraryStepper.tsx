@@ -18,13 +18,13 @@ interface TestLibraryStepperProps {
 function getSteps(testArr: CandidateTestStatus[]) {
     //set labels for steps
     const testLabelArray = [];
-    testLabelArray.push(testArr.map(test=>test.testName));
+    testLabelArray.push(testArr.map(test => test.testName));
     return testLabelArray;
 }
 
-function getActiveStep(testArr:CandidateTestStatus[]) {
+function getActiveStep(testArr: CandidateTestStatus[]) {
     //check for number of completed tests
-    const completedTests=(testArr.filter(({testStatus})=>testStatus==="Completed"));
+    const completedTests = (testArr.filter(({testStatus}) => testStatus === "Completed"));
     return completedTests.length;
 }
 

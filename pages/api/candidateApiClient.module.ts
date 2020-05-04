@@ -11,7 +11,7 @@ export interface CandidateTestStatus {
     testStatus: string;
 }
 
-export async function getSessionCandidate(token: string):Promise<SessionCandidate> {
+export async function getSessionCandidate(token: string): Promise<SessionCandidate> {
     const baseUrl = `https://testswitch-api-staging.herokuapp.com/sessions/`;
     try {
         const result = await fetch(
