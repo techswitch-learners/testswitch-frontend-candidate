@@ -8,7 +8,7 @@ import {useRouter} from "next/router";
 import {Response} from "node-fetch";
 
 type EditorContentGetter = () => string;
-type FormStatus = "READY" | "SUBMITTING" | "ERROR" | "FINISHED"
+
 
 
 interface TextEditorContainerProps {
@@ -16,14 +16,10 @@ interface TextEditorContainerProps {
     width: string;
     defaultText: string;
     token:string;
-    testNumber:number
+    testId:number
 }
-const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({height, width, defaultText,token,testNumber}) => {
+const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({height, width, defaultText,token,testId}) => {
     const [isEditorReady, setIsEditorReady] = useState(false);
-    const [status, setStatus] = useState<FormStatus>("READY");
-    const [tokenId, setToken] = useState("");
-    const [testId, setTest] = useState(0);
-    const [testAnswer, setTestAnswer] = useState("");
     const [error, setError] = useState("");
     const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
     const router=useRouter();
@@ -31,16 +27,14 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
     function handleIsEditorMounted(_getEditorContents: EditorContentGetter): void {
         setIsEditorReady(true);
         getEditorContentIfMountedRef.current = _getEditorContents;
-        setTestAnswer(getEditorContentIfMountedRef.current());
-        setTest(testNumber);
-        setToken(token);
-    }
+     }
 
    
-    function submitForm() {      
-        addTestSubmisson(tokenId,{testId,testAnswer})
+    function submitForm() {
+        var testAnswer=getEditorContentIfMountedRef.current();
+        addTestSubmisson(token,{testId,testAnswer})
             .then((response)=>{  
-                if (response.status>= 200 && response.status <= 299) {
+                if (response.ok) {
                     router.push('/submitted');
                 } else {
                      throw Error(response.statusText);
@@ -64,10 +58,11 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
                 value={defaultText}
                 editorDidMount={handleIsEditorMounted}
                 options={TextEditorSettings}
+                
             />
         </div>
             
-                <a className={scss.buttonBlack} onClick={submitForm}>Submit Code</a>
+                <button className={scss.buttonBlack} onClick={submitForm}>Submit Code</button>
          
         </section>
         

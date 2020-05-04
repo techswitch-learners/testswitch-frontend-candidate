@@ -24,7 +24,7 @@ const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.
                      width="100%"
                      defaultText={candidateTestViewProps.test.testStarterCode}
                      token={candidateTestViewProps.token}
-                     testNumber={candidateTestViewProps.test.number}
+                     testId={candidateTestViewProps.test.number}
                 />
             </section>
         </div>
