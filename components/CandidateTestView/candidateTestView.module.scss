@@ -55,31 +55,31 @@
 
 //Media Queries
 
-        @media (min-width: $mediaHighResMinWidth){
-          //High Resolution 2000px and above
-          .instructionsSubheader {
-            box-sizing: border-box;
-            font-size: $highResSubHeaderFontSize;
-          }
-          .instructionsHeader {
-            font-size: $highResSubHeaderFontSize;
-          }
-          .testInstructions {
-            font-size: $highResBodyFontSize;
-            line-height: 200%;
-          }
-          .testTitle {
-            font-size: $highResHeaderFontSize;
-            margin-top: 0.5vh;
-            margin-bottom: 0.8vh;
-            padding: 2.5rem;
-          }
-          .buttonYellow{
-            @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $highResBodyFontSize);
-            min-width: 15vw;
-            margin: 3rem;
-          }
-        }
+        //@media (min-width: $mediaHighResMinWidth){
+        //  //High Resolution 2000px and above
+        //  .instructionsSubheader {
+        //    box-sizing: border-box;
+        //    font-size: $highResSubHeaderFontSize;
+        //  }
+        //  .instructionsHeader {
+        //    font-size: $highResSubHeaderFontSize;
+        //  }
+        //  .testInstructions {
+        //    font-size: $highResBodyFontSize;
+        //    line-height: 200%;
+        //  }
+        //  .testTitle {
+        //    font-size: $highResHeaderFontSize;
+        //    margin-top: 0.5vh;
+        //    margin-bottom: 0.8vh;
+        //    padding: 2.5rem;
+        //  }
+        //  .buttonYellow{
+        //    @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $highResBodyFontSize);
+        //    min-width: 15vw;
+        //    margin: 3rem;
+        //  }
+        //}
         @media (max-width: $mediaLowResMaxWidth){
           //Low Resolution 900px and below
           .instructionsSubheader {

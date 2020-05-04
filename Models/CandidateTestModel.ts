@@ -12,3 +12,13 @@ export interface CandidateTestModel {
     expectedOutput: string | number;
 }
 
+export interface CandidateTestStatusModel {
+    candidateTest: CandidateTestModel;
+    testStartedTimeStamp: number | undefined;
+    testSubmittedTimeStamp: number | undefined;
+}
+
+export interface TestLibraryStepperProps {
+    candidateTestsStatus: CandidateTestStatusModel[];
+    candidateUniqueUrl: string;
+}

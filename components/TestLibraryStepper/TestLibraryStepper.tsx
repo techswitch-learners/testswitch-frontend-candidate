@@ -1,18 +1,13 @@
 ﻿import React from "react";
 import {Step, StepLabel, Stepper, Typography} from '@material-ui/core';
 import {MuiThemeProvider} from '@material-ui/core/styles';
-import {CandidateTestStatus} from "../../pages/api/candidateApiClient.module";
 import TestSwitchStepIcon from "../TestLibraryStepperIcons/TestLibraryStepperIcons";
 import {h1Style, TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
 import Link from "next/link";
 import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
 import {TestList} from "../CandidateTestView/Tests/TestList";
 import {testToRender} from "../../pages";
-
-
-interface TestLibraryStepperProps {
-    candidateTestStatus: CandidateTestStatus[];
-}
+import {TestLibraryStepperProps} from "../../Models/CandidateTestModel";
 
 function getSteps(): string[] {
     //TODO: mock data, set number of steps based on test range, maybe props.candidateTestStatus.tests.length?
