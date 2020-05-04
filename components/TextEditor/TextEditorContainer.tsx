@@ -31,7 +31,7 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
 
    
     function submitForm() {
-        let testAnswer=getEditorContentIfMountedRef.current();
+        const testAnswer=getEditorContentIfMountedRef.current();
         addTestSubmisson(token,{testId,testAnswer})
             .then((response)=>{  
                 if (response.ok) {

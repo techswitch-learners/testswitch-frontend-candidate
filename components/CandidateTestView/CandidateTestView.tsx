@@ -6,7 +6,7 @@ import InstructionsBlock from "./Instructions/Instructions";
 
 interface CandidateTestViewProps {
     test: CandidateTestModel;
-    token:string;
+    token: string;
 }
 const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.Element => (
     
