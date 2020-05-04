@@ -1,33 +1,31 @@
 ﻿import React from "react";
 import {Step, StepLabel, Stepper, Typography} from '@material-ui/core';
 import {MuiThemeProvider} from '@material-ui/core/styles';
-import {CandidateTestStatus} from "../../pages/api/candidateApiClient.module";
 import TestSwitchStepIcon from "../TestLibraryStepperIcons/TestLibraryStepperIcons";
 import {h1Style, TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
 import Link from "next/link";
 import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
 
-
-interface TestLibraryStepperProps {
-    candidateTestStatus: CandidateTestStatus[];
+interface CandidateTestStatus {
+    testName: string;
+    testResult: string;
 }
 
-function getSteps() {
-    //TODO: mock data, set number of steps based on test range, maybe props.candidateTestStatus.tests.length?
-    const testNumber = 3;
+interface TestLibraryStepperProps {
+    candidateTestStatuses: CandidateTestStatus[];
+}
 
+function getSteps(testArr: CandidateTestStatus[]) {
     //set labels for steps
     const testLabelArray = [];
-    while (testLabelArray.length + 1 <= testNumber) {
-        testLabelArray.push(`Test ${testLabelArray.length + 1}`);
-    }
+    testLabelArray.push(testArr.map(test=>test.testName));
     return testLabelArray;
 }
 
 export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
-    const steps = getSteps();
-    //TODO this is example data, set active step with candidate number of results, maybe props.candidateTestStatus.results.length?
-    const activeStep = 1;
+    const steps = getSteps(props.candidateTestStatuses);
+    let activeStep = 0;
+    const completedTests = props.candidateTestStatuses.map(test => test.testResult === 'Completed'?(test.testName):('none'));
 
     return (
         <article className="stepperContainer">
@@ -35,7 +33,7 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                 <Stepper style={{backgroundColor: "transparent"}} alternativeLabel activeStep={activeStep}
                          connector={<TestSwitchConnector/>}>
                     {steps.map((label, status) => (
-                        <Step key={label}>
+                        <Step key={label.length}>
                             <StepLabel StepIconComponent={TestSwitchStepIcon} className="stepLabel"><h1
                                 style={h1Style}>{label}</h1>
                             </StepLabel>

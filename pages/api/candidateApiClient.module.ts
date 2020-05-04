@@ -1,38 +1,42 @@
 ﻿import fetch from "node-fetch";
 
-export interface CandidateTestStatus {
-    testId: string;
+export interface SessionCandidate {
+    firstName: string;
+    lastName: string;
+    testStatuses: CandidateTestStatus[];
+}
+
+interface CandidateTestStatus {
+    testName: string;
     testResult: string;
 }
 
-const baseUrl = `https://localhost:5001`;
-
-export async function getCandidateTestResults() {
+export async function getSessionCandidate(token: string):Promise<SessionCandidate> {
+    const baseUrl = `https://testswitch-api-staging.herokuapp.com/sessions/`;
     try {
         const result = await fetch(
-            //TODO: placeholder endpoint
-            `https://testswitch-api-staging.herokuapp.com/candidates`
+            `${baseUrl}${token}`
         );
         const data = await result.json();
-        //TODO: configure for future api call to candidate results, this is currently set to the candidates endpoint
-        return data.items;
+        return data;
     } catch (error) {
         console.error(error);
         return error.message;
     }
 }
 
-export async function getCandidateTests() {
+export async function getCandidateTests(token: string): Promise<SessionCandidate>{
+    const baseUrl = `https://testswitch-api-staging.herokuapp.com/sessions/`;
     try {
         const result = await fetch(
             //TODO: placeholder endpoint
-            `https://testswitch-api-staging.herokuapp.com/candidates`
+            `${baseUrl}+${token}`
         );
         const data = await result.json();
-        //TODO: configure for future api call to candidate results, this is currently set to the candidates endpoint
-        return data.items[0].id;
+        return data.testStatuses
     } catch (error) {
         console.error(error);
         return error.message;
     }
 }
+
