@@ -6,8 +6,8 @@ export interface CandidateTestStatus {
     testResult: string;
 }
 export interface NewTestSubmission{
-    testId:number;
-    testAnswer:string;
+    testId: number;
+    testAnswer: string;
 }
 
 const baseUrl = `https://localhost:5001`;
@@ -42,7 +42,7 @@ export async function getCandidateTests() {
     }
 }
 
-export async function addTestSubmisson( tokenId:string,newTestSubmission: NewTestSubmission) {
+export async function addTestSubmisson( tokenId: string,newTestSubmission: NewTestSubmission) {
     const { publicRuntimeConfig } = getConfig();
     const apiURL=publicRuntimeConfig.API_URL;
   

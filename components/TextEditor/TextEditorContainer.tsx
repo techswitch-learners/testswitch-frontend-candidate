@@ -15,8 +15,8 @@ interface TextEditorContainerProps {
     height: string;
     width: string;
     defaultText: string;
-    token:string;
-    testId:number
+    token: string;
+    testId: number;
 }
 const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({height, width, defaultText,token,testId}) => {
     const [isEditorReady, setIsEditorReady] = useState(false);
@@ -31,7 +31,7 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
 
    
     function submitForm() {
-        var testAnswer=getEditorContentIfMountedRef.current();
+        let testAnswer=getEditorContentIfMountedRef.current();
         addTestSubmisson(token,{testId,testAnswer})
             .then((response)=>{  
                 if (response.ok) {
