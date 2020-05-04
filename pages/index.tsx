@@ -6,13 +6,7 @@ import Link from "next/link";
 import {CandidateTestModel} from "../Models/CandidateTestModel";
 import {TestList} from "../components/CandidateTestView/Tests/TestList";
 
-export let screenWidth = 1080;
 export const testToRender: CandidateTestModel = TestList[1];
-export function reportScreenWidth(): number {
-    screenWidth = screen.width;
-    window.addEventListener('resize', reportScreenWidth);
-    return screenWidth;
-}
 
 const Home: NextPage = () =>
     <Layout>
@@ -25,7 +19,7 @@ const Home: NextPage = () =>
                 <li>When you are ready and sure you won’t be disturbed, please click “Start”</li>
             </ul>
             <Link href={"/testlibrary"}>
-                <a onClick={(): number => reportScreenWidth()} className={scss.buttonYellow}>Start</a>
+                <a className={scss.buttonYellow}>Start</a>
             </Link>
         </section>
     </Layout>;
