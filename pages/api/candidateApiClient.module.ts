@@ -6,9 +6,9 @@ export interface SessionCandidate {
     testStatuses: CandidateTestStatus[];
 }
 
-interface CandidateTestStatus {
+export interface CandidateTestStatus {
     testName: string;
-    testResult: string;
+    testStatus: string;
 }
 
 export async function getSessionCandidate(token: string):Promise<SessionCandidate> {
@@ -24,19 +24,3 @@ export async function getSessionCandidate(token: string):Promise<SessionCandidat
         return error.message;
     }
 }
-
-export async function getCandidateTests(token: string): Promise<SessionCandidate>{
-    const baseUrl = `https://testswitch-api-staging.herokuapp.com/sessions/`;
-    try {
-        const result = await fetch(
-            //TODO: placeholder endpoint
-            `${baseUrl}+${token}`
-        );
-        const data = await result.json();
-        return data.testStatuses
-    } catch (error) {
-        console.error(error);
-        return error.message;
-    }
-}
-

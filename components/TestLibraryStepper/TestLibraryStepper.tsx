@@ -8,7 +8,7 @@ import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
 
 interface CandidateTestStatus {
     testName: string;
-    testResult: string;
+    testStatus: string;
 }
 
 interface TestLibraryStepperProps {
@@ -22,16 +22,23 @@ function getSteps(testArr: CandidateTestStatus[]) {
     return testLabelArray;
 }
 
+function getActiveStep(testArr:CandidateTestStatus[]) {
+    //check for number of completed tests
+    const completedTests=(testArr.filter(({testStatus})=>testStatus==="Completed"));
+    return completedTests.length;
+}
+
+
 export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
     const steps = getSteps(props.candidateTestStatuses);
-    let activeStep = 0;
-    const completedTests = props.candidateTestStatuses.map(test => test.testResult === 'Completed'?(test.testName):('none'));
+    const activeStep = getActiveStep(props.candidateTestStatuses);
 
     return (
         <article className="stepperContainer">
             <MuiThemeProvider theme={TestSwitchTheme}>
                 <Stepper style={{backgroundColor: "transparent"}} alternativeLabel activeStep={activeStep}
-                         connector={<TestSwitchConnector/>}>
+                         connector
+                             ={<TestSwitchConnector/>}>
                     {steps.map((label, status) => (
                         <Step key={label.length}>
                             <StepLabel StepIconComponent={TestSwitchStepIcon} className="stepLabel"><h1
@@ -43,7 +50,7 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
             </MuiThemeProvider>
             <section className="stepperBtnContainer">
                 {activeStep === steps.length ? (
-                    <Typography align={"center"} className="finished">
+                    <Typography style={h1Style} align={"center"} className="finished">
                         All tests completed.
                     </Typography>
                 ) : (

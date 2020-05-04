@@ -26,7 +26,7 @@ const TestLibrary: NextPage<TestlibraryProps> = ({sessionCandidate}) => {
 };
 
 //TODO placeholder id for candidateID,until url has token as query
-const candidateToken = `e701b7bc-6fb2-4b7e-a8ab-ef5ff66c43bd`;
+const candidateToken = `815b47a8-0b7a-4d6a-99e9-2fe130c5b774`;
 
 export const getServerSideProps: GetServerSideProps = async context => {
     const token = context.query.token as string;
