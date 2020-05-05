@@ -3,30 +3,34 @@
 .layout {
   background-color: $techSwitchBlack;
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   border-style: none;
   font-family: $techSwitchFont;
-}
-
-body {
+  max-height: 100vh;
+  max-width: 100vw;
   margin: 0;
+  padding: 0;
 }
 
 .logoHeader {
-  width: 100px;
-  padding: 15px;
-  margin: 6px;
+  box-sizing: border-box;
+  width: 20vw;
+  padding: 0.2rem;
+  margin: 0.2rem;
   align-self: flex-start;
 }
 
-@media (min-width: 768px){
-  .logoHeader{
-    width: 200px;
+//@media (min-width: $mediaHighResMinWidth){
+//  .logoHeader {
+//    //High Resolution 2000px and above
+//   width: 12vw;
+//  }
+//}
+@media (max-width: $mediaLowResMaxWidth){
+  .logoHeader {
+    //Low Resolution 900px and below
+    width: 40vw;
+    
   }
 }
 
-.layoutHeader {
-  width: 100vw;
-  text-align: left;
-}
+

@@ -1,4 +1,5 @@
 ﻿import {editor} from "monaco-editor";
+
 type TextEditorOptions = editor.IEditorOptions;
 
 const TextEditorSettings: TextEditorOptions = {
@@ -9,11 +10,11 @@ const TextEditorSettings: TextEditorOptions = {
         enabled: false
     },
     folding: false,
-    fontSize: 26,
     minimap: {
         enabled: true,
         scale: 100
     },
+    fontSize: 18,
     suggest: {
         showMethods: false,
         showFunctions: false,

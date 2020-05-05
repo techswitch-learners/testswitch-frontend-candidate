@@ -13,12 +13,12 @@ const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.
         <div className={scss.testPage}>
             <h1 className={scss.testTitle}>Test {candidateTestViewProps.test.number}: {candidateTestViewProps.test.title}</h1>
             <section className={scss.testInstructions}>
-                <h2 className={scss.instructionsHeader}>{candidateTestViewProps.test.title}</h2>
+                <p className={scss.instructionsSubheader}><strong>{candidateTestViewProps.test.title}</strong></p>
                 <div id={"testInstructions"} className={scss.instructions}>
                     {InstructionsBlock(candidateTestViewProps.test)}
                 </div>
             </section>
-            <section className={scss.textEditor}>
+            <div className={scss.textEditor}>
                 <TextEditorContainer 
                      height="50vh" 
                      width="100%"
@@ -26,7 +26,7 @@ const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.
                      token={candidateTestViewProps.token}
                      testId={candidateTestViewProps.test.number}
                 />
-            </section>
+            </div>
         </div>
 
 );

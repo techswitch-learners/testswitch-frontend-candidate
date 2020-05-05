@@ -1,82 +1,108 @@
 ﻿﻿@import "../../pageStyles/constants";
 .testPage {
-  max-height: 800px;
+  box-sizing: border-box;
+  max-height: 100vh;
   max-width: 100vw;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin-top: 2vh;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  
 }
-
 .testInstructions {
-  height: 500px;
-  max-width: 50vw;
-
-}
-.instructionList {
-  margin-bottom: 1em;
+ padding: 1vw;
 }
 
-.testInstructionsHeader {
-  color: $techSwitchWhite;
+.instructionsSubheader {
   font-size: $desktopSubHeaderFontSize;
-  margin-bottom: 12px;
-  padding: 5px;
+  line-height: 1rem;
 }
 
 .testInstructions {
+  box-sizing: border-box;
   color: $techSwitchWhite;
   white-space: pre-wrap;
-  font-size: $bodyFontSize;
+  font-size: $desktopBodyFontSize;
   justify-content: left;
   text-align: left;
   width: 40vw;
-  line-height: 1.5;
-  padding-left: 3vw;
-  margin-top: 12px;
-  margin-bottom: 24px;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-left: 1rem;
+  line-height: 130%;
+ 
 }
 
 .textEditor {
+  box-sizing: border-box;
   color: $techSwitchWhite;
-  font-size: $buttonFontSize;
-  justify-content: right;
+  font-size: $desktopBodyFontSize;
   margin-top: 5vh;
   margin-right: 1vw;
+  width: 50vw;
 }
 
 .testTitle {
+  box-sizing: border-box;
   color: $techSwitchYellow;
-  font-size: 30pt;
+  font-size: $desktopHeaderFontSize;
   max-width: 40vw;
   white-space: nowrap;
-  margin: 5px;
-  padding: 5px;
-  top: 1vh;
-  right: 2vw;
-  overflow: hidden;
   position: absolute;
+  top: 0;
+  right: 0;
   text-align: right;
+  margin: 0.5rem;
 }
 
-.editorBox {
-  border-style: solid;
-  border-width: 5px;
-  border-color: $techSwitchYellow;
-}
+//Media Queries
 
-.sampleInputOutput {
-  margin: 5px;
-  padding: 5px;
-  top: 85vh;
-  left: 46vw;
-  display: flex;
-  flex-direction: column;
-  line-height: 0;
-  position: absolute;
-  overflow: hidden;
-}
+        //@media (min-width: $mediaHighResMinWidth){
+        //  //High Resolution 2000px and above
+        //  .instructionsSubheader {
+        //    box-sizing: border-box;
+        //    font-size: $highResSubHeaderFontSize;
+        //  }
+        //  .instructionsHeader {
+        //    font-size: $highResSubHeaderFontSize;
+        //  }
+        //  .testInstructions {
+        //    font-size: $highResBodyFontSize;
+        //    line-height: 200%;
+        //  }
+        //  .testTitle {
+        //    font-size: $highResHeaderFontSize;
+        //    margin-top: 0.5vh;
+        //    margin-bottom: 0.8vh;
+        //    padding: 2.5rem;
+        //  }
+        //  .buttonYellow{
+        //    @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $highResBodyFontSize);
+        //    min-width: 15vw;
+        //    margin: 3rem;
+        //  }
+        //}
+        @media (max-width: $mediaLowResMaxWidth){
+          //Low Resolution 900px and below
+          .instructionsSubheader {
+            box-sizing: border-box;
+            font-size: $lowResSubHeaderFontSize;
+          }
+          .instructionsHeader {
+            font-size: $lowResSubHeaderFontSize;
+          }
+          .testInstructions {
+            font-size: $lowResBodyFontSize;
+          }
+          .testTitle {
+            font-size: $lowResHeaderFontSize;
+            white-space: normal;
+            overflow-wrap: break-spaces;
+            margin-right: 1rem;
+            margin-top: 1.5rem;
+          }
+          .buttonYellow{
+            @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $lowResBodyFontSize);
+            max-width: 40vw;
+          }
+        }
 
 

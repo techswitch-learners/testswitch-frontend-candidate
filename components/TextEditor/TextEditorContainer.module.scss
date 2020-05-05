@@ -1,14 +1,40 @@
 @import "../../pageStyles/constants";
 .editorBox {
+  box-sizing: border-box;
   border-style: solid;
   border-width: 5px;
-  width: 50vw;
+  max-width: 50vw;
   border-color: $techSwitchYellow;
 }
 
 .buttonBlack{
   @include techSwitchButton();
   display: block;
+}
+
+//@media (min-width: $mediaHighResMinWidth) {
+//  //High Resolution 2000px and above
+//  .editorBox {
+//    border-width: 0.8rem;
+//  }
+//
+//  .buttonBlack{
+//    font-size: $highResBodyFontSize;
+//    border-width: 0.8rem;
+//    min-width: 400px;
+//  }
+//}
+@media (max-width: $mediaLowResMaxWidth) {
+  //Low Resolution 900px and below
+  .editorBox {
+    border-width: 0.2rem;
+  }
+
+  .buttonBlack{
+    font-size: $lowResBodyFontSize;
+    border-width: 0.2rem;
+    max-width: 40vw;
+  }
 }
 
 .error{

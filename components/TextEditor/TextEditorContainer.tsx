@@ -3,7 +3,8 @@ import Editor from "@monaco-editor/react";
 import {TextEditorSettings} from "./TextEditorSettings";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
 import Link from "next/link";
-import {addTestSubmisson} from "../../pages/api/candidateApiClient.module";
+import TokenLink from "../TokenLink/TokenLink";
+import {addTestSubmission} from "../../pages/api/candidateApiClient.module";
 import {useRouter} from "next/router";
 import {Response} from "node-fetch";
 
@@ -23,30 +24,30 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
     const [error, setError] = useState("");
     const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
     const router=useRouter();
-    
+
     function handleIsEditorMounted(_getEditorContents: EditorContentGetter): void {
         setIsEditorReady(true);
         getEditorContentIfMountedRef.current = _getEditorContents;
      }
 
-   
+
     function submitForm() {
         const testAnswer=getEditorContentIfMountedRef.current();
-        addTestSubmisson(token,{testId,testAnswer})
-            .then((response)=>{  
+        addTestSubmission(token,{testId,testAnswer})
+            .then((response)=>{
                 if (response.ok) {
                     router.push('/submitted');
                 } else {
                      throw Error(response.statusText);
                 }
-            })           
+            })
             .catch(error=>{console.log(error);
                 setError("There was an error submitting your test")});
-            
+
     }
 
     return (
-        
+
         <section>
             <p className={scss.error}>{error}</p>
         <div className={scss.editorBox}>
@@ -58,14 +59,14 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
                 value={defaultText}
                 editorDidMount={handleIsEditorMounted}
                 options={TextEditorSettings}
-                
+
             />
         </div>
-            
-                <button className={scss.buttonBlack} onClick={submitForm}>Submit Code</button>
-         
+            <TokenLink href={"/submitted"}>
+                <a className={scss.buttonBlack} onClick={handleShowValue}>Submit Code</a>
+            </TokenLink>
         </section>
-        
+
     );
 };
 
