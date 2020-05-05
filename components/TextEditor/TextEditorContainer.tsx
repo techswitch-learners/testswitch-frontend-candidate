@@ -9,8 +9,6 @@ import {testToRender} from "../../pages";
 
 type EditorContentGetter = () => string;
 
-
-
 interface TextEditorContainerProps {
     height: string;
     width: string;
@@ -44,6 +42,9 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
                 setError("There was an error submitting your test")});
     }
 
+    const handleSubmit = () => {
+        submitForm();
+    }
     return (
 
         <section>

@@ -57,7 +57,7 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                     </Typography>
                 ) : (
                     <Typography align={"center"}>
-                        <TokenLink href={`/test${activeStep + 1}`} as={testToRender.title}>
+                        <TokenLink href={'/testpage'} as={testToRender.title}>
                             <a className={scss.buttonYellow}>
                                 {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
                             </a>
