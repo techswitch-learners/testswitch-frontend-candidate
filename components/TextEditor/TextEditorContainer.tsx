@@ -24,31 +24,30 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
     const [error, setError] = useState("");
     const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
     const router=useRouter();
-    
+
     function handleIsEditorMounted(_getEditorContents: EditorContentGetter): void {
         setIsEditorReady(true);
-        window.addEventListener('resize', reportScreenWidth);
         getEditorContentIfMountedRef.current = _getEditorContents;
      }
 
-   
+
     function submitForm() {
         const testAnswer=getEditorContentIfMountedRef.current();
         addTestSubmisson(token,{testId,testAnswer})
-            .then((response)=>{  
+            .then((response)=>{
                 if (response.ok) {
                     router.push('/submitted');
                 } else {
                      throw Error(response.statusText);
                 }
-            })           
+            })
             .catch(error=>{console.log(error);
                 setError("There was an error submitting your test")});
-            
+
     }
 
     return (
-        
+
         <section>
             <p className={scss.error}>{error}</p>
         <div className={scss.editorBox}>
@@ -67,7 +66,7 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
                 <a className={scss.buttonBlack} onClick={handleShowValue}>Submit Code</a>
             </TokenLink>
         </section>
-        
+
     );
 };
 

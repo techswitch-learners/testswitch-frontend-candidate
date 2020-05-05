@@ -20,7 +20,7 @@ const TestLibrary: NextPage<TestlibraryProps> = ({sessionCandidate}) => {
             <Head>
                 <title>TestSwitch Test Library</title>
             </Head>
-            <TestLibraryStepper key={key} candidateTestStatuses={sessionCandidate.testStatuses}/>
+            <TestLibraryStepper key={key} candidateTestStatuses={sessionCandidate.testStatuses} />
         </Layout>
     );
 };
