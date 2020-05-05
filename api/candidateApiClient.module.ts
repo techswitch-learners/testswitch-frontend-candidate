@@ -1,4 +1,7 @@
-﻿import fetch from "node-fetch";
+﻿import getConfig from "next/config";
+import fetch from "node-fetch";
+
+﻿
 
 export interface SessionCandidate {
     firstName: string;
@@ -12,10 +15,11 @@ export interface CandidateTestStatus {
 }
 
 export async function getSessionCandidate(token: string): Promise<SessionCandidate> {
-    const baseUrl = `https://testswitch-api-staging.herokuapp.com/sessions/`;
+    const {publicRuntimeConfig} = getConfig();
+    const baseUrl = publicRuntimeConfig.API_URL;
     try {
         const result = await fetch(
-            `${baseUrl}${token}`
+            `${baseUrl}/sessions/${token}`
         );
         const data = await result.json();
         return data;

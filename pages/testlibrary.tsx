@@ -2,7 +2,7 @@
 import {GetServerSideProps, NextPage} from "next";
 import Head from "next/head";
 import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStepper";
-import {getSessionCandidate, SessionCandidate} from "./api/candidateApiClient.module"
+import {getSessionCandidate, SessionCandidate} from "../api/candidateApiClient.module"
 import Layout from "../components/Layout/layout";
 import {assertTokenIsValid} from "../helpers/tokenHelpers";
 
@@ -26,13 +26,10 @@ const TestLibrary: NextPage<TestlibraryProps> = ({sessionCandidate}) => {
     );
 };
 
-//TODO placeholder id for candidateID,until url has token as query
-const candidateToken = `815b47a8-0b7a-4d6a-99e9-2fe130c5b774`;
-
 export const getServerSideProps: GetServerSideProps = async ({query, res}) => {
     await assertTokenIsValid(query, res);
-    const token = context.query.token as string;
-    const sessionData = getSessionCandidate(candidateToken);
+    const token = query.token as string;
+    const sessionData = getSessionCandidate(token);
 
     return {
         props: {

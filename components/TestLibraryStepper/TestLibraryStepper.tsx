@@ -15,14 +15,12 @@ interface TestLibraryStepperProps {
     candidateTestStatuses: CandidateTestStatus[];
 }
 
-function getSteps(testArr: CandidateTestStatus[]) {
+function getSteps(testArr: CandidateTestStatus[]): string[] {
     //set labels for steps
-    const testLabelArray = [];
-    testLabelArray.push(testArr.map(test => test.testName));
-    return testLabelArray;
+    return testArr.map(test => test.testName);
 }
 
-function getActiveStep(testArr: CandidateTestStatus[]) {
+function getActiveStep(testArr: CandidateTestStatus[]): number {
     //check for number of completed tests
     const completedTests = (testArr.filter(({testStatus}) => testStatus === "Completed"));
     return completedTests.length;
@@ -39,8 +37,8 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                 <Stepper style={{backgroundColor: "transparent"}} alternativeLabel activeStep={activeStep}
                          connector
                              ={<TestSwitchConnector/>}>
-                    {steps.map((label, status) => (
-                        <Step key={label.length}>
+                    {steps.map((label, index) => (
+                        <Step key={index}>
                             <StepLabel StepIconComponent={TestSwitchStepIcon} className="stepLabel"><h1
                                 style={h1Style}>{label}</h1>
                             </StepLabel>
