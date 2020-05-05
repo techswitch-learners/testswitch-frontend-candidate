@@ -17,10 +17,10 @@ interface TestLibraryStepperProps {
     candidateTestStatuses: CandidateTestStatus[];
 }
 
-function getSteps(): string[][] {
+function getSteps(): string[] {
     //set labels for steps
-    const testLabelArray = [];
-    testLabelArray.push(TestList.map(test => test.title));
+    const testLabelArray = TestList.map(test => test.title)
+    const dummyTest = testLabelArray.shift();
     return testLabelArray;
 }
 
