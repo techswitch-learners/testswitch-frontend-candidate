@@ -1,6 +1,9 @@
 ﻿const withSass = require('@zeit/next-sass');
 module.exports = withSass({
-    cssModules: true
+    cssModules: true,
+    publicRuntimeConfig: {
+        API_URL: process.env.API_URL
+    }
 });
 
 WebFontConfig = {
