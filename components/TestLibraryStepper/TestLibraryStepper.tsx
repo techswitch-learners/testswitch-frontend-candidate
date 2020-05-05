@@ -4,8 +4,8 @@ import {MuiThemeProvider} from '@material-ui/core/styles';
 import {CandidateTestStatus} from "../../pages/api/candidateApiClient.module";
 import TestSwitchStepIcon from "../TestLibraryStepperIcons/TestLibraryStepperIcons";
 import {h1Style, TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
-import Link from "next/link";
 import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
+import TokenLink from "../TokenLink/TokenLink";
 
 
 interface TestLibraryStepperProps {
@@ -50,11 +50,11 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                     </Typography>
                 ) : (
                     <Typography align={"center"}>
-                        <Link href={`/test${activeStep + 1}`}>
+                        <TokenLink href={`/test${activeStep + 1}`}>
                             <a className={scss.buttonYellow}>
                                 {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
                             </a>
-                        </Link>
+                        </TokenLink>
                     </Typography>
                 )}
             </section>
