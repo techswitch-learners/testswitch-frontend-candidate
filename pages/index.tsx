@@ -5,7 +5,6 @@ import Layout from "../components/Layout/layout";
 import {CandidateTestModel} from "../Models/CandidateTestModel";
 import {TestList} from "../components/CandidateTestView/Tests/TestList";
 import TokenLink from "../components/TokenLink/TokenLink";
-import Link from "next/link";
 
 export const testToRender: CandidateTestModel = TestList[1];
 
@@ -19,9 +18,9 @@ const Home: NextPage = () =>
                 <li>You must complete the test in one sitting</li>
                 <li>When you are ready and sure you won’t be disturbed, please click “Start”</li>
             </ul>
-            <Link href={"/testlibrary"} as={testToRender.title}>
+            <TokenLink href={"/testlibrary"} as={testToRender.title}>
                 <a className={scss.buttonYellow}>Start</a>
-            </Link>
+            </TokenLink>
         </section>
     </Layout>;
 export default Home;

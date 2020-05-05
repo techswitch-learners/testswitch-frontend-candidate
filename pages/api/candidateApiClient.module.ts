@@ -22,25 +22,23 @@ export async function getSessionCandidate(token: string): Promise<SessionCandida
         const result = await fetch(
             `${baseUrl}${token}`
         );
-        const data = await result.json();
-        return data;
+        return await result.json();
     } catch (error) {
         console.error(error);
         return error.message;
     }
 }
 
-export async function addTestSubmisson( tokenId: string,newTestSubmission: NewTestSubmission) {
+export async function addTestSubmission(tokenId: string, newTestSubmission: NewTestSubmission) {
     const { publicRuntimeConfig } = getConfig();
     const apiURL=publicRuntimeConfig.API_URL;
-  
-        const response = await fetch(`${apiURL}/sessions/${tokenId}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newTestSubmission),
-        });
-    return await response;
- 
+
+  return await fetch(`${apiURL}/sessions/${tokenId}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newTestSubmission),
+    });
+
 }

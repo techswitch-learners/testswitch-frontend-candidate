@@ -6,7 +6,6 @@ import {h1Style, TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverr
 import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
 import {TestList} from "../CandidateTestView/Tests/TestList";
 import {testToRender} from "../../pages";
-import {TestLibraryStepperProps} from "../../Models/CandidateTestModel";
 import TokenLink from "../TokenLink/TokenLink";
 
 interface CandidateTestStatus {
@@ -18,14 +17,14 @@ interface TestLibraryStepperProps {
     candidateTestStatuses: CandidateTestStatus[];
 }
 
-function getSteps(testArr: CandidateTestStatus[]) {
+function getSteps(testArr: CandidateTestStatus[]): string[][] {
     //set labels for steps
     const testLabelArray = [];
     testLabelArray.push(testArr.map(test => test.testName));
     return testLabelArray;
 }
 
-function getActiveStep(testArr: CandidateTestStatus[]) {
+function getActiveStep(testArr: CandidateTestStatus[]): number {
     //check for number of completed tests
     const completedTests = (testArr.filter(({testStatus}) => testStatus === "Completed"));
     return completedTests.length;
@@ -58,7 +57,7 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                     </Typography>
                 ) : (
                     <Typography align={"center"}>
-                        <TokenLink href={`/test${activeStep + 1}`}>
+                        <TokenLink href={`/test${activeStep + 1}`} as={testToRender.title}>
                             <a className={scss.buttonYellow}>
                                 {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
                             </a>
@@ -69,4 +68,4 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
         </article>
     )
 }
-    
+

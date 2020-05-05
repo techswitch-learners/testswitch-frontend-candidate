@@ -4,7 +4,7 @@ import {TextEditorSettings} from "./TextEditorSettings";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
 import Link from "next/link";
 import TokenLink from "../TokenLink/TokenLink";
-import {addTestSubmisson} from "../../pages/api/candidateApiClient.module";
+import {addTestSubmission} from "../../pages/api/candidateApiClient.module";
 import {useRouter} from "next/router";
 import {Response} from "node-fetch";
 
@@ -33,7 +33,7 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
 
     function submitForm() {
         const testAnswer=getEditorContentIfMountedRef.current();
-        addTestSubmisson(token,{testId,testAnswer})
+        addTestSubmission(token,{testId,testAnswer})
             .then((response)=>{
                 if (response.ok) {
                     router.push('/submitted');
@@ -59,7 +59,7 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
                 value={defaultText}
                 editorDidMount={handleIsEditorMounted}
                 options={TextEditorSettings}
-                
+
             />
         </div>
             <TokenLink href={"/submitted"}>
