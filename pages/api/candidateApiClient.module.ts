@@ -1,6 +1,11 @@
 ﻿import fetch from "node-fetch";
 import getConfig from 'next/config';
 
+export interface SessionCandidate {
+    firstName: string;
+    lastName: string;
+    testStatuses: CandidateTestStatus[];
+}
 export interface CandidateTestStatus {
     testId: string;
     testResult: string;
@@ -10,32 +15,15 @@ export interface NewTestSubmission{
     testAnswer: string;
 }
 
-const baseUrl = `https://localhost:5001`;
-
-export async function getCandidateTestResults() {
+export async function getSessionCandidate(token: string): Promise<SessionCandidate> {
+    const {publicRuntimeConfig} = getConfig();
+    const baseUrl = publicRuntimeConfig.API_URL;
     try {
         const result = await fetch(
-            //TODO: placeholder endpoint
-            `https://testswitch-api-staging.herokuapp.com/candidates`
+            `${baseUrl}/sessions/${token}`
         );
         const data = await result.json();
-        //TODO: configure for future api call to candidate results, this is currently set to the candidates endpoint
-        return data.items;
-    } catch (error) {
-        console.error(error);
-        return error.message;
-    }
-}
-
-export async function getCandidateTests() {
-    try {
-        const result = await fetch(
-            //TODO: placeholder endpoint
-            `https://testswitch-api-staging.herokuapp.com/candidates`
-        );
-        const data = await result.json();
-        //TODO: configure for future api call to candidate results, this is currently set to the candidates endpoint
-        return data.items[0].id;
+        return data;
     } catch (error) {
         console.error(error);
         return error.message;
