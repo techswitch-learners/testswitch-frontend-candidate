@@ -17,10 +17,10 @@ interface TestLibraryStepperProps {
     candidateTestStatuses: CandidateTestStatus[];
 }
 
-function getSteps(testArr: CandidateTestStatus[]): string[][] {
+function getSteps(): string[][] {
     //set labels for steps
     const testLabelArray = [];
-    testLabelArray.push(testArr.map(test => test.testName));
+    testLabelArray.push(TestList.map(test => test.title));
     return testLabelArray;
 }
 
@@ -32,7 +32,7 @@ function getActiveStep(testArr: CandidateTestStatus[]): number {
 
 
 export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
-    const steps = getSteps(props.candidateTestStatuses);
+    const steps = getSteps();
     const activeStep = getActiveStep(props.candidateTestStatuses);
 
     return (

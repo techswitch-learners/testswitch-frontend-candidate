@@ -6,11 +6,11 @@ import {getSessionCandidate, SessionCandidate} from "./api/candidateApiClient.mo
 import Layout from "../components/Layout/layout";
 import {assertTokenIsValid} from "../helpers/tokenHelpers";
 
-interface TestlibraryProps {
+interface TestLibraryProps {
     sessionCandidate: SessionCandidate;
 }
 
-const TestLibrary: NextPage<TestlibraryProps> = ({sessionCandidate}) => {
+const TestLibrary: NextPage<TestLibraryProps> = ({sessionCandidate}) => {
     const [key, setKey] = React.useState(0);
 
     React.useEffect(() => {
@@ -27,16 +27,14 @@ const TestLibrary: NextPage<TestlibraryProps> = ({sessionCandidate}) => {
 };
 
 //TODO placeholder id for candidateID,until url has token as query
-const candidateToken = `815b47a8-0b7a-4d6a-99e9-2fe130c5b774`;
+const candidateToken = `df1ccacc-8b94-4c5e-a190-caf3f5e860b6`;
 
 export const getServerSideProps: GetServerSideProps = async ({query, res}) => {
     await assertTokenIsValid(query, res);
-    const tests = getCandidateTests();
-    const results = getCandidateTestResults();
 
     return {
         props: {
-            sessionCandidate: await sessionData
+            sessionCandidate: await getSessionCandidate(candidateToken)
         }
     }
 };
