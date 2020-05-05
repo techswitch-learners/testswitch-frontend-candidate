@@ -4,6 +4,7 @@ import Head from "next/head";
 import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStepper";
 import {CandidateTestStatus, getCandidateTestResults, getCandidateTests} from "./api/candidateApiClient.module"
 import Layout from "../components/Layout/layout";
+import {assertTokenIsValid} from "../helpers/tokenHelpers";
 
 interface TestlibraryProps {
     candidateTestStatus: CandidateTestStatus[];
@@ -30,7 +31,8 @@ const candidateId = () => {
     return 1;
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps = async ({query, res}) => {
+    await assertTokenIsValid(query, res);
     const tests = getCandidateTests();
     const results = getCandidateTestResults();
 
@@ -41,6 +43,5 @@ export const getServerSideProps: GetServerSideProps = async context => {
         }
     }
 };
-
 
 export default TestLibrary;
