@@ -12,7 +12,7 @@ class MyDocument extends Document {
 
     render(): JSX.Element {
         return (
-            <Html lang={"en"} title={"TestSwitch"} className={scss.layout}>
+            <Html lang={"en"} className={scss.layout}>
                 <Head><title>TestSwitch</title></Head>
                 <body>
                 <Main/>
