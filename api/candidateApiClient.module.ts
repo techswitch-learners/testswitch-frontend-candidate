@@ -1,8 +1,6 @@
 ﻿import getConfig from "next/config";
 import fetch from "node-fetch";
 
-﻿
-
 export interface SessionCandidate {
     firstName: string;
     lastName: string;
