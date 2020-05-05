@@ -1,9 +1,10 @@
 import React from "react";
-import {NextPage} from 'next';
+import {GetServerSideProps, NextPage} from 'next';
 import scss from '../pageStyles/index.module.scss';
 import Layout from "../components/Layout/layout";
 import {CandidateTestModel} from "../Models/CandidateTestModel";
 import {TestList} from "../components/CandidateTestView/Tests/TestList";
+import {assertTokenIsValid} from "../helpers/tokenHelpers";
 import TokenLink from "../components/TokenLink/TokenLink";
 
 export const testToRender: CandidateTestModel = TestList[1];
@@ -23,6 +24,12 @@ const Home: NextPage = () =>
             </TokenLink>
         </section>
     </Layout>;
+
+export const getServerSideProps: GetServerSideProps = async ({res, query}) => {
+    await assertTokenIsValid(query, res);
+    return { props: {}};
+};
+
 export default Home;
 
 
