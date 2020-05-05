@@ -9,31 +9,41 @@ import {TestList} from "../CandidateTestView/Tests/TestList";
 import {testToRender} from "../../pages";
 import {TestLibraryStepperProps} from "../../Models/CandidateTestModel";
 
-function getSteps(): string[] {
-    //TODO: mock data, set number of steps based on test range, maybe props.candidateTestStatus.tests.length?
-    //Temporarily counts tests in list
-    const testNumber = TestList.length;
+interface CandidateTestStatus {
+    testName: string;
+    testStatus: string;
+}
 
+interface TestLibraryStepperProps {
+    candidateTestStatuses: CandidateTestStatus[];
+}
+
+function getSteps(testArr: CandidateTestStatus[]) {
     //set labels for steps
     const testLabelArray = [];
-    while (testLabelArray.length + 1 <= testNumber) {
-        testLabelArray.push(`Test ${testLabelArray.length + 1}`);
-    }
+    testLabelArray.push(testArr.map(test => test.testName));
     return testLabelArray;
 }
 
+function getActiveStep(testArr: CandidateTestStatus[]) {
+    //check for number of completed tests
+    const completedTests = (testArr.filter(({testStatus}) => testStatus === "Completed"));
+    return completedTests.length;
+}
+
+
 export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
-    const steps = getSteps();
-    //TODO this is example data, set active step with candidate number of results, maybe props.candidateTestStatus.results.length?
-    const activeStep = 0;
+    const steps = getSteps(props.candidateTestStatuses);
+    const activeStep = getActiveStep(props.candidateTestStatuses);
 
     return (
         <article className="stepperContainer">
             <MuiThemeProvider theme={TestSwitchTheme}>
                 <Stepper style={{backgroundColor: "transparent"}} alternativeLabel activeStep={activeStep}
-                         connector={<TestSwitchConnector/>}>
+                         connector
+                             ={<TestSwitchConnector/>}>
                     {steps.map((label, status) => (
-                        <Step key={label}>
+                        <Step key={label.length}>
                             <StepLabel StepIconComponent={TestSwitchStepIcon} className="stepLabel"><h1
                                 style={h1Style}>{label}</h1>
                             </StepLabel>
@@ -43,7 +53,7 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
             </MuiThemeProvider>
             <section className="stepperBtnContainer">
                 {activeStep === steps.length ? (
-                    <Typography align={"center"} className="finished">
+                    <Typography style={h1Style} align={"center"} className="finished">
                         All tests completed.
                     </Typography>
                 ) : (
