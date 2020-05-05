@@ -32,21 +32,6 @@
 
 //Media Queries
 
-//@media (min-width: $mediaHighResMinWidth){
-//  //High Resolution 2000px and above
-//  .submitHeader {
-//    font-size: $highResHeaderFontSize;
-//    max-width: 1200px;
-//  }
-//  .thankyou {
-//    font-size: $highResSubHeaderFontSize;
-//  }
-//  .submitMessage {
-//    font-size: $highResBodyFontSize;
-//    max-width: 1200px;
-//  }
-//}
-
 @media (max-width: $mediaLowResMaxWidth){
   //Low Resolution 900px and below
   .submitHeader {
@@ -68,5 +53,5 @@
     margin: 0.2em;
     padding: 0.5rem;
   }
- 
+
 }

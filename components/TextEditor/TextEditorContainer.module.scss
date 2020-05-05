@@ -12,18 +12,6 @@
   display: block;
 }
 
-//@media (min-width: $mediaHighResMinWidth) {
-//  //High Resolution 2000px and above
-//  .editorBox {
-//    border-width: 0.8rem;
-//  }
-//
-//  .buttonBlack{
-//    font-size: $highResBodyFontSize;
-//    border-width: 0.8rem;
-//    min-width: 400px;
-//  }
-//}
 @media (max-width: $mediaLowResMaxWidth) {
   //Low Resolution 900px and below
   .editorBox {

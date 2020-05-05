@@ -2,11 +2,10 @@ import React, {FormEvent, FunctionComponent, MutableRefObject, useRef, useState}
 import Editor from "@monaco-editor/react";
 import {TextEditorSettings} from "./TextEditorSettings";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
-import Link from "next/link";
 import TokenLink from "../TokenLink/TokenLink";
 import {addTestSubmission} from "../../pages/api/candidateApiClient.module";
 import {useRouter} from "next/router";
-import {Response} from "node-fetch";
+import {testToRender} from "../../pages";
 
 type EditorContentGetter = () => string;
 
@@ -31,19 +30,18 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
      }
 
 
-    function submitForm() {
-        const testAnswer=getEditorContentIfMountedRef.current();
+    function submitForm(): void {
+        const testAnswer = getEditorContentIfMountedRef.current();
         addTestSubmission(token,{testId,testAnswer})
             .then((response)=>{
                 if (response.ok) {
-                    router.push('/submitted');
+                    router.push('/testlibrary');
                 } else {
                      throw Error(response.statusText);
                 }
             })
             .catch(error=>{console.log(error);
                 setError("There was an error submitting your test")});
-
     }
 
     return (
@@ -62,8 +60,8 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
 
             />
         </div>
-            <TokenLink href={"/submitted"}>
-                <a className={scss.buttonBlack} onClick={handleShowValue}>Submit Code</a>
+            <TokenLink href={"/submitted"} as={testToRender.title}>
+                <button className={scss.buttonBlack} type={"submit"} onSubmit={handleSubmit}>Submit Code</button>
             </TokenLink>
         </section>
 

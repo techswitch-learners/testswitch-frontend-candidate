@@ -39,25 +39,6 @@
 
  //Media Queries
 
-      //@media (min-width: $mediaHighResMinWidth){
-      //  //High Resolution 2500px and above
-      //  .welcome {
-      //    font-size: $highResHeaderFontSize;
-      //    width: 1200px;
-      //  }
-      //  .instructionsHeader {
-      //    font-size: $highResSubHeaderFontSize;
-      //  }
-      //  .instructions {
-      //    font-size: $highResBodyFontSize;
-      //    width: 1200px;
-      //  }
-      //  .buttonYellow{
-      //    @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $highResBodyFontSize);
-      //    min-width: 10vw;
-      //    margin: 3rem;
-      //  }
-      //}
       @media (max-width: $mediaLowResMaxWidth){
         //Low Resolution 900px and below
         .welcome {
@@ -65,14 +46,14 @@
           margin: 0.2em;
           padding: 0.5rem;
           max-width: 500px;
-          min-width: 250px; 
+          min-width: 250px;
         }
         .instructionsHeader {
           font-size: $lowResSubHeaderFontSize;
           max-width: 500px;
           min-width: 250px;
         }
-       
+
         .instructions {
           width: 50vw;
           font-size: $lowResBodyFontSize;

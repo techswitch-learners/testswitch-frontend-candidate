@@ -19,17 +19,11 @@
   align-self: flex-start;
 }
 
-//@media (min-width: $mediaHighResMinWidth){
-//  .logoHeader {
-//    //High Resolution 2000px and above
-//   width: 12vw;
-//  }
-//}
 @media (max-width: $mediaLowResMaxWidth){
   .logoHeader {
     //Low Resolution 900px and below
     width: 40vw;
-    
+
   }
 }
 
