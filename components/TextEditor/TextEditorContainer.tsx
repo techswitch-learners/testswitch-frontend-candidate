@@ -6,7 +6,7 @@ import TokenLink from "../TokenLink/TokenLink";
 import {useRouter} from "next/router";
 import {TestList} from "../CandidateTestView/Tests/TestList";
 import {useStatus} from "../../pages/testlibrary";
-import {addTestSubmission} from "../../pages/api/candidateApiClientModule";
+import {addTestSubmission} from "../../api/candidateApiClientModule";
 
 type EditorContentGetter = () => string;
 

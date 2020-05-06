@@ -5,8 +5,8 @@ import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStep
 import Layout from "../components/Layout/layout";
 import {assertTokenIsValid} from "../helpers/tokenHelpers";
 import {useRouter} from "next/router";
-import {CandidateTestStatus} from "./api/candidateApiClientModule";
-import {getSessionCandidate} from "./api/sessionClient";
+import {CandidateTestStatus} from "../api/candidateApiClientModule";
+import {getSessionCandidate} from "../api/sessionClient";
 
 interface TestLibraryProps {
     sessionCandidate: SessionCandidate;

@@ -16,7 +16,7 @@ export interface NewTestSubmission{
     testAnswer: string;
 }
 
-export async function addTestSubmission( tokenId: string,newTestSubmission: NewTestSubmission) {
+export async function addTestSubmission( tokenId: string, newTestSubmission: NewTestSubmission) {
     const { publicRuntimeConfig } = getConfig();
     const apiURL = publicRuntimeConfig.API_URL;
 
@@ -28,3 +28,4 @@ export async function addTestSubmission( tokenId: string,newTestSubmission: NewT
         body: JSON.stringify(newTestSubmission),
     });
 }
+

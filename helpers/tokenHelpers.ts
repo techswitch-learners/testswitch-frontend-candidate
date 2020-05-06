@@ -1,6 +1,6 @@
 ﻿import {ServerResponse} from "http";
 import {ParsedUrlQuery} from "querystring";
-import {checkToken} from "../pages/api/sessionClient";
+import {checkToken} from "../api/sessionClient";
 
 export async function assertTokenIsValid(query: ParsedUrlQuery, response: ServerResponse): Promise<string> {
     const token = query.token as string;

@@ -1,5 +1,6 @@
-﻿import {assertTokenIsValid} from "../../helpers/tokenHelpers";
-﻿import getConfig from 'next/config';
+﻿import {assertTokenIsValid} from "../helpers/tokenHelpers";
+
+﻿﻿import getConfig from 'next/config';
 import fetch from "node-fetch";
 import {GetServerSideProps} from "next";
 import {CandidateTestStatus} from "./candidateApiClientModule";
