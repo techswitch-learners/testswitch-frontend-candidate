@@ -1,0 +1,30 @@
+@import "pageStyles/constants";
+
+.testInstructions {
+  box-sizing: border-box;
+  color: $techSwitchWhite;
+  white-space: pre-wrap;
+  font-size: $desktopBodyFontSize;
+  justify-content: left;
+  text-align: left;
+  width: 40vw;
+  margin-left: 1rem;
+  line-height: 130%;
+
+}
+.instructionsSubheader {
+  font-size: $desktopSubHeaderFontSize;
+  line-height: 1rem;
+}
+
+@media (max-width: $mediaLowResMaxWidth) {
+  //Low Resolution 900px and below
+  .instructionsSubheader {
+    box-sizing: border-box;
+    font-size: $lowResSubHeaderFontSize;
+  }
+  .testInstructions {
+    font-size: $lowResBodyFontSize;
+  }
+}
+

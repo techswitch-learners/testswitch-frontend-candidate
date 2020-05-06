@@ -7,28 +7,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  
-}
-.testInstructions {
- padding: 1vw;
-}
 
-.instructionsSubheader {
-  font-size: $desktopSubHeaderFontSize;
-  line-height: 1rem;
-}
-
-.testInstructions {
-  box-sizing: border-box;
-  color: $techSwitchWhite;
-  white-space: pre-wrap;
-  font-size: $desktopBodyFontSize;
-  justify-content: left;
-  text-align: left;
-  width: 40vw;
-  margin-left: 1rem;
-  line-height: 130%;
- 
 }
 
 .textEditor {
@@ -53,44 +32,10 @@
   margin: 0.5rem;
 }
 
-//Media Queries
-
-        //@media (min-width: $mediaHighResMinWidth){
-        //  //High Resolution 2000px and above
-        //  .instructionsSubheader {
-        //    box-sizing: border-box;
-        //    font-size: $highResSubHeaderFontSize;
-        //  }
-        //  .instructionsHeader {
-        //    font-size: $highResSubHeaderFontSize;
-        //  }
-        //  .testInstructions {
-        //    font-size: $highResBodyFontSize;
-        //    line-height: 200%;
-        //  }
-        //  .testTitle {
-        //    font-size: $highResHeaderFontSize;
-        //    margin-top: 0.5vh;
-        //    margin-bottom: 0.8vh;
-        //    padding: 2.5rem;
-        //  }
-        //  .buttonYellow{
-        //    @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $highResBodyFontSize);
-        //    min-width: 15vw;
-        //    margin: 3rem;
-        //  }
-        //}
         @media (max-width: $mediaLowResMaxWidth){
           //Low Resolution 900px and below
-          .instructionsSubheader {
-            box-sizing: border-box;
-            font-size: $lowResSubHeaderFontSize;
-          }
           .instructionsHeader {
             font-size: $lowResSubHeaderFontSize;
-          }
-          .testInstructions {
-            font-size: $lowResBodyFontSize;
           }
           .testTitle {
             font-size: $lowResHeaderFontSize;

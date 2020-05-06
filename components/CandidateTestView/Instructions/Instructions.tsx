@@ -1,9 +1,9 @@
 import React from "react";
-import scss from "../CandidateTestView.module.scss";
+import scss from "../Instructions.module.scss";
 import {CandidateTestModel} from "../../../Models/CandidateTestModel";
 
 const InstructionsBlock = (testModel: CandidateTestModel): JSX.Element => (
-    <div>
+    <div className={scss.testInstructions}>
         <p className={scss.instructionList}>{testModel.brief}</p>
         <p className={scss.instructionsSubheader}><strong>Example</strong></p>
         <p className={scss.instructionList}>{testModel.example}</p>
