@@ -14,6 +14,7 @@ const TextEditorSettings: TextEditorOptions = {
         enabled: true,
         scale: 100
     },
+    scrollBeyondLastLine: false,
     suggest: {
         showMethods: false,
         showFunctions: false,
