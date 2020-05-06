@@ -29,7 +29,7 @@ export async function getSessionCandidate(token: string): Promise<SessionCandida
         return error.message;
     }
 }
-export async function addTestSubmisson( tokenId: string,newTestSubmission: NewTestSubmission) {
+export async function addTestSubmission( tokenId: string,newTestSubmission: NewTestSubmission) {
     const { publicRuntimeConfig } = getConfig();
     const apiURL = publicRuntimeConfig.API_URL;
 
