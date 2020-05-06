@@ -3,10 +3,8 @@ import Layout from "../components/Layout/layout";
 import CandidateTestView from "../components/CandidateTestView/CandidateTestView";
 import {CandidateTestModel} from "../Models/CandidateTestModel";
 import {testToRender} from "./index";
-import {ParsedUrlQuery} from "querystring";
-import withRouter from "next/dist/client/with-router";
-import {getServerSideProps} from "../api/sessionClient";
 import {NextPage} from "next";
+import {useRouter} from "next/router";
 
 const TestPage: NextPage<CandidateTestModel> = () => {
     const router = useRouter();
@@ -17,6 +15,5 @@ const TestPage: NextPage<CandidateTestModel> = () => {
         </Layout>
     )
 };
-
 
 export default TestPage;

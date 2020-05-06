@@ -10,9 +10,9 @@ export const getServerSideProps: GetServerSideProps = async ({res, query}) => {
 };
 
 export async function checkToken(token: string): Promise<boolean> {
-    const {publicRuntimeConfig} = getConfig();
-    const baseUrl = publicRuntimeConfig.API_URL;
-
+    // Not working for me:
+    // const {publicRuntimeConfig} = getConfig();
+    // const baseUrl = publicRuntimeConfig.API_URL;
     const response = await fetch(`https://testswitch-api-staging.herokuapp.com/sessions/${token}`);
     return response.ok;
 }
@@ -25,7 +25,7 @@ export interface NewTestSubmission{
     testId: number;
     testAnswer: string;
 }
-export async function getSessionCandidate(token: string): Promise<SessionCandidate> {
+export async function getSessionCandidate(token: string | string[] | undefined): Promise<SessionCandidate> {
     const baseUrl = `https://testswitch-api-staging.herokuapp.com/sessions/`;
     try {
         const result = await fetch(
