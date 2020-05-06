@@ -13,17 +13,19 @@
 .submitMessage {
   color: $techSwitchWhite;
   font-size: $desktopSubHeaderFontSize;
+  max-width: 600px;
 }
 
 .content {
-  width: 100%;
-  height: 50vh;
+  width: 100vw;
+  max-height: 700px;
+  min-height: 400px;
   text-align: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  justify-content: stretch;
   padding: 3px;
   font-family: Open Sans, sans-serif;
   text-decoration: none;
@@ -36,20 +38,17 @@
   //Low Resolution 900px and below
   .submitHeader {
     font-size: $lowResHeaderFontSize;
-    max-width: 80vw;
     margin: 0.2em;
     padding: 0.5rem;
   }
   .thankyou {
     font-size: $lowResSubHeaderFontSize;
-    max-width: 80vw;
     margin: 0.2em;
     padding: 0.5rem;
   }
   .submitMessage {
     font-size: $lowResBodyFontSize;
     line-height: 150%;
-    max-width: 80vw;
     margin: 0.2em;
     padding: 0.5rem;
   }

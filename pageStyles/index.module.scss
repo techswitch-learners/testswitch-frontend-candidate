@@ -9,7 +9,7 @@
 }
 
 .content {
-  width: 100%;
+  width: 100vw;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,6 @@
   font-family: $techSwitchFont;
   text-decoration: none;
   text-align: center;
-  height: 40vh;
 }
 
 .instructionsHeader {
@@ -62,7 +61,7 @@
         }
         .buttonYellow{
           @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $lowResBodyFontSize);
-          max-width: 40vw;
+          max-width: 80px;
         }
       }
 

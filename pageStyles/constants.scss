@@ -7,14 +7,14 @@ $errorMessage:rgb(226,25,100);
 //Fonts
 $techSwitchFont: Open Sans, sans-serif;
 
-    $desktopHeaderFontSize: 2.5rem;
-    $desktopSubHeaderFontSize: 2rem;
-    $desktopBodyFontSize: 1.5rem;
+    $desktopHeaderFontSize: 2rem;
+    $desktopSubHeaderFontSize: 1.5rem;
+    $desktopBodyFontSize: 1.2rem;
 
     $mediaLowResMaxWidth: 900px;
-    $lowResHeaderFontSize: 1.5rem;
+    $lowResHeaderFontSize: 1.3rem;
     $lowResSubHeaderFontSize: 1rem;
-    $lowResBodyFontSize: 1rem;
+    $lowResBodyFontSize: 0.8rem;
 
 //Buttons
 @mixin techSwitchButton($backgroundColour: $techSwitchBlack, $inverseColour: $techSwitchYellow, $fontSize: $desktopBodyFontSize) {

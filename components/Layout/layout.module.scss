@@ -13,17 +13,8 @@
 
 .logoHeader {
   box-sizing: border-box;
-  width: 10vw;
+  width: 180px;
   padding: 0.2rem;
   margin: 0.2rem;
   align-self: flex-start;
 }
-
-@media (max-width: $mediaLowResMaxWidth){
-  .logoHeader {
-    //Low Resolution 900px and below
-    width: 40vw;
-  }
-}
-
-
