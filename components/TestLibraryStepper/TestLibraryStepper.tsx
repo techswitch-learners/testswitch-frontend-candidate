@@ -41,8 +41,8 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                 <Stepper style={{backgroundColor: "transparent"}} alternativeLabel activeStep={activeStep}
                          connector
                              ={<TestSwitchConnector/>}>
-                    {steps.map((label, status) => (
-                        <Step key={label.length}>
+                    {steps.map((label, index) => (
+                        <Step key={index}>
                             <StepLabel StepIconComponent={TestSwitchStepIcon} className="stepLabel"><h1
                                 style={h1Style}>{label}</h1>
                             </StepLabel>

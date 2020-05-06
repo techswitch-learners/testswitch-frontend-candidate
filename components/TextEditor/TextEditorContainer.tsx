@@ -1,4 +1,4 @@
-import React, {FormEvent, FunctionComponent, MutableRefObject, useRef, useState} from "react";
+import React, {FunctionComponent, MutableRefObject, useRef, useState} from "react";
 import Editor from "@monaco-editor/react";
 import {TextEditorSettings} from "./TextEditorSettings";
 import scss from "../TextEditor/TextEditorContainer.module.scss";

@@ -2,14 +2,13 @@
 module.exports = withSass({
     cssModules: true,
     publicRuntimeConfig: {
-        API_URL: process.env.API_URL,
-    },
+        API_URL: process.env.API_URL
+    }
 });
+
 WebFontConfig = {
     google: {
         families: ['Open Sans']
     },
     timeout: 2000
 };
-
-
