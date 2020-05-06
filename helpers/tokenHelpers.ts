@@ -2,12 +2,13 @@
 import {ParsedUrlQuery} from "querystring";
 import {checkToken} from "../api/sessionClient";
 
-export async function assertTokenIsValid(query: ParsedUrlQuery, response: ServerResponse): Promise<void> {
+export async function assertTokenIsValid(query: ParsedUrlQuery, response: ServerResponse): Promise<string> {
     const token = query.token as string;
     const tokenIsValid = await checkToken(token);
-    
+
     if (!tokenIsValid) {
         response.statusCode = 404;
         response.end();
     }
+    return token;
 }

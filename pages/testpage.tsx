@@ -1,11 +1,12 @@
-﻿import {GetServerSideProps, NextPage} from 'next';
-import React from "react";
+﻿import React from "react";
 import Layout from "../components/Layout/layout";
 import CandidateTestView from "../components/CandidateTestView/CandidateTestView";
 import {CandidateTestModel} from "../Models/CandidateTestModel";
 import {testToRender} from "./index";
-import {assertTokenIsValid} from "../helpers/tokenHelpers";
-import {useRouter} from "next/router";
+import {ParsedUrlQuery} from "querystring";
+import withRouter from "next/dist/client/with-router";
+import {getServerSideProps} from "../api/sessionClient";
+import {NextPage} from "next";
 
 const TestPage: NextPage<CandidateTestModel> = () => {
     const router = useRouter();
@@ -17,9 +18,5 @@ const TestPage: NextPage<CandidateTestModel> = () => {
     )
 };
 
-export const getServerSideProps: GetServerSideProps = async ({res, query}) => {
-    await assertTokenIsValid(query, res);
-    return { props: {}};
-};
 
 export default TestPage;

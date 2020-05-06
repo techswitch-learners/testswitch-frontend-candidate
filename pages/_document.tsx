@@ -8,11 +8,10 @@ import scss from "../components/Layout/layout.module.scss";
 class MyDocument extends Document {
     static async getInitialProps(ctx: NextPageContext & { renderPage: RenderPage }): Promise<DocumentInitialProps> {
         const initialProps = await Document.getInitialProps(ctx);
-        
+
         return {...initialProps}
     }
-   
-    
+
     render(): JSX.Element {
         return (
             <Html lang={"en"} className={scss.layout}>

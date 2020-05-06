@@ -3,9 +3,9 @@ import Editor from "@monaco-editor/react";
 import {TextEditorSettings} from "./TextEditorSettings";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
 import TokenLink from "../TokenLink/TokenLink";
-import {addTestSubmission} from "../../pages/api/candidateApiClient.module";
 import {useRouter} from "next/router";
 import {testToRender} from "../../pages";
+import {addTestSubmission} from "../../api/sessionClient";
 
 type EditorContentGetter = () => string;
 
