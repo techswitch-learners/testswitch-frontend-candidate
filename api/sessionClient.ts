@@ -10,10 +10,9 @@ export const getServerSideProps: GetServerSideProps = async ({res, query}) => {
 };
 
 export async function checkToken(token: string): Promise<boolean> {
-    // Not working for me:
-    // const {publicRuntimeConfig} = getConfig();
-    // const baseUrl = publicRuntimeConfig.API_URL;
-    const response = await fetch(`https://testswitch-api-staging.herokuapp.com/sessions/${token}`);
+    const {publicRuntimeConfig} = getConfig();
+    const baseUrl = publicRuntimeConfig.API_URL;
+    const response = await fetch(`${baseUrl}/sessions/${token}`);
     return response.ok;
 }
 export interface SessionCandidate {
