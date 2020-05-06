@@ -6,6 +6,7 @@ import InstructionsBlock from "./Instructions/Instructions";
 
 interface CandidateTestViewProps {
     test: CandidateTestModel;
+    token: string;
 }
 const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.Element => (
     
@@ -22,6 +23,8 @@ const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.
                      height="50vh" 
                      width="100%"
                      defaultText={candidateTestViewProps.test.testStarterCode}
+                     token={candidateTestViewProps.token}
+                     testId={candidateTestViewProps.test.number}
                 />
             </section>
         </div>

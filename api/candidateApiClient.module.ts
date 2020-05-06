@@ -11,7 +11,10 @@ export interface CandidateTestStatus {
     testName: string;
     testStatus: string;
 }
-
+export interface NewTestSubmission{
+    testId: number;
+    testAnswer: string;
+}
 export async function getSessionCandidate(token: string): Promise<SessionCandidate> {
     const {publicRuntimeConfig} = getConfig();
     const baseUrl = publicRuntimeConfig.API_URL;
@@ -25,4 +28,18 @@ export async function getSessionCandidate(token: string): Promise<SessionCandida
         console.error(error);
         return error.message;
     }
+}
+export async function addTestSubmisson( tokenId: string,newTestSubmission: NewTestSubmission) {
+    const { publicRuntimeConfig } = getConfig();
+    const apiURL=publicRuntimeConfig.API_URL;
+
+    const response = await fetch(`${apiURL}/sessions/${tokenId}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newTestSubmission),
+    });
+    return await response;
+
 }

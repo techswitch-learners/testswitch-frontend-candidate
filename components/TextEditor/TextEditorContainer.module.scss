@@ -10,3 +10,7 @@
   @include techSwitchButton();
   display: block;
 }
+
+.error{
+  color: $errorMessage;
+}

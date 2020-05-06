@@ -5,11 +5,14 @@ import CandidateTestView from "../components/CandidateTestView/CandidateTestView
 import {CandidateTestModel} from "../Models/CandidateTestModel";
 import {testToRender} from "./index";
 import {assertTokenIsValid} from "../helpers/tokenHelpers";
+import {useRouter} from "next/router";
 
 const TestPage: NextPage<CandidateTestModel> = () => {
+    const router = useRouter();
+    console.log(router.query.token.toString());
     return (
         <Layout>
-            <CandidateTestView test={testToRender}/>
+            <CandidateTestView test={testToRender} token={router.query.token.toString()}/>
         </Layout>
     )
 };
