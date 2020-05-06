@@ -9,9 +9,10 @@ import {useRouter} from "next/router";
 
 const TestPage: NextPage<CandidateTestModel> = () => {
     const router = useRouter();
+    const token = router.query.token as string;
     return (
         <Layout>
-            <CandidateTestView test={testToRender} token={router.query.token.toString()}/>
+            <CandidateTestView test={testToRender} token={token}/>
         </Layout>
     )
 };
