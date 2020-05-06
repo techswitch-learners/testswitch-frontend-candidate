@@ -5,12 +5,11 @@
   color: $techSwitchWhite;
   white-space: pre-wrap;
   font-size: $desktopBodyFontSize;
-  justify-content: left;
   text-align: left;
-  width: 40vw;
-  margin-left: 1rem;
+  padding-right: 1rem;
+  padding-left: 5rem;
   line-height: 130%;
-
+  width: 700px;
 }
 .instructionsSubheader {
   font-size: $desktopSubHeaderFontSize;
@@ -28,6 +27,10 @@
   }
   .testInstructions {
     font-size: $lowResBodyFontSize;
-  }
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 300px;
+    }
 }
 
