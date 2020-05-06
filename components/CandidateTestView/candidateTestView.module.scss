@@ -34,9 +34,6 @@
 
         @media (max-width: $mediaLowResMaxWidth){
           //Low Resolution 900px and below
-          .instructionsHeader {
-            font-size: $lowResSubHeaderFontSize;
-          }
           .testTitle {
             font-size: $lowResHeaderFontSize;
             white-space: normal;

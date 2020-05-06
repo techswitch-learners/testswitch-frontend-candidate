@@ -19,6 +19,9 @@
 
 @media (max-width: $mediaLowResMaxWidth) {
   //Low Resolution 900px and below
+  .instructionsHeader {
+    font-size: $lowResSubHeaderFontSize;
+  }
   .instructionsSubheader {
     box-sizing: border-box;
     font-size: $lowResSubHeaderFontSize;
