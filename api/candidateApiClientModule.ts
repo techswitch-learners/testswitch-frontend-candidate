@@ -31,7 +31,7 @@ export async function getSessionCandidate(token: string): Promise<SessionCandida
 }
 export async function addTestSubmisson( tokenId: string,newTestSubmission: NewTestSubmission) {
     const { publicRuntimeConfig } = getConfig();
-    const apiURL=publicRuntimeConfig.API_URL;
+    const apiURL = publicRuntimeConfig.API_URL;
 
     return await fetch(`${apiURL}/sessions/${tokenId}`, {
         method: "POST",
