@@ -5,8 +5,8 @@ import TestSwitchStepIcon from "../TestLibraryStepperIcons/TestLibraryStepperIco
 import {h1Style, TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
 import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
 import {TestList} from "../CandidateTestView/Tests/TestList";
-import {testToRender} from "../../pages";
 import TokenLink from "../TokenLink/TokenLink";
+import {CandidateTestModel} from "../../Models/CandidateTestModel";
 
 interface CandidateTestStatus {
     testName: string;
@@ -24,17 +24,18 @@ function getSteps(): string[] {
     return testLabelArray;
 }
 
-function getActiveStep(testArr: CandidateTestStatus[]): number {
+export function getActiveStep(testArr: CandidateTestStatus[]): number {
     //check for number of completed tests
     const completedTests = (testArr.filter(({testStatus}) => testStatus === "Completed"));
     return completedTests.length;
 }
+export let testToRender: CandidateTestModel;
 
 
 export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
     const steps = getSteps();
     const activeStep = getActiveStep(props.candidateTestStatuses);
-
+    testToRender = TestList[activeStep+1];
     return (
         <article className="stepperContainer">
             <MuiThemeProvider theme={TestSwitchTheme}>

@@ -1,8 +1,8 @@
 ﻿import getConfig from 'next/config';
 import fetch from "node-fetch";
-import {CandidateTestStatus} from "../components/CandidateTestView/CandidateTestStatus/CandidateTestStatus";
 import {GetServerSideProps} from "next";
 import {assertTokenIsValid} from "../helpers/tokenHelpers";
+import {CandidateTestStatus} from "./candidateApiClientModule";
 const {publicRuntimeConfig} = getConfig();
 const baseUrl = publicRuntimeConfig.API_URL;
 export async function checkToken(token: string): Promise<boolean> {

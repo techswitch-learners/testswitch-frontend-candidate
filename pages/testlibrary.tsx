@@ -4,19 +4,18 @@ import Head from "next/head";
 import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStepper";
 import Layout from "../components/Layout/layout";
 import {assertTokenIsValid} from "../helpers/tokenHelpers";
-import {CandidateTestStatus} from "../components/CandidateTestView/CandidateTestStatus/CandidateTestStatus";
 import {getSessionCandidate} from "../api/sessionClient";
 import {useRouter} from "next/router";
-
+import {CandidateTestStatus} from "../api/candidateApiClientModule";
 
 interface TestLibraryProps {
     sessionCandidate: SessionCandidate;
 }
-const defaultTestStatus: CandidateTestStatus = {testName: "dummy test", testStatus: "pending"};
 
-function useStatus(): CandidateTestStatus[] {
+export function useStatus(): CandidateTestStatus[] {
     const router = useRouter();
-    const [candidateTestStatus, setCandidateTestStatus] = useState([defaultTestStatus]);
+    const emptyStatusArray: CandidateTestStatus[] = [];
+    const [candidateTestStatus, setCandidateTestStatus] = useState(emptyStatusArray);
     useEffect(() => {
         getSessionCandidate(router.query.token).then(status => status.testStatuses).then(result => setCandidateTestStatus(result));
     });
@@ -41,7 +40,6 @@ const TestLibrary: NextPage<TestLibraryProps> = () => {
 export const getServerSideProps: GetServerSideProps = async ({query, res}) => {
     await assertTokenIsValid(query, res);
     const token = query.token as string;
-
     return {
         props: {
             sessionCandidate: await getSessionCandidate(token)
