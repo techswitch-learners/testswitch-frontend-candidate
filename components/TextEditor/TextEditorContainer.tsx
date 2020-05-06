@@ -4,7 +4,7 @@ import {TextEditorSettings} from "./TextEditorSettings";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
 import Link from "next/link";
 import TokenLink from "../TokenLink/TokenLink";
-import {addTestSubmisson} from "../../pages/api/candidateApiClient.module";
+import {addTestSubmisson} from "../../api/candidateApiClient.module";
 import {useRouter} from "next/router";
 import {Response} from "node-fetch";
 
@@ -36,7 +36,7 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
         addTestSubmisson(token,{testId,testAnswer})
             .then((response)=>{  
                 if (response.ok) {
-                    router.push('/submitted');
+                    router.push(`/submitted?token=${token}`);
                 } else {
                      throw Error(response.statusText);
                 }

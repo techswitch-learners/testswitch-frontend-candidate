@@ -1,6 +1,5 @@
 ﻿import getConfig from "next/config";
 import fetch from "node-fetch";
-import {NewTestSubmission} from "../pages/api/candidateApiClient.module";
 
 export interface SessionCandidate {
     firstName: string;
