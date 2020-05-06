@@ -4,9 +4,9 @@ import {TextEditorSettings} from "./TextEditorSettings";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
 import TokenLink from "../TokenLink/TokenLink";
 import {useRouter} from "next/router";
-import {addTestSubmission} from "../../api/sessionClient";
 import {TestList} from "../CandidateTestView/Tests/TestList";
 import {useStatus} from "../../pages/testlibrary";
+import {addTestSubmission} from "../../pages/api/candidateApiClientModule";
 
 type EditorContentGetter = () => string;
 
@@ -25,8 +25,9 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
 
     function handleIsEditorMounted(_getEditorContents: EditorContentGetter): void {
         setIsEditorReady(true);
+        if(isEditorReady) {
         getEditorContentIfMountedRef.current = _getEditorContents;
-     }
+     }}
 
 
     function submitForm(): void {
@@ -34,7 +35,7 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
         addTestSubmission(token,{testId,testAnswer})
             .then((response)=>{
                 if (response.ok) {
-                    router.push('/testlibrary');
+                    router.push('/testlibrary').then(r => r.valueOf());
                 } else {
                      throw Error(response.statusText);
                 }

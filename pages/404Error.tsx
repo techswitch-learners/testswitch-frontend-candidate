@@ -1,4 +1,4 @@
-﻿﻿import {NextPage} from 'next';
+﻿import {NextPage} from 'next';
 import Layout from "../components/Layout/layout";
 import scss from "../pageStyles/submitted.module.scss";
 import React from "react";

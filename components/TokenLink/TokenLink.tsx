@@ -2,7 +2,6 @@
 import {useRouter} from "next/router";
 import Link from "next/link";
 
-
 type TokenLinkProps = {children: React.ReactNode; href: string; as: string}
 
 const TokenLink: React.FunctionComponent<TokenLinkProps> = ({children, href}: TokenLinkProps) => {
@@ -18,7 +17,6 @@ const TokenLink: React.FunctionComponent<TokenLinkProps> = ({children, href}: To
           {children}
       </Link>
   )
-
 };
 
 export default TokenLink;

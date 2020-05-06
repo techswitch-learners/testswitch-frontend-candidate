@@ -15,20 +15,7 @@ export interface NewTestSubmission{
     testId: number;
     testAnswer: string;
 }
-export async function getSessionCandidate(token: string): Promise<SessionCandidate> {
-    const {publicRuntimeConfig} = getConfig();
-    const baseUrl = publicRuntimeConfig.API_URL;
-    try {
-        const result = await fetch(
-            `${baseUrl}/sessions/${token}`
-        );
-        const data = await result.json();
-        return data;
-    } catch (error) {
-        console.error(error);
-        return error.message;
-    }
-}
+
 export async function addTestSubmission( tokenId: string,newTestSubmission: NewTestSubmission) {
     const { publicRuntimeConfig } = getConfig();
     const apiURL = publicRuntimeConfig.API_URL;
@@ -40,5 +27,4 @@ export async function addTestSubmission( tokenId: string,newTestSubmission: NewT
         },
         body: JSON.stringify(newTestSubmission),
     });
-
 }
