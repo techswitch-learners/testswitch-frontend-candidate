@@ -19,7 +19,7 @@ $techSwitchFont: Open Sans, sans-serif;
 //Buttons
 @mixin techSwitchButton($backgroundColour: $techSwitchBlack, $inverseColour: $techSwitchYellow, $fontSize: $desktopBodyFontSize) {
     width: 180px;
-    height: 60px;
+    height: 1.3em;
     margin-top: 20px;
     padding: 3px;
     display: inline-block;
@@ -32,6 +32,7 @@ $techSwitchFont: Open Sans, sans-serif;
     text-decoration: none;
     transition: all 250ms ease;
     background: $backgroundColour;
+
 
     &:hover, &:active {
       background: $inverseColour;
