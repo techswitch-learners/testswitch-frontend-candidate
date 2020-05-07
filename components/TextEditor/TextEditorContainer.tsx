@@ -2,15 +2,10 @@ import React, {FunctionComponent, MutableRefObject, useRef, useState} from "reac
 import Editor from "@monaco-editor/react";
 import {TextEditorSettings} from "./TextEditorSettings";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
-import Link from "next/link";
-import TokenLink from "../TokenLink/TokenLink";
-import {addTestSubmisson} from "../../api/candidateApiClient.module";
 import {useRouter} from "next/router";
-import {Response} from "node-fetch";
+import {addTestSubmission} from "../../api/candidateApiClientModule";
 
 type EditorContentGetter = () => string;
-
-
 
 interface TextEditorContainerProps {
     height: string;
@@ -24,29 +19,33 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
     const [error, setError] = useState("");
     const getEditorContentIfMountedRef: MutableRefObject<EditorContentGetter> = useRef(() => "");
     const router=useRouter();
-    
+
     function handleIsEditorMounted(_getEditorContents: EditorContentGetter): void {
         setIsEditorReady(true);
+        if(isEditorReady) {
         getEditorContentIfMountedRef.current = _getEditorContents;
-     }
+     }}
 
-   
-    function submitForm() {
-        const testAnswer=getEditorContentIfMountedRef.current();
-        addTestSubmisson(token,{testId,testAnswer})
-            .then((response)=>{  
+
+    function submitForm(): void {
+        const testAnswer = getEditorContentIfMountedRef.current();
+        const url = "/testlibrary";
+        addTestSubmission(token,{testId,testAnswer})
+            .then((response)=>{
                 if (response.ok) {
-                    router.push(`/submitted?token=${token}`);
+                    router.push(`${url}?token=${token}`);
                 } else {
                      throw Error(response.statusText);
                 }
-            })           
+            })
             .catch(error=>{console.log(error);
                 setError("There was an error submitting your test")});
-            
     }
-
+    const handleSubmit = () => {
+        submitForm();
+    }
     return (
+
         <section>
             <p className={scss.error}>{error}</p>
         <div className={scss.editorBox}>
@@ -58,14 +57,12 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
                 value={defaultText}
                 editorDidMount={handleIsEditorMounted}
                 options={TextEditorSettings}
-                
+
             />
         </div>
-            
-                <button className={scss.buttonBlack} onClick={submitForm}>Submit Code</button>
-         
+                <button className={scss.buttonBlack} onClick={handleSubmit}>Submit Code</button>
         </section>
-        
+
     );
 };
 

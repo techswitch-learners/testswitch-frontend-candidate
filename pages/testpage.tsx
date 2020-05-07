@@ -1,25 +1,39 @@
-﻿import {GetServerSideProps, NextPage} from 'next';
-import React from "react";
+﻿import React from "react";
 import Layout from "../components/Layout/layout";
 import CandidateTestView from "../components/CandidateTestView/CandidateTestView";
 import {CandidateTestModel} from "../Models/CandidateTestModel";
-import {testToRender} from "./index";
-import {assertTokenIsValid} from "../helpers/tokenHelpers";
+import {GetServerSideProps, NextPage} from "next";
 import {useRouter} from "next/router";
+import {getActiveStep} from "../components/TestLibraryStepper/TestLibraryStepper";
+import {TestList} from "../components/CandidateTestView/Tests/TestList";
+import {assertTokenIsValid, getSessionCandidate} from "../api/candidateApiClientModule";
+import {SessionCandidate} from "../Models/SessionCandidateModels";
 
-const TestPage: NextPage<CandidateTestModel> = () => {
+interface TestPageProps {
+    sessionCandidate: SessionCandidate;
+}
+export function getTestToRender(sessionCandidate: SessionCandidate): CandidateTestModel {
+    const activeStep = getActiveStep(sessionCandidate.testStatuses);
+    return (TestList[activeStep + 1]);
+}
+
+const TestPage: NextPage<TestPageProps> = ({sessionCandidate}) => {
     const router = useRouter();
     const token = router.query.token as string;
+    const testToRender = getTestToRender(sessionCandidate);
     return (
         <Layout>
             <CandidateTestView test={testToRender} token={token}/>
         </Layout>
     )
 };
-
-export const getServerSideProps: GetServerSideProps = async ({res, query}) => {
+export const getServerSideProps: GetServerSideProps = async ({query, res}) => {
     await assertTokenIsValid(query, res);
-    return { props: {}};
+    const token = query.token as string;
+    return {
+        props: {
+            sessionCandidate: await getSessionCandidate(token)
+        }
+    }
 };
-
 export default TestPage;

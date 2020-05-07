@@ -1,6 +1,6 @@
 @import "constants";
 
-.submitHeader {
+.errorHeader {
   color: $techSwitchYellow;
   font-size: $desktopHeaderFontSize;
 }
@@ -10,7 +10,7 @@
   font-size: $desktopHeaderFontSize;
 }
 
-.submitMessage {
+.errorMessage {
   color: $techSwitchWhite;
   font-size: $desktopSubHeaderFontSize;
   max-width: 600px;
@@ -36,7 +36,7 @@
 
 @media (max-width: $mediaLowResMaxWidth){
   //Low Resolution 900px and below
-  .submitHeader {
+  .errorHeader {
     font-size: $lowResHeaderFontSize;
     margin: 0.2em;
     padding: 0.5rem;
@@ -46,7 +46,7 @@
     margin: 0.2em;
     padding: 0.5rem;
   }
-  .submitMessage {
+  .errorMessage {
     font-size: $lowResBodyFontSize;
     line-height: 150%;
     margin: 0.2em;
