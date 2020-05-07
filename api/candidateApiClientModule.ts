@@ -24,15 +24,10 @@ export async function assertTokenIsValid(query: ParsedUrlQuery, response: Server
 export async function getSessionCandidate(token: string | string[] | undefined): Promise<SessionCandidate> {
     const {publicRuntimeConfig} = getConfig();
     const baseUrl = publicRuntimeConfig.API_URL;
-    try {
-        const result = await fetch(
-            `${baseUrl}/sessions/${token}`
-        );
-        return await result.json();
-    } catch (error) {
-        console.error(error);
-        return error.message;
-    }
+    const result = await fetch(
+        `${baseUrl}/sessions/${token}`
+    );
+    return await result.json();
 }
 
 export async function addTestSubmission( tokenId: string, newTestSubmission: NewTestSubmission) {
