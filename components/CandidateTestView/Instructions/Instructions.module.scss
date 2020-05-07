@@ -1,14 +1,37 @@
-.sampleInputOutput {
-  margin: 5px;
-  padding: 5px;
-  top: 78vh;
-  left: 46vw;
-  display: inline-block;
-  position: absolute;
-  overflow: hidden;
-}
-.testInstructions {
-  height: 500px;
-  max-width: 50vw;
+@import "pageStyles/constants";
 
+.testInstructions {
+  box-sizing: border-box;
+  color: $techSwitchWhite;
+  white-space: pre-wrap;
+  font-size: $desktopBodyFontSize;
+  text-align: left;
+  padding-right: 1rem;
+  padding-left: 5rem;
+  margin-right: 2rem;
+  line-height: 130%;
+  width: 700px;
 }
+.instructionsSubheader {
+  font-size: $desktopSubHeaderFontSize;
+  line-height: 1rem;
+}
+
+@media (max-width: $mediaLowResMaxWidth) {
+  //Low Resolution 900px and below
+  .instructionsHeader {
+    font-size: $lowResSubHeaderFontSize;
+  }
+  .instructionsSubheader {
+    box-sizing: border-box;
+    font-size: $lowResSubHeaderFontSize;
+  }
+  .testInstructions {
+    font-size: $lowResBodyFontSize;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 300px;
+    }
+}
+

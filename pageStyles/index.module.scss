@@ -3,20 +3,19 @@
 .welcome {
   color: $techSwitchYellow;
   font-size: $desktopHeaderFontSize;
-  max-width: $welcomeHeaderWidth;
-  margin: 5px;
-  padding: 5px;
+  margin: 1rem;
+  padding: 1rem;
+  width: 500px;
 }
 
 .content {
-  width: 100%;
+  width: 100vw;
   align-items: center;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 3px;
-  font-family: Open Sans, sans-serif;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-family: $techSwitchFont;
   text-decoration: none;
   text-align: center;
 }
@@ -24,26 +23,47 @@
 .instructionsHeader {
   color: $techSwitchWhite;
   font-size: $desktopSubHeaderFontSize;
-  margin-top: 24px;
-  margin-bottom: 12px;
-  padding: 5px;
 }
 
 .instructions {
   color: $techSwitchWhite;
-  font-size: $buttonFontSize;
+  font-size: $desktopBodyFontSize;
   justify-content: left;
   text-align: left;
-  padding: 5px;
-  margin-top: 12px;
-  margin-bottom: 24px;
-  margin-right: 5px;
-  margin-left: 5px;
-  max-width: $welcomeHeaderWidth;
+  width: 500px;
 }
 .buttonYellow{
-  @include techSwitchButton($techSwitchYellow, $techSwitchBlack)
+  @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $desktopBodyFontSize)
 }
+
+ //Media Queries
+
+      @media (max-width: $mediaLowResMaxWidth){
+        //Low Resolution 900px and below
+        .welcome {
+          font-size: $lowResHeaderFontSize;
+          margin: 0.2em;
+          padding: 0.5rem;
+          max-width: 500px;
+          min-width: 250px;
+        }
+        .instructionsHeader {
+          font-size: $lowResSubHeaderFontSize;
+          max-width: 500px;
+          min-width: 250px;
+        }
+
+        .instructions {
+          width: 50vw;
+          font-size: $lowResBodyFontSize;
+          max-width: 500px;
+          min-width: 250px;
+        }
+        .buttonYellow{
+          @include techSwitchButton($techSwitchYellow, $techSwitchBlack, $lowResBodyFontSize);
+          max-width: 80px;
+        }
+      }
 
 
 

@@ -9,18 +9,16 @@ interface CandidateTestViewProps {
     token: string;
 }
 const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.Element => (
-    
         <div className={scss.testPage}>
             <h1 className={scss.testTitle}>Test {candidateTestViewProps.test.number}: {candidateTestViewProps.test.title}</h1>
             <section className={scss.testInstructions}>
-                <h2 className={scss.instructionsHeader}>{candidateTestViewProps.test.title}</h2>
                 <div id={"testInstructions"} className={scss.instructions}>
                     {InstructionsBlock(candidateTestViewProps.test)}
                 </div>
             </section>
             <section className={scss.textEditor}>
-                <TextEditorContainer 
-                     height="50vh" 
+                <TextEditorContainer
+                     height="50vh"
                      width="100%"
                      defaultText={candidateTestViewProps.test.testStarterCode}
                      token={candidateTestViewProps.token}

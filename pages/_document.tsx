@@ -9,7 +9,6 @@ class MyDocument extends Document {
         const initialProps = await Document.getInitialProps(ctx);
         return {...initialProps}
     }
-
     render(): JSX.Element {
         return (
             <Html lang={"en"} className={scss.layout}>

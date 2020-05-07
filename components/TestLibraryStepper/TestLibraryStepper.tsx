@@ -4,33 +4,28 @@ import {MuiThemeProvider} from '@material-ui/core/styles';
 import TestSwitchStepIcon from "../TestLibraryStepperIcons/TestLibraryStepperIcons";
 import {h1Style, TestSwitchConnector, TestSwitchTheme} from "../TestLibraryOverrides/TestLibraryOverrides"
 import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
+import {TestList} from "../CandidateTestView/Tests/TestList";
 import TokenLink from "../TokenLink/TokenLink";
-
-interface CandidateTestStatus {
-    testName: string;
-    testStatus: string;
-}
-
-interface TestLibraryStepperProps {
+import {CandidateTestStatus} from "../../Models/SessionCandidateModels";
+export interface TestLibraryStepperProps {
     candidateTestStatuses: CandidateTestStatus[];
 }
-
-function getSteps(testArr: CandidateTestStatus[]): string[] {
+function getSteps(): string[] {
     //set labels for steps
-    return testArr.map(test => test.testName);
+    const testLabelArray = TestList.map(test => test.title)
+    const dummyTest = testLabelArray.shift();
+    return testLabelArray;
 }
 
-function getActiveStep(testArr: CandidateTestStatus[]): number {
+export function getActiveStep(sessionCandidate: CandidateTestStatus[]): number {
     //check for number of completed tests
-    const completedTests = (testArr.filter(({testStatus}) => testStatus === "Completed"));
+    const completedTests = (sessionCandidate.filter(({testStatus}) => testStatus === "Completed"));
     return completedTests.length;
 }
 
-
 export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
-    const steps = getSteps(props.candidateTestStatuses);
+    const steps = getSteps();
     const activeStep = getActiveStep(props.candidateTestStatuses);
-
     return (
         <article className="stepperContainer">
             <MuiThemeProvider theme={TestSwitchTheme}>
@@ -53,7 +48,7 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                     </Typography>
                 ) : (
                     <Typography align={"center"}>
-                        <TokenLink href={`/test${activeStep + 1}`}>
+                        <TokenLink href={'/testpage'}>
                             <a className={scss.buttonYellow}>
                                 {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
                             </a>
@@ -64,4 +59,4 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
         </article>
     )
 }
-    
+

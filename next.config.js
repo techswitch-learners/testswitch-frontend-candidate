@@ -6,9 +6,3 @@ module.exports = withSass({
     }
 });
 
-WebFontConfig = {
-    google: {
-        families: ['Open Sans']
-    },
-    timeout: 2000
-};
