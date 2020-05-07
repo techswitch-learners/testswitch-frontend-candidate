@@ -7,20 +7,20 @@ import {useRouter} from "next/router";
 import {getActiveStep} from "../components/TestLibraryStepper/TestLibraryStepper";
 import {TestList} from "../components/CandidateTestView/Tests/TestList";
 import {assertTokenIsValid, getSessionCandidate} from "../api/candidateApiClientModule";
-import {CandidateTestStatus, SessionCandidate} from "../Models/SessionCandidateModels";
+import {SessionCandidate} from "../Models/SessionCandidateModels";
 
 interface TestPageProps {
     sessionCandidate: SessionCandidate;
 }
-export function getTestToRender(candidateTestStatuses: CandidateTestStatus[]): CandidateTestModel {
-    const activeStep = getActiveStep(candidateTestStatuses);
+export function getTestToRender(sessionCandidate: SessionCandidate): CandidateTestModel {
+    const activeStep = getActiveStep(sessionCandidate.testStatuses);
     return (TestList[activeStep + 1]);
 }
 
 const TestPage: NextPage<TestPageProps> = ({sessionCandidate}) => {
     const router = useRouter();
     const token = router.query.token as string;
-    const testToRender = getTestToRender(sessionCandidate.testStatuses);
+    const testToRender = getTestToRender(sessionCandidate);
     return (
         <Layout>
             <CandidateTestView test={testToRender} token={token}/>
