@@ -29,10 +29,11 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
 
     function submitForm(): void {
         const testAnswer = getEditorContentIfMountedRef.current();
+        const url = "/testlibrary";
         addTestSubmission(token,{testId,testAnswer})
             .then((response)=>{
                 if (response.ok) {
-                    router.push('/testlibrary?token='+{token});
+                    router.push(`${url}?token=${token}`);
                 } else {
                      throw Error(response.statusText);
                 }
