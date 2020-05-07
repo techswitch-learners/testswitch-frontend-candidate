@@ -3,10 +3,8 @@ import {GetServerSideProps, NextPage} from "next";
 import Head from "next/head";
 import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStepper";
 import Layout from "../components/Layout/layout";
-import {assertTokenIsValid} from "../helpers/tokenHelpers";
 import {useRouter} from "next/router";
-import {CandidateTestStatus} from "../api/candidateApiClientModule";
-import {getSessionCandidate} from "../api/sessionClient";
+import {assertTokenIsValid, CandidateTestStatus, getSessionCandidate} from "../api/candidateApiClientModule";
 
 interface TestLibraryProps {
     sessionCandidate: SessionCandidate;
