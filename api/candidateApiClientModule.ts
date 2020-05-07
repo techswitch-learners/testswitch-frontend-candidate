@@ -1,6 +1,5 @@
 import getConfig from 'next/config';
 import fetch from "node-fetch";
-import {GetServerSideProps} from "next";
 import {ServerResponse} from "http";
 import {ParsedUrlQuery} from "querystring";
 import {NewTestSubmission, SessionCandidate} from "../Models/SessionCandidateModels";
@@ -15,18 +14,12 @@ export async function checkToken(token: string): Promise<boolean> {
 export async function assertTokenIsValid(query: ParsedUrlQuery, response: ServerResponse): Promise<string> {
     const token = query.token as string;
     const tokenIsValid = await checkToken(token);
-
     if (!tokenIsValid) {
         response.statusCode = 404;
         response.end();
     }
     return token;
 }
-
-export const getServerSideProps: GetServerSideProps = async ({res, query}) => {
-    await assertTokenIsValid(query, res);
-    return { props: {}};
-};
 
 export async function getSessionCandidate(token: string | string[] | undefined): Promise<SessionCandidate> {
     const {publicRuntimeConfig} = getConfig();
@@ -46,7 +39,6 @@ export async function getSessionCandidate(token: string | string[] | undefined):
 export async function addTestSubmission( tokenId: string, newTestSubmission: NewTestSubmission) {
     const { publicRuntimeConfig } = getConfig();
     const apiURL = publicRuntimeConfig.API_URL;
-
     return await fetch(`${apiURL}/sessions/${tokenId}`, {
         method: "POST",
         headers: {

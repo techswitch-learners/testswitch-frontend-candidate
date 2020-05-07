@@ -5,18 +5,14 @@ import Link from "next/link";
 type TokenLinkProps = {href: string};
 
 const TokenLink: React.FunctionComponent<TokenLinkProps> = ({children, href}) => {
-  const router = useRouter();
+    const router = useRouter();
     const token = router.query.token;
-  let link = "";
-  if(token === undefined) {
-      link = '/404Error';
-  } else { link = `${href}?token=${token}`}
-
-  return (
-      <Link href={link}>
-          {children}
-      </Link>
-  )
-};
+    const hrefLink = `${href}?token=${token}`;
+    return (
+        <Link href={hrefLink}>
+            {children}
+        </Link>
+    )
+}
 
 export default TokenLink;

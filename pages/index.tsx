@@ -2,7 +2,8 @@ import React from "react";
 import scss from '../pageStyles/index.module.scss';
 import Layout from "../components/Layout/layout";
 import TokenLink from "../components/TokenLink/TokenLink";
-import {NextPage} from "next";
+import {GetServerSideProps, NextPage} from "next";
+import {assertTokenIsValid} from "../api/candidateApiClientModule";
 
 const Home: NextPage = () =>
     <Layout>
@@ -19,10 +20,8 @@ const Home: NextPage = () =>
             </TokenLink>
         </section>
     </Layout>;
-
+export const getServerSideProps: GetServerSideProps = async ({res, query}) => {
+    await assertTokenIsValid(query, res);
+    return { props: {}};
+};
 export default Home;
-
-
-
-
-

@@ -1,7 +1,8 @@
-﻿import {NextPage} from 'next';
+﻿import {GetServerSideProps, NextPage} from 'next';
 import Layout from "../components/Layout/layout";
 import scss from "../pageStyles/submitted.module.scss";
 import React from "react";
+import {assertTokenIsValid} from "../api/candidateApiClientModule";
 
 const Submitted: NextPage = () => (
     <Layout>
@@ -12,5 +13,10 @@ const Submitted: NextPage = () => (
         </section>
     </Layout>
 );
+export const getServerSideProps: GetServerSideProps = async ({res, query}) => {
+    await assertTokenIsValid(query, res);
+    return { props: {}};
+};
 
 export default Submitted;
+

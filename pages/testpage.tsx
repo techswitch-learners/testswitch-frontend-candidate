@@ -2,11 +2,12 @@
 import Layout from "../components/Layout/layout";
 import CandidateTestView from "../components/CandidateTestView/CandidateTestView";
 import {CandidateTestModel} from "../Models/CandidateTestModel";
-import {NextPage} from "next";
+import {GetServerSideProps, NextPage} from "next";
 import {useRouter} from "next/router";
 import {getActiveStep} from "../components/TestLibraryStepper/TestLibraryStepper";
 import {TestList} from "../components/CandidateTestView/Tests/TestList";
 import {useStatus} from "./testlibrary";
+import {assertTokenIsValid} from "../api/candidateApiClientModule";
 
 export function getTestToRender(): CandidateTestModel {
     const activeStep = getActiveStep(useStatus());
@@ -23,5 +24,8 @@ const TestPage: NextPage<CandidateTestModel> = () => {
         </Layout>
     )
 };
-
+export const getServerSideProps: GetServerSideProps = async ({res, query}) => {
+    await assertTokenIsValid(query, res);
+    return { props: {}};
+};
 export default TestPage;
