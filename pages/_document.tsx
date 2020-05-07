@@ -3,8 +3,6 @@ import React from "react";
 import {NextPageContext} from "next";
 import {RenderPage} from "next/dist/next-server/lib/utils";
 import scss from "../components/Layout/layout.module.scss";
-import {loadEnvConfig} from "next/dist/lib/load-env-config";
-export const API_URL = loadEnvConfig("/env-var.env");
 
 class MyDocument extends Document {
     static async getInitialProps(ctx: NextPageContext & { renderPage: RenderPage }): Promise<DocumentInitialProps> {
