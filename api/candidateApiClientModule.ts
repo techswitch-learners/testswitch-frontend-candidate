@@ -1,5 +1,5 @@
 import getConfig from 'next/config';
-import fetch from "node-fetch";
+import fetch, {Response} from "node-fetch";
 import {ServerResponse} from "http";
 import {ParsedUrlQuery} from "querystring";
 import {NewTestSubmission, SessionCandidate} from "../Models/SessionCandidateModels";
@@ -30,7 +30,7 @@ export async function getSessionCandidate(token: string | string[] | undefined):
     return await result.json();
 }
 
-export async function addTestSubmission( tokenId: string, newTestSubmission: NewTestSubmission) {
+export async function addTestSubmission( tokenId: string, newTestSubmission: NewTestSubmission): Promise<Response> {
     const { publicRuntimeConfig } = getConfig();
     const apiURL = publicRuntimeConfig.API_URL;
     return await fetch(`${apiURL}/sessions/${tokenId}`, {

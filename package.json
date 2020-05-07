@@ -55,8 +55,7 @@
     "next": "^9.3.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "webfont-loader": "^1.1.0",
-    "@now/static-build": "^0.16.0"
+    "webfont-loader": "^1.1.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.5.0",
