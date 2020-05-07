@@ -17,7 +17,7 @@ const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.
                     {InstructionsBlock(candidateTestViewProps.test)}
                 </div>
             </section>
-            <div className={scss.textEditor}>
+            <section className={scss.textEditor}>
                 <TextEditorContainer
                      height="50vh"
                      width="100%"
@@ -25,7 +25,7 @@ const CandidateTestView = (candidateTestViewProps: CandidateTestViewProps): JSX.
                      token={candidateTestViewProps.token}
                      testId={candidateTestViewProps.test.number}
                 />
-            </div>
+            </section>
         </div>
 
 );

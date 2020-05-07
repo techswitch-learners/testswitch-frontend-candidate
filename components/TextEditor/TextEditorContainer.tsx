@@ -2,10 +2,7 @@ import React, {FunctionComponent, MutableRefObject, useRef, useState} from "reac
 import Editor from "@monaco-editor/react";
 import {TextEditorSettings} from "./TextEditorSettings";
 import scss from "../TextEditor/TextEditorContainer.module.scss";
-import TokenLink from "../TokenLink/TokenLink";
 import {useRouter} from "next/router";
-import {TestList} from "../CandidateTestView/Tests/TestList";
-import {useStatus} from "../../pages/testlibrary";
 import {addTestSubmission} from "../../api/candidateApiClientModule";
 
 type EditorContentGetter = () => string;
@@ -35,7 +32,7 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
         addTestSubmission(token,{testId,testAnswer})
             .then((response)=>{
                 if (response.ok) {
-                    router.push('/testlibrary').then(r => r.valueOf());
+                    router.push('/testlibrary?token='+{token});
                 } else {
                      throw Error(response.statusText);
                 }
@@ -43,17 +40,8 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
             .catch(error=>{console.log(error);
                 setError("There was an error submitting your test")});
     }
-    let link = "";
-    let as = "";
     const handleSubmit = () => {
         submitForm();
-        if(TestList.length-1 > useStatus().length) {
-            link = "/testlibrary";
-            as = "testlibrary"
-        } else {
-            link = "/submitted";
-            as = "thankyou"
-        }
     }
     return (
 
@@ -71,9 +59,7 @@ const TextEditorContainer: FunctionComponent<TextEditorContainerProps> = ({heigh
 
             />
         </div>
-            <TokenLink href={link} as={as}>
-                <button className={scss.buttonBlack} type={"submit"} onSubmit={handleSubmit}>Submit Code</button>
-            </TokenLink>
+                <button className={scss.buttonBlack} onClick={handleSubmit}>Submit Code</button>
         </section>
 
     );
