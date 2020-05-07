@@ -7,8 +7,10 @@ import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
 import {TestList} from "../CandidateTestView/Tests/TestList";
 import TokenLink from "../TokenLink/TokenLink";
 import {CandidateTestModel} from "../../Models/CandidateTestModel";
-import {CandidateTestStatus, TestLibraryStepperProps} from "../../Models/SessionCandidateModels";
-
+import {CandidateTestStatus} from "../../Models/SessionCandidateModels";
+export interface TestLibraryStepperProps {
+    candidateTestStatuses: CandidateTestStatus[];
+}
 function getSteps(): string[] {
     //set labels for steps
     const testLabelArray = TestList.map(test => test.title)

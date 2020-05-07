@@ -28,8 +28,7 @@ export async function getSessionCandidate(token: string | string[] | undefined):
         const result = await fetch(
             `${baseUrl}/sessions/${token}`
         );
-        const data = await result.json();
-        return data;
+        return await result.json();
     } catch (error) {
         console.error(error);
         return error.message;

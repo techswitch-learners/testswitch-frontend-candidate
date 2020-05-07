@@ -11,6 +11,3 @@ export interface NewTestSubmission{
     testId: number;
     testAnswer: string;
 }
-export interface TestLibraryStepperProps {
-    candidateTestStatuses: CandidateTestStatus[];
-}
