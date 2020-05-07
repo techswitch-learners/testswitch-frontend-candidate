@@ -15,6 +15,7 @@ const TextEditorSettings: TextEditorOptions = {
         scale: 100
     },
     fontSize: 18,
+    scrollBeyondLastLine: false,
     suggest: {
         showMethods: false,
         showFunctions: false,
@@ -44,4 +45,4 @@ const TextEditorSettings: TextEditorOptions = {
         maxVisibleSuggestions: 5,
     }
 };
-export {TextEditorSettings};
+export {TextEditorSettings}
