@@ -2,9 +2,9 @@
 import {useRouter} from "next/router";
 import Link from "next/link";
 
-type TokenLinkProps = {children: React.ReactNode; href: string; as: string}
+type TokenLinkProps = {href: string};
 
-const TokenLink: React.FunctionComponent<TokenLinkProps> = ({children, href}: TokenLinkProps) => {
+const TokenLink: React.FunctionComponent<TokenLinkProps> = ({children, href}) => {
   const router = useRouter();
     const token = router.query.token;
   let link = "";

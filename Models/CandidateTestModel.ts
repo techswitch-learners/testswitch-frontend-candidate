@@ -11,3 +11,4 @@ export interface CandidateTestModel {
     outputDescription: string;
     expectedOutput: string | number;
 }
+

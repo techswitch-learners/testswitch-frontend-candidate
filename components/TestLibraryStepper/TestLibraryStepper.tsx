@@ -7,15 +7,7 @@ import scss from '../TestLibraryStepper/TestLibraryStepper.module.scss';
 import {TestList} from "../CandidateTestView/Tests/TestList";
 import TokenLink from "../TokenLink/TokenLink";
 import {CandidateTestModel} from "../../Models/CandidateTestModel";
-
-interface CandidateTestStatus {
-    testName: string;
-    testStatus: string;
-}
-
-interface TestLibraryStepperProps {
-    candidateTestStatuses: CandidateTestStatus[];
-}
+import {CandidateTestStatus, TestLibraryStepperProps} from "../../Models/SessionCandidateModels";
 
 function getSteps(): string[] {
     //set labels for steps
@@ -30,7 +22,6 @@ export function getActiveStep(testArr: CandidateTestStatus[]): number {
     return completedTests.length;
 }
 export let testToRender: CandidateTestModel;
-
 
 export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.Element {
     const steps = getSteps();
@@ -58,7 +49,7 @@ export default function TestLibraryStepper(props: TestLibraryStepperProps): JSX.
                     </Typography>
                 ) : (
                     <Typography align={"center"}>
-                        <TokenLink href={'/testpage'} as={testToRender.title}>
+                        <TokenLink href={'/testpage'}>
                             <a className={scss.buttonYellow}>
                                 {activeStep === steps.length - 1 ? 'Start Final Test' : `Start Test ${activeStep + 1}`}
                             </a>

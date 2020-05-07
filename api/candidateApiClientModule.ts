@@ -3,6 +3,7 @@ import fetch from "node-fetch";
 import {GetServerSideProps} from "next";
 import {ServerResponse} from "http";
 import {ParsedUrlQuery} from "querystring";
+import {NewTestSubmission, SessionCandidate} from "../Models/SessionCandidateModels";
 
 const {publicRuntimeConfig} = getConfig();
 const baseUrl = publicRuntimeConfig.API_URL;
@@ -27,17 +28,6 @@ export const getServerSideProps: GetServerSideProps = async ({res, query}) => {
     return { props: {}};
 };
 
-export interface SessionCandidate {
-    firstName: string;
-    lastName: string;
-    testStatuses: CandidateTestStatus[];
-}
-
-export interface NewTestSubmission{
-    testId: number;
-    testAnswer: string;
-}
-
 export async function getSessionCandidate(token: string | string[] | undefined): Promise<SessionCandidate> {
     const {publicRuntimeConfig} = getConfig();
     const baseUrl = publicRuntimeConfig.API_URL;
@@ -51,21 +41,6 @@ export async function getSessionCandidate(token: string | string[] | undefined):
         console.error(error);
         return error.message;
     }
-}
-
-export interface SessionCandidate {
-    firstName: string;
-    lastName: string;
-    testStatuses: CandidateTestStatus[];
-}
-
-export interface CandidateTestStatus {
-    testName: string;
-    testStatus: string;
-}
-export interface NewTestSubmission{
-    testId: number;
-    testAnswer: string;
 }
 
 export async function addTestSubmission( tokenId: string, newTestSubmission: NewTestSubmission) {

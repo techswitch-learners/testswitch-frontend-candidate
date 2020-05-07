@@ -4,7 +4,8 @@ import Head from "next/head";
 import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStepper";
 import Layout from "../components/Layout/layout";
 import {useRouter} from "next/router";
-import {assertTokenIsValid, CandidateTestStatus, getSessionCandidate} from "../api/candidateApiClientModule";
+import {CandidateTestStatus, SessionCandidate} from "../Models/SessionCandidateModels";
+import {assertTokenIsValid, getSessionCandidate} from "../api/candidateApiClientModule";
 
 interface TestLibraryProps {
     sessionCandidate: SessionCandidate;
@@ -44,15 +45,5 @@ export const getServerSideProps: GetServerSideProps = async ({query, res}) => {
         }
     }
 };
-
-export interface SessionCandidate {
-    firstName: string;
-    lastName: string;
-    testStatuses: CandidateTestStatus[];
-}
-export interface NewTestSubmission{
-    testId: number;
-    testAnswer: string;
-}
 
 export default TestLibrary;

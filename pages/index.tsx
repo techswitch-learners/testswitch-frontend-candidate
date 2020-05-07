@@ -14,7 +14,7 @@ const Home: NextPage = () =>
                 <li>You must complete the test in one sitting</li>
                 <li>When you are ready and sure you won’t be disturbed, please click “Start”</li>
             </ul>
-            <TokenLink href={"/testlibrary"} as={"testlibrary"}>
+            <TokenLink href={"/testlibrary"}>
                 <a className={scss.buttonYellow}>Start</a>
             </TokenLink>
         </section>
