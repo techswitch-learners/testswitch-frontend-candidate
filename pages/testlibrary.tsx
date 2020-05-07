@@ -1,37 +1,22 @@
-﻿import React, {useEffect, useState} from "react";
+﻿import React from "react";
 import {GetServerSideProps, NextPage} from "next";
 import Head from "next/head";
 import TestLibraryStepper from "../components/TestLibraryStepper/TestLibraryStepper";
 import Layout from "../components/Layout/layout";
-import {useRouter} from "next/router";
-import {CandidateTestStatus, SessionCandidate} from "../Models/SessionCandidateModels";
 import {assertTokenIsValid, getSessionCandidate} from "../api/candidateApiClientModule";
+import {SessionCandidate} from "../Models/SessionCandidateModels";
 
 interface TestLibraryProps {
     sessionCandidate: SessionCandidate;
 }
 
-export function useStatus(): CandidateTestStatus[] {
-    const router = useRouter();
-    const emptyStatusArray: CandidateTestStatus[] = [];
-    const [candidateTestStatus, setCandidateTestStatus] = useState(emptyStatusArray);
-    useEffect(() => {
-        getSessionCandidate(router.query.token).then(status => status.testStatuses).then(result => setCandidateTestStatus(result));
-    });
-    return candidateTestStatus;
-}
-
-const TestLibrary: NextPage<TestLibraryProps> = () => {
-    const [key, setKey] = React.useState(0);
-    React.useEffect(() => {
-        setKey(1);
-    }, []);
+const TestLibrary: NextPage<TestLibraryProps> = ({sessionCandidate}) => {
     return (
         <Layout>
             <Head>
                 <title>TestSwitch Test Library</title>
             </Head>
-            <TestLibraryStepper key={key} candidateTestStatuses={useStatus()} />
+            <TestLibraryStepper key={1} candidateTestStatuses={sessionCandidate.testStatuses} />
         </Layout>
     );
 };

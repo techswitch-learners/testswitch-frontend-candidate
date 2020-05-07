@@ -18,9 +18,9 @@ function getSteps(): string[] {
     return testLabelArray;
 }
 
-export function getActiveStep(testArr: CandidateTestStatus[]): number {
+export function getActiveStep(sessionCandidate: CandidateTestStatus[]): number {
     //check for number of completed tests
-    const completedTests = (testArr.filter(({testStatus}) => testStatus === "Completed"));
+    const completedTests = (sessionCandidate.filter(({testStatus}) => testStatus === "Completed"));
     return completedTests.length;
 }
 export let testToRender: CandidateTestModel;
